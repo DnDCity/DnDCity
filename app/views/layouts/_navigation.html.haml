@@ -7,7 +7,9 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      = link_to 'Home', root_path, class: 'navbar-brand'
+      %a.navbar-brand{href: root_path} DnD&sdot;City
     .collapse.navbar-collapse
       %ul.nav.navbar-nav
         = render 'layouts/navigation_links'
+      %ul.nav.navbar-nav.pull-right
+        = render 'layouts/user_links'
