@@ -1,0 +1,13 @@
+%p
+  %b Name:
+  = @campaign.name
+%p
+  %b User:
+  = @campaign.user
+%p
+  %b Desc:
+  = @campaign.desc
+
+= link_to 'Edit', edit_campaign_path(@campaign)
+\|
+= link_to 'Back', campaigns_path
