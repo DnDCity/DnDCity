@@ -1,0 +1,12 @@
+Dungeons and Dragons City (DnDCity)
+Dungeons and Dragons Character Sheet (DnDCT)
+
+While we are still deciding on a name our project deals with the popular tabletop RPG Dungeons and Dragons, or DnD. Anyone who has ever played DnD knows how frustrating it can get to manage your characters, campaigns, even just get together and just play. DnDCity aims to fix that. DnDCity is a website that uses multiple pages and forms where people can come and organize DnD campagns, create and manage characters, items, or even campaigns.
+
+The users of the website can be divided into three distinct categories: the Campaign Creator, the Game Master (or DM as he is sometimes referred to), and the Player. The Campaign Creator is the person who initially organizes the group of players to form campaign parties. The Game Master is the person who directs the game play, and determines the outcomes of players actions. finally, the Player is the person who determines the actions of one or more characters in the game itself. 
+
+Keeping track of the Users, and their character sheets will provide us with ample opportunity to employ multiple database tables. We will limit the number of tables by being selective in which potential features we implement.
+
+The nature of the web based architecture we will be using inherently has multiple processes and inter-process communication. Web Browsers, Servers, and Database engines will all be communicating together to deliver the application to the users.
+
+In order to keep track of all of the various tasks this project will endeavor, we will be using github. 
