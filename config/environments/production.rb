@@ -76,4 +76,9 @@ DnDCity::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  # ActionMailer Config
+  config.action_mailer.default_url_options = { :host => 'www.dndcity.com' }
+  # change to true to allow email to be sent during development
+
 end
