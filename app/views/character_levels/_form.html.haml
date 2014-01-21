@@ -1,0 +1,12 @@
+= simple_form_for(@character_level) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :character
+    = f.input :level
+    = f.association :character_class
+    = f.input :class_level
+    = f.input :hp
+
+  .form-actions
+    = f.button :submit

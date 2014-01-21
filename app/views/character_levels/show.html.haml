@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Character:
+  = @character_level.character
+%p
+  %b Level:
+  = @character_level.level
+%p
+  %b Character class:
+  = @character_level.character_class
+%p
+  %b Class level:
+  = @character_level.class_level
+%p
+  %b Hp:
+  = @character_level.hp
+
+= link_to 'Edit', edit_character_level_path(@character_level)
+\|
+= link_to 'Back', character_levels_path

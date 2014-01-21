@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @character.name
+%p
+  %b User:
+  = @character.user
+%p
+  %b Base str:
+  = @character.base_str
+%p
+  %b Base dex:
+  = @character.base_dex
+%p
+  %b Base con:
+  = @character.base_con
+%p
+  %b Base int:
+  = @character.base_int
+%p
+  %b Base wis:
+  = @character.base_wis
+%p
+  %b Base cha:
+  = @character.base_cha
+
+= link_to 'Edit', edit_character_path(@character)
+\|
+= link_to 'Back', characters_path

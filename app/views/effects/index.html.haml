@@ -1,0 +1,23 @@
+%h1 Listing effects
+
+%table
+  %tr
+    %th Name
+    %th Desc
+    %th Effects
+    %th
+    %th
+    %th
+
+  - @effects.each do |effect|
+    %tr
+      %td= effect.name
+      %td= effect.desc
+      %td= effect.effects
+      %td= link_to 'Show', effect
+      %td= link_to 'Edit', edit_effect_path(effect)
+      %td= link_to 'Destroy', effect, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Effect', new_effect_path

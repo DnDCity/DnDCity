@@ -1,0 +1,27 @@
+%h1 Listing character_levels
+
+%table
+  %tr
+    %th Character
+    %th Level
+    %th Character class
+    %th Class level
+    %th Hp
+    %th
+    %th
+    %th
+
+  - @character_levels.each do |character_level|
+    %tr
+      %td= character_level.character
+      %td= character_level.level
+      %td= character_level.character_class
+      %td= character_level.class_level
+      %td= character_level.hp
+      %td= link_to 'Show', character_level
+      %td= link_to 'Edit', edit_character_level_path(character_level)
+      %td= link_to 'Destroy', character_level, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Character level', new_character_level_path

@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @effect.name
+%p
+  %b Desc:
+  = @effect.desc
+%p
+  %b Effects:
+  = @effect.effects
+
+= link_to 'Edit', edit_effect_path(@effect)
+\|
+= link_to 'Back', effects_path
