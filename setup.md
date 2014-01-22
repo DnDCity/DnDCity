@@ -2,9 +2,7 @@
 
 ### Get packages 
 
-'''
-$ sudo apt-get install postgresql libpq-dev curl vim-gnome nodejs git
-'''
+    $ sudo apt-get install postgresql libpq-dev curl vim-gnome nodejs git
 
 ### install rvm:
 
