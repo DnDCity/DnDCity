@@ -1,0 +1,28 @@
+# PostgreSQL. Versions 8.2 and up are supported.
+# https://devcenter.heroku.com/articles/getting-started-with-rails4#use-postgres
+# Configure Using Gemfile
+# gem 'pg'
+#
+local: &local
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+#  username: <%= ENV['USER'] %>
+  password:
+  template: template0
+
+development:
+  <<: *local
+  database: <%= Rails.application.class.parent_name %>_development
+
+test: &test
+  <<: *local
+  database: <%= Rails.application.class.parent_name %>_test
+
+production:
+  <<: *local
+  database: <%= Rails.application.class.parent_name %>_production
+
+cucumber:
+  <<: *test
+
