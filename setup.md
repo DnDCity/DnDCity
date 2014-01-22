@@ -9,7 +9,7 @@
 * search for rvm install https://rvm.io/rvm/install
 * use poor man's rails installer option
 
-    $ \curl -sSL https://get.rvm.io | bash -s stable --rails
+        $ \curl -sSL https://get.rvm.io | bash -s stable --rails
 
 ### setup database
 
