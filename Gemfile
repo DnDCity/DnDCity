@@ -17,6 +17,7 @@ gem 'simple_form'
 gem 'thin'
 gem 'cancan'
 gem 'rolify'
+gem 'redcarpet'
 group :development, :test do
   gem 'rspec-rails'
 end
