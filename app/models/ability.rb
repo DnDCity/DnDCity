@@ -14,6 +14,7 @@ class Ability
        can :manage, Character, user_id: user.id
     else # visitor
     end
+    can :manage, Hair
     #
     # The first argument to `can` is the action you are giving the user 
     # permission to do.

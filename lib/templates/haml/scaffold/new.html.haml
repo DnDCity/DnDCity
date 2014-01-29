@@ -1,0 +1,5 @@
+.pull-right
+  %a{href: <%= plural_table_name %>_path}
+    %span.glyphicon.glyphicon-list
+%h1.title New <%= singular_table_name.humanize %>
+= render 'form'
