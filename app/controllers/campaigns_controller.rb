@@ -1,10 +1,13 @@
 class CampaignsController < ApplicationController
-  before_action :set_campaign, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
+  before_action :build_campaign, only: [:create]
+  # before_action :set_campaign, only: [:update]
+  load_and_authorize_resource
 
   # GET /campaigns
   # GET /campaigns.json
   def index
-    @campaigns = Campaign.all
+    # @campaigns = Campaign.all
   end
 
   # GET /campaigns/1
@@ -14,7 +17,7 @@ class CampaignsController < ApplicationController
 
   # GET /campaigns/new
   def new
-    @campaign = Campaign.new
+    # @campaign = Campaign.new
   end
 
   # GET /campaigns/1/edit
@@ -24,8 +27,8 @@ class CampaignsController < ApplicationController
   # POST /campaigns
   # POST /campaigns.json
   def create
-    @campaign = Campaign.new(campaign_params)
-    @campaign.user = current_user
+    #@campaign = Campaign.new(campaign_params)
+    # @campaign.user = current_user
 
     respond_to do |format|
       if @campaign.save
@@ -68,8 +71,13 @@ class CampaignsController < ApplicationController
       @campaign = Campaign.find(params[:id])
     end
 
+    def build_campaign
+      @campaign = Campaign.new(campaign_params)
+      @campaign.user = current_user
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def campaign_params
-      params.require(:campaign).permit(:name, :reference, :desc)
+      params.require(:campaign).permit(:name, :desc)
     end
 end
