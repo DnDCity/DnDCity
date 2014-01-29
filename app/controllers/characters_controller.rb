@@ -1,10 +1,13 @@
 class CharactersController < ApplicationController
-  before_action :set_character, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
+  before_action :build_character, only: [:create]
+  # before_action :set_character, only: [:update]
+  load_and_authorize_resource
 
   # GET /characters
   # GET /characters.json
   def index
-    @characters = Character.all
+    # @characters = Character.where(user_id: current_user.id)
   end
 
   # GET /characters/1
@@ -14,7 +17,7 @@ class CharactersController < ApplicationController
 
   # GET /characters/new
   def new
-    @character = Character.new
+    # @character = Character.new
   end
 
   # GET /characters/1/edit
@@ -24,7 +27,7 @@ class CharactersController < ApplicationController
   # POST /characters
   # POST /characters.json
   def create
-    @character = Character.new(character_params)
+    # @character = Character.new(character_params)
 
     respond_to do |format|
       if @character.save
@@ -67,8 +70,13 @@ class CharactersController < ApplicationController
       @character = Character.find(params[:id])
     end
 
+    def build_character
+      @character = Character.new(character_params)
+      @character.user = current_user
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def character_params
-      params.require(:character).permit(:name, :user_id, :base_str, :base_dex, :base_con, :base_int, :base_wis, :base_cha)
+      params.require(:character).permit(:name, :base_str, :base_dex, :base_con, :base_int, :base_wis, :base_cha)
     end
 end

@@ -1,30 +1,27 @@
-%p#notice= notice
+.pull-right
+  = link_to 'Edit', edit_character_path(@character)
+  = link_to 'Back', characters_path
+  %p
+    %b User:
+    = @character.user
+%h1= @character.name
+.abilities
+  .ability.str
+    %b Str:
+    = @character.base_str
+  .ability.dex
+    %b Dex:
+    = @character.base_dex
+  .ability.con
+    %b Con:
+    = @character.base_con
+  .ability.int
+    %b Int:
+    = @character.base_int
+  .ability.wis
+    %b Wis:
+    = @character.base_wis
+  .ability.cha
+    %b Cha:
+    = @character.base_cha
 
-%p
-  %b Name:
-  = @character.name
-%p
-  %b User:
-  = @character.user
-%p
-  %b Base str:
-  = @character.base_str
-%p
-  %b Base dex:
-  = @character.base_dex
-%p
-  %b Base con:
-  = @character.base_con
-%p
-  %b Base int:
-  = @character.base_int
-%p
-  %b Base wis:
-  = @character.base_wis
-%p
-  %b Base cha:
-  = @character.base_cha
-
-= link_to 'Edit', edit_character_path(@character)
-\|
-= link_to 'Back', characters_path

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140120205220) do
+ActiveRecord::Schema.define(version: 20140121024415) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,90 @@ ActiveRecord::Schema.define(version: 20140120205220) do
   create_table "campaigns", force: true do |t|
     t.string   "name",       null: false
     t.integer  "user_id",    null: false
+    t.text     "desc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "character_classes", force: true do |t|
+    t.string   "name"
+    t.text     "desc"
+    t.string   "hit_die"
+    t.string   "alignment_restrictions"
+    t.float    "base_attack_bonus"
+    t.float    "attack_bonus_per_level"
+    t.float    "base_fort_save"
+    t.float    "fort_save_bonus_per_level"
+    t.float    "base_reflex_save"
+    t.float    "reflex_save_bonus_per_level"
+    t.float    "base_will_save"
+    t.float    "will_save_bonus_per_level"
+    t.integer  "bonus_feat"
+    t.integer  "bonus_skill_points"
+    t.integer  "bonus_skill_points_per_level"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "character_levels", force: true do |t|
+    t.integer  "character_id"
+    t.integer  "level"
+    t.integer  "character_class_id"
+    t.integer  "class_level"
+    t.integer  "hp"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "character_levels", ["character_class_id"], name: "index_character_levels_on_character_class_id", using: :btree
+
+  create_table "characters", force: true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.integer  "race_id"
+    t.integer  "size_id"
+    t.string   "gender"
+    t.string   "alignment"
+    t.string   "religion"
+    t.float    "height"
+    t.float    "weight"
+    t.integer  "age"
+    t.string   "looks"
+    t.text     "desc"
+    t.integer  "base_str"
+    t.integer  "base_dex"
+    t.integer  "base_con"
+    t.integer  "base_int"
+    t.integer  "base_wis"
+    t.integer  "base_cha"
+    t.integer  "current_hp"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "characters", ["user_id"], name: "index_characters_on_user_id", using: :btree
+
+  create_table "effects", force: true do |t|
+    t.string   "name"
+    t.text     "desc"
+    t.text     "effects"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "races", force: true do |t|
+    t.string   "name"
+    t.integer  "size_id"
+    t.integer  "speed"
+    t.integer  "str"
+    t.integer  "dex"
+    t.integer  "con"
+    t.integer  "int"
+    t.integer  "wis"
+    t.integer  "cha"
+    t.integer  "bonus_feat"
+    t.integer  "bonus_skill_points"
+    t.integer  "bonus_skill_points_per_level"
     t.text     "desc"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -34,6 +118,27 @@ ActiveRecord::Schema.define(version: 20140120205220) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id", using: :btree
   add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
+
+  create_table "sizes", force: true do |t|
+    t.string   "name"
+    t.text     "desc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "skills", force: true do |t|
+    t.string   "name"
+    t.text     "desc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "spells", force: true do |t|
+    t.string   "name"
+    t.text     "desc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name",                   default: "", null: false

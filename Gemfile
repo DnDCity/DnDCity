@@ -16,12 +16,13 @@ gem 'haml-rails'
 gem 'simple_form'
 gem 'thin'
 gem 'cancan'
+## gem 'cancan_strong_parameters' ## patch may not always be necessary ## didn't help
 gem 'rolify'
 group :development, :test do
   gem 'rspec-rails'
 end
 group :test do
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', :require => false
   # gem 'database-cleaner'
 end
 group :development do
