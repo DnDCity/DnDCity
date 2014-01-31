@@ -3,6 +3,23 @@
 
   .form-inputs
     = f.input :name
+    = f.association :size
+    = f.input :speed
+
+    .abilities
+      %h3 Ability Modifiers
+      = f.input :str
+      = f.input :dex
+      = f.input :con
+      = f.input :int
+      = f.input :wis
+      = f.input :cha
+    .bonuses
+      %h3 Bonuses
+      = f.input :bonus_feat
+      = f.input :bonus_skill_points
+      = f.input :bonus_skill_points_per_level
+
     = f.input :desc
 
   .form-actions

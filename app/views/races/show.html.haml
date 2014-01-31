@@ -1,12 +1,52 @@
-%p#notice= notice
-
+.pull-right
+  %a{href: races_path}
+    %span.glyphicon.glyphicon-list
+  -if can? :create, Race
+    %a{href: new_race_path}
+      %span.glyphicon.glyphicon-plus
+  - if can? :edit, @race
+    %a{href: edit_race_path(@race)}
+      %span.glyphicon.glyphicon-pencil
+  - if can? :destroy, @race
+    %a{href: race_path(@race), data: {method: :delete, confirm: "Are you sure you want to delete #{@race}?"}}
+      %span.glyphicon.glyphicon-trash
+%h1.title Race #{@race}
 %p
   %b Name:
   = @race.name
+%p 
+  %b Size:
+  = link_to @race.size, @race.size
 %p
   %b Desc:
   = @race.desc
-
-= link_to 'Edit', edit_race_path(@race)
-\|
-= link_to 'Back', races_path
+%p
+  %b Speed:
+  = @race.speed
+%p
+  %b Str:
+  = @race.str
+%p
+  %b Dex:
+  = @race.dex
+%p
+  %b Con:
+  = @race.con
+%p
+  %b Int:
+  = @race.int
+%p
+  %b Wis:
+  = @race.wis
+%p
+  %b Cha:
+  = @race.cha
+%p
+  %b Bonus feat:
+  = @race.bonus_feat
+%p
+  %b Bonus skill points:
+  = @race.bonus_skill_points
+%p
+  %b Bonus skill points per level:
+  = @race.bonus_skill_points_per_level

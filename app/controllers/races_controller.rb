@@ -1,20 +1,20 @@
 class RacesController < ApplicationController
-  before_action :set_race, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user! # see devise
+  before_action :build_race, only: [:create]
+  # before_action :set_race, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource # see cancan
 
   # GET /races
-  # GET /races.json
   def index
-    @races = Race.all
+    # @races = Race.all
   end
 
   # GET /races/1
-  # GET /races/1.json
   def show
   end
 
   # GET /races/new
   def new
-    @race = Race.new
   end
 
   # GET /races/1/edit
@@ -22,43 +22,27 @@ class RacesController < ApplicationController
   end
 
   # POST /races
-  # POST /races.json
   def create
-    @race = Race.new(race_params)
-
-    respond_to do |format|
-      if @race.save
-        format.html { redirect_to @race, notice: 'Race was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @race }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @race.errors, status: :unprocessable_entity }
-      end
+    if @race.save
+      redirect_to @race, notice: 'Race was successfully created.'
+    else
+      render action: 'new'
     end
   end
 
   # PATCH/PUT /races/1
-  # PATCH/PUT /races/1.json
   def update
-    respond_to do |format|
-      if @race.update(race_params)
-        format.html { redirect_to @race, notice: 'Race was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @race.errors, status: :unprocessable_entity }
-      end
+    if @race.update(race_params)
+      redirect_to @race, notice: 'Race was successfully updated.'
+    else
+      render action: 'edit'
     end
   end
 
   # DELETE /races/1
-  # DELETE /races/1.json
   def destroy
     @race.destroy
-    respond_to do |format|
-      format.html { redirect_to races_url }
-      format.json { head :no_content }
-    end
+    redirect_to races_url, notice: 'Race was successfully destroyed.'
   end
 
   private
@@ -67,8 +51,13 @@ class RacesController < ApplicationController
       @race = Race.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    def build_race
+      @race= Race.new(race_params)
+      # @race.user = current_user # use if owned resource
+    end
+
+    # Only allow a trusted parameter "white list" through.
     def race_params
-      params.require(:race).permit(:name, :desc)
+      params.require(:race).permit(:name, :desc, :speed, :str, :dex, :con, :int, :wis, :cha, :bonus_feat, :bonus_skill_points, :bonus_skill_points_per_level, :size_id)
     end
 end

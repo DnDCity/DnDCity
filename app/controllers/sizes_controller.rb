@@ -1,20 +1,19 @@
 class SizesController < ApplicationController
-  before_action :set_size, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
+  before_action :build_size, only: [:create]
+  # before_action :set_size, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /sizes
-  # GET /sizes.json
   def index
-    @sizes = Size.all
   end
 
   # GET /sizes/1
-  # GET /sizes/1.json
   def show
   end
 
   # GET /sizes/new
   def new
-    @size = Size.new
   end
 
   # GET /sizes/1/edit
@@ -22,43 +21,27 @@ class SizesController < ApplicationController
   end
 
   # POST /sizes
-  # POST /sizes.json
   def create
-    @size = Size.new(size_params)
-
-    respond_to do |format|
-      if @size.save
-        format.html { redirect_to @size, notice: 'Size was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @size }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @size.errors, status: :unprocessable_entity }
-      end
+    if @size.save
+      redirect_to @size, notice: 'Size was successfully created.'
+    else
+      render action: 'new'
     end
   end
 
   # PATCH/PUT /sizes/1
-  # PATCH/PUT /sizes/1.json
   def update
-    respond_to do |format|
-      if @size.update(size_params)
-        format.html { redirect_to @size, notice: 'Size was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @size.errors, status: :unprocessable_entity }
-      end
+    if @size.update(size_params)
+      redirect_to @size, notice: 'Size was successfully updated.'
+    else
+      render action: 'edit'
     end
   end
 
   # DELETE /sizes/1
-  # DELETE /sizes/1.json
   def destroy
     @size.destroy
-    respond_to do |format|
-      format.html { redirect_to sizes_url }
-      format.json { head :no_content }
-    end
+    redirect_to sizes_url, notice: 'Size was successfully destroyed.'
   end
 
   private
@@ -67,7 +50,12 @@ class SizesController < ApplicationController
       @size = Size.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    def build_size
+      @size= Size.new(size_params)
+      # @size.user = current_user # use if owned resource
+    end
+
+    # Only allow a trusted parameter "white list" through.
     def size_params
       params.require(:size).permit(:name, :desc)
     end

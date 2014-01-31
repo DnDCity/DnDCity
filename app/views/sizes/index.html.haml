@@ -1,21 +1,30 @@
-%h1 Listing sizes
+-if can? :create, Size
+  .pull-right
+    %a{href: new_size_path}
+      %span.glyphicon.glyphicon-plus
+%h1.title Listing Sizes
 
 %table
   %tr
     %th Name
     %th Desc
     %th
-    %th
-    %th
+      -if can? :create, Size
+        %a{href: new_size_path}
+          %span.glyphicon.glyphicon-plus
 
   - @sizes.each do |size|
     %tr
       %td= size.name
       %td= size.desc
-      %td= link_to 'Show', size
-      %td= link_to 'Edit', edit_size_path(size)
-      %td= link_to 'Destroy', size, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td
+        %a{href: size_path(size)}
+          %span.glyphicon.glyphicon-file
+        - if can? :edit, size
+          %a{href: edit_size_path(size)}
+            %span.glyphicon.glyphicon-pencil
+        - if can? :destroy, size
+          %a{href: size_path(size), data: {method: :delete, confirm: "Are you sure you want to delete #{size}?"}}
+            %span.glyphicon.glyphicon-trash
 
-%br
 
-= link_to 'New Size', new_size_path
