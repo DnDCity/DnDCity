@@ -1,7 +1,14 @@
-%h1 Editing race
-
+.pull-right
+  %a{href: races_path}
+    %span.glyphicon.glyphicon-list
+  -if can? :read, Race
+    %a{href: race_path}
+      %span.glyphicon.glyphicon-file
+  -if can? :create, Race
+    %a{href: new_race_path}
+      %span.glyphicon.glyphicon-plus
+  - if can? :destroy, @race
+    %a{href: race_path(@race), data: {method: :delete, confirm: "Are you sure you want to delete #{@race}?"}}
+      %span.glyphicon.glyphicon-trash
+%h1.title Editing Race #{@race}
 = render 'form'
-
-= link_to 'Show', @race
-\|
-= link_to 'Back', races_path

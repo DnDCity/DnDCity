@@ -1,15 +1,16 @@
-%h1 Listing characters
+.pull-right
+  = link_to 'New Character', new_character_path
+%h1 Your Characters
 
 %table
   %tr
     %th Name
-    %th User
-    %th Base str
-    %th Base dex
-    %th Base con
-    %th Base int
-    %th Base wis
-    %th Base cha
+    %th Str
+    %th Dex
+    %th Con
+    %th Int
+    %th Wis
+    %th Cha
     %th
     %th
     %th
@@ -17,7 +18,6 @@
   - @characters.each do |character|
     %tr
       %td= character.name
-      %td= character.user
       %td= character.base_str
       %td= character.base_dex
       %td= character.base_con
@@ -28,6 +28,4 @@
       %td= link_to 'Edit', edit_character_path(character)
       %td= link_to 'Destroy', character, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-%br
 
-= link_to 'New Character', new_character_path

@@ -1,21 +1,39 @@
-%h1 Listing races
+-if can? :create, Race
+  .pull-right
+    %a{href: new_race_path}
+      %span.glyphicon.glyphicon-plus
+%h1.title Races and Templates
 
 %table
   %tr
     %th Name
-    %th Desc
+    %th Speed
+    %th Str
+    %th Dex
+    %th Con
+    %th Int
+    %th Wis
+    %th Cha
     %th
-    %th
-    %th
+      -if can? :create, Race
+        %a{href: new_race_path}
+          %span.glyphicon.glyphicon-plus
 
   - @races.each do |race|
     %tr
-      %td= race.name
-      %td= race.desc
-      %td= link_to 'Show', race
-      %td= link_to 'Edit', edit_race_path(race)
-      %td= link_to 'Destroy', race, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td
+        %a{href: race_path(race)}
+          = race.name
+      %td= race.speed
+      %td= race.str
+      %td= race.dex
+      %td= race.con
+      %td= race.int
+      %td= race.wis
+      %td= race.cha
+      %td
+        - if can? :edit, race
+          %a{href: edit_race_path(race)}
+            %span.glyphicon.glyphicon-pencil
 
-%br
 
-= link_to 'New Race', new_race_path

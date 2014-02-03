@@ -1,0 +1,18 @@
+.pull-right
+  %a{href: <%= plural_table_name %>_path}
+    %span.glyphicon.glyphicon-list
+  -if can? :create, <%= class_name %>
+    %a{href: new_<%= singular_table_name %>_path}
+      %span.glyphicon.glyphicon-plus
+  - if can? :edit, @<%= singular_table_name %>
+    %a{href: edit_<%= singular_table_name %>_path(@<%= singular_table_name %>)}
+      %span.glyphicon.glyphicon-pencil
+  - if can? :destroy, @<%= singular_table_name %>
+    %a{href: <%= singular_table_name %>_path(@<%= singular_table_name %>), data: {method: :delete, confirm: "Are you sure you want to delete #{@<%= singular_table_name %>}?"}}
+      %span.glyphicon.glyphicon-trash
+%h1.title <%= singular_table_name.humanize %> #{@<%= singular_table_name %>}
+<% for attribute in attributes -%>
+%p
+  %b <%= attribute.human_name %>:
+  = @<%= singular_table_name %>.<%= attribute.name %>
+<% end -%>
