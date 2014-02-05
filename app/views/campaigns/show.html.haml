@@ -1,13 +1,19 @@
+.pull-right
+  %a{href: campaigns_path}
+    %span.glyphicon.glyphicon-list
+  -if can? :create, Campaign
+    %a{href: new_campaign_path}
+      %span.glyphicon.glyphicon-plus
+  - if can? :edit, @campaign
+    %a{href: edit_campaign_path(@campaign)}
+      %span.glyphicon.glyphicon-pencil
+  - if can? :destroy, @campaign
+    %a{href: campaign_path(@campaign), data: {method: :delete, confirm: "Are you sure you want to delete #{@campaign}?"}}
+      %span.glyphicon.glyphicon-trash
+%h1.title Campaign #{@campaign}
 %p
   %b Name:
   = @campaign.name
 %p
-  %b User:
+  %b Created by:
   = @campaign.user
-%p
-  %b Desc:
-  = @campaign.desc
-
-= link_to 'Edit', edit_campaign_path(@campaign)
-\|
-= link_to 'Back', campaigns_path

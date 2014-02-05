@@ -1,7 +1,14 @@
-%h1 Editing campaign
-
+.pull-right
+  %a{href: campaigns_path}
+    %span.glyphicon.glyphicon-list
+  -if can? :read, Campaign
+    %a{href: campaign_path}
+      %span.glyphicon.glyphicon-file
+  -if can? :create, Campaign
+    %a{href: new_campaign_path}
+      %span.glyphicon.glyphicon-plus
+  - if can? :destroy, @campaign
+    %a{href: campaign_path(@campaign), data: {method: :delete, confirm: "Are you sure you want to delete #{@campaign}?"}}
+      %span.glyphicon.glyphicon-trash
+%h1.title Editing Campaign #{@campaign}
 = render 'form'
-
-= link_to 'Show', @campaign
-\|
-= link_to 'Back', campaigns_path

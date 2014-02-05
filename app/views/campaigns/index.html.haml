@@ -1,21 +1,27 @@
-%h1 Listing campaigns
+-if can? :create, Campaign
+  .pull-right
+    %a{href: new_campaign_path}
+      %span.glyphicon.glyphicon-plus
+%h1.title Listing Campaigns
 
 %table
   %tr
     %th Name
-    %th Creator
+    %th User
     %th
-    %th
-    %th
+      -if can? :create, Campaign
+        %a{href: new_campaign_path}
+          %span.glyphicon.glyphicon-plus
 
   - @campaigns.each do |campaign|
     %tr
-      %td= campaign.name
-      %td= link_to campaign.user, campaign.user
-      %td= link_to 'Show', campaign
-      %td= link_to 'Edit', edit_campaign_path(campaign)
-      %td= link_to 'Destroy', campaign, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td
+        %a{href: campaign_path(campaign)}
+          = campaign.name
+      %td= campaign.user
+      %td
+        - if can? :edit, campaign
+          %a{href: edit_campaign_path(campaign)}
+            %span.glyphicon.glyphicon-pencil
 
-%br
 
-= link_to 'New Campaign', new_campaign_path
