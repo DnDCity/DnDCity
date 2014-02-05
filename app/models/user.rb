@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
   has_many :characters
 
   def to_s
-    email
+    if name && !name.empty?
+      name
+    else
+      email
+    end
   end
 end
