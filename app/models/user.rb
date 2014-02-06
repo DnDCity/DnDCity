@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :characters
+  has_many :campaigns
 
   def to_s
     if name && !name.empty?
