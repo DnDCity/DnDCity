@@ -4,8 +4,8 @@
   .form-inputs
     = f.input :name
     .descriptors
-      = f.input :race
-      = f.input :size 
+      = f.association :race
+      = f.association :size 
       = f.input :gender
       = f.input :alignment 
       = f.input :religion
