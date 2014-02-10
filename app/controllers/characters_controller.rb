@@ -2,7 +2,7 @@ class CharactersController < ApplicationController
   before_filter :authenticate_user!
   before_action :build_character, only: [:create]
   # before_action :set_character, only: [:update]
-  load_and_authorize_resource
+  load_and_authorize_resource through: :current_user
 
   # GET /characters
   # GET /characters.json
