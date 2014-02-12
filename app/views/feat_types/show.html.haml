@@ -1,0 +1,24 @@
+.pull-right
+  %a{href: feat_types_path}
+    %span.glyphicon.glyphicon-list
+  -if can? :create, FeatType
+    %a{href: new_feat_type_path}
+      %span.glyphicon.glyphicon-plus
+  - if can? :edit, @feat_type
+    %a{href: edit_feat_type_path(@feat_type)}
+      %span.glyphicon.glyphicon-pencil
+  - if can? :destroy, @feat_type
+    %a{href: feat_type_path(@feat_type), data: {method: :delete, confirm: "Are you sure you want to delete #{@feat_type}?"}}
+      %span.glyphicon.glyphicon-trash
+%h1.title Feat type #{@feat_type}
+%p
+  %b Name:
+  = @feat_type.name
+:markdown
+  #{@feat_type.desc}
+
+%h3 Feats
+%ul
+  - @feat_type.feats.each do |feat|
+    %li= link_me feat
+

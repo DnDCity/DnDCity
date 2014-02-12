@@ -1,0 +1,30 @@
+-if can? :create, FeatType
+  .pull-right
+    %a{href: new_feat_type_path}
+      %span.glyphicon.glyphicon-plus
+%h1.title Listing Feat Types
+
+%table
+  %tr
+    %th Name
+    %th Desc
+    %th
+      -if can? :create, FeatType
+        %a{href: new_feat_type_path}
+          %span.glyphicon.glyphicon-plus
+
+  - @feat_types.each do |feat_type|
+    %tr
+      %td= feat_type.name
+      %td= feat_type.desc
+      %td
+        %a{href: feat_type_path(feat_type)}
+          %span.glyphicon.glyphicon-file
+        - if can? :edit, feat_type
+          %a{href: edit_feat_type_path(feat_type)}
+            %span.glyphicon.glyphicon-pencil
+        - if can? :destroy, feat_type
+          %a{href: feat_type_path(feat_type), data: {method: :delete, confirm: "Are you sure you want to delete #{feat_type}?"}}
+            %span.glyphicon.glyphicon-trash
+
+

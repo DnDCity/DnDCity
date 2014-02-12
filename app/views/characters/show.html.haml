@@ -4,6 +4,9 @@
   %p
     %b User:
     = @character.user
+  - if @character.public && current_user == @character.user
+    .warn [Publicly Visible]
+    
 %h1= @character.name
 
 .descriptors

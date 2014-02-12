@@ -1,0 +1,13 @@
+= simple_form_for(@feat) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :desc
+    = f.association :feat_type
+    = f.input :modifiers
+    = f.input :prerequisites
+    = f.input :benefit
+
+  .form-actions
+    = f.button :submit

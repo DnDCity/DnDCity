@@ -80,6 +80,6 @@ class CharactersController < ApplicationController
       params.require(:character).permit(:name, :race_id, :size_id, :gender,
         :alignment, :religion, :height, :weight, :age, :looks, :desc,
         :base_str, :base_dex, :base_con, :base_int, :base_wis, :base_cha,
-        :current_hp)
+        :current_hp, :public)
     end
 end

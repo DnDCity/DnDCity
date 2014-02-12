@@ -3,6 +3,7 @@
 
   .form-inputs
     = f.input :name
+    = f.input :public, inline_label: "Allow everybody see this Character."
     .descriptors
       = f.association :race
       = f.association :size 

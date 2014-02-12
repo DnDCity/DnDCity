@@ -1,5 +1,9 @@
 DnDCity::Application.routes.draw do
 
+  resources :feats
+
+  resources :feat_types
+
   resources :effects
   resources :character_levels
   resources :sizes
@@ -9,7 +13,9 @@ DnDCity::Application.routes.draw do
   resources :races
 
   resources :characters
-  resources :campaigns
+  resources :campaigns do 
+    resources :members
+  end
 
   root :to => "home#index"
   devise_for :users, :controllers => {:registrations => "registrations"}

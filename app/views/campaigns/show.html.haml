@@ -12,8 +12,10 @@
       %span.glyphicon.glyphicon-trash
 %h1.title Campaign #{@campaign}
 %p
-  %b Name:
-  = @campaign.name
-%p
   %b Created by:
   = @campaign.user
+%p
+  %b Public:
+  = @campaign.public
+:markdown
+  #{@campaign.desc}

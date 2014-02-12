@@ -1,0 +1,14 @@
+.pull-right
+  %a{href: feats_path}
+    %span.glyphicon.glyphicon-list
+  -if can? :read, Feat
+    %a{href: feat_path}
+      %span.glyphicon.glyphicon-file
+  -if can? :create, Feat
+    %a{href: new_feat_path}
+      %span.glyphicon.glyphicon-plus
+  - if can? :destroy, @feat
+    %a{href: feat_path(@feat), data: {method: :delete, confirm: "Are you sure you want to delete #{@feat}?"}}
+      %span.glyphicon.glyphicon-trash
+%h1.title Editing Feat #{@feat}
+= render 'form'

@@ -2,7 +2,7 @@
   .pull-right
     %a{href: new_campaign_path}
       %span.glyphicon.glyphicon-plus
-%h1.title Listing Campaigns
+%h1.title My Campaigns
 
 %table
   %tr
@@ -23,5 +23,23 @@
         - if can? :edit, campaign
           %a{href: edit_campaign_path(campaign)}
             %span.glyphicon.glyphicon-pencil
+
+%h1.title Public Campaigns
+
+%table
+  %tr
+    %th Name
+    %th User
+    %th Open?
+
+  - @public_campaigns.each do |campaign|
+    %tr
+      %td
+        %a{href: campaign_path(campaign)}
+          = campaign.name
+      %td= campaign.user
+      %td= campaign.open
+
+
 
 

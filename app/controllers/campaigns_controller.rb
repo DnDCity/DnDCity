@@ -2,6 +2,7 @@ class CampaignsController < ApplicationController
   before_filter :authenticate_user!
   before_action :build_campaign, only: [:create]
   # before_action :set_campaign, only: [:show, :edit, :update, :destroy]
+  before_action :load_campaigns, only: :index
   load_and_authorize_resource
 
   # GET /campaigns
@@ -50,6 +51,11 @@ class CampaignsController < ApplicationController
       @campaign = Campaign.find(params[:id])
     end
 
+    def load_campaigns
+      @campaigns = current_user.campaigns
+      @public_campaigns = Campaign.where("public = ? and user_id != ?", true, current_user.id)
+    end
+
     def build_campaign
       @campaign= Campaign.new(campaign_params)
       @campaign.user = current_user # use if owned resource
@@ -57,6 +63,6 @@ class CampaignsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def campaign_params
-      params.require(:campaign).permit(:name)
+      params.require(:campaign).permit(:name,:desc,:open,:public)
     end
 end

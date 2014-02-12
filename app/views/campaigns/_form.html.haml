@@ -3,6 +3,9 @@
 
   .form-inputs
     = f.input :name
+    = f.input :desc
+    = f.input :public, inline_label: "Allow everybody see the campaign."
+    = f.input :open, inline_label: "Allow everyone to request to join the campaign."
 
   .form-actions
     = f.button :submit
