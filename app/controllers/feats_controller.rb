@@ -1,7 +1,6 @@
 class FeatsController < ApplicationController
-  before_filter :authenticate_user!
-  before_action :build_feat, only: [:create]
-  # before_action :set_feat, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, except: [:index, :show]
+  before_filter :clean_params, only: [:create, :update]
   load_and_authorize_resource
 
   # GET /feats
@@ -31,6 +30,7 @@ class FeatsController < ApplicationController
 
   # PATCH/PUT /feats/1
   def update
+    
     if @feat.update(feat_params)
       redirect_to @feat, notice: 'Feat was successfully updated.'
     else
@@ -45,18 +45,13 @@ class FeatsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_feat
-      @feat = Feat.find(params[:id])
-    end
-
-    def build_feat
-      @feat= Feat.new(feat_params)
-      # @feat.user = current_user # use if owned resource
-    end
-
     # Only allow a trusted parameter "white list" through.
     def feat_params
-      params.require(:feat).permit(:name, :desc, :feat_type_id, :modifiers, :prerequisites, :benefit)
+      params.require(:feat).permit(:name, :desc, :feat_type_id, :modifiers,
+                              :prerequisites, :benefit, prerequisite_feat_ids: [])
+    end
+
+    def clean_params
+      params[:feat] = feat_params
     end
 end

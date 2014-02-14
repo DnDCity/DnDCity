@@ -3,10 +3,11 @@
 
   .form-inputs
     = f.input :name
-    = f.input :desc
     = f.association :feat_type
-    = f.input :modifiers
+    = f.association :prerequisite_feats
     = f.input :prerequisites
+    = f.input :desc
+    = f.input :modifiers
     = f.input :benefit
 
   .form-actions

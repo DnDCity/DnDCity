@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140212202028) do
+ActiveRecord::Schema.define(version: 20140214192941) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -119,6 +119,14 @@ ActiveRecord::Schema.define(version: 20140212202028) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "prerequisite_feats", id: false, force: true do |t|
+    t.integer "feat_id"
+    t.integer "prerequisite_id"
+  end
+
+  add_index "prerequisite_feats", ["feat_id"], name: "index_prerequisite_feats_on_feat_id", using: :btree
+  add_index "prerequisite_feats", ["prerequisite_id"], name: "index_prerequisite_feats_on_prerequisite_id", using: :btree
 
   create_table "races", force: true do |t|
     t.string   "name"

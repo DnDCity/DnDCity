@@ -2,37 +2,17 @@
   .pull-right
     %a{href: new_feat_path}
       %span.glyphicon.glyphicon-plus
-%h1.title Listing Feats
+%h1.title Feats
 
 %table
   %tr
     %th Name
-    %th Desc
     %th Feat type
-    %th Modifiers
-    %th Prerequisites
-    %th Benefit
-    %th
-      -if can? :create, Feat
-        %a{href: new_feat_path}
-          %span.glyphicon.glyphicon-plus
 
   - @feats.each do |feat|
     %tr
-      %td= feat.name
-      %td= feat.desc
-      %td= feat.feat_type
-      %td= feat.modifiers
-      %td= feat.prerequisites
-      %td= feat.benefit
       %td
         %a{href: feat_path(feat)}
-          %span.glyphicon.glyphicon-file
-        - if can? :edit, feat
-          %a{href: edit_feat_path(feat)}
-            %span.glyphicon.glyphicon-pencil
-        - if can? :destroy, feat
-          %a{href: feat_path(feat), data: {method: :delete, confirm: "Are you sure you want to delete #{feat}?"}}
-            %span.glyphicon.glyphicon-trash
-
-
+          = feat.name
+      %td= feat.feat_type
+   

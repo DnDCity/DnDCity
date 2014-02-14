@@ -7,6 +7,7 @@ class Ability
     user ||= User.new # guest user (not logged in)
 
     if user.has_role? :admin
+      can :manage, :all ## remove this later when we have things better defined
       can :manage, :users
       can :manage, :roles
       can :manage, FeatType
@@ -25,6 +26,8 @@ class Ability
     # Anybody
     can :read, Campaign#, public: true
     can :read, Character#, public: true
+    can :read, FeatType
+    can :read, Feat
     #
     # The first argument to `can` is the action you are giving the user 
     # permission to do.

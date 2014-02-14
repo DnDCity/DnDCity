@@ -10,21 +10,18 @@
   - if can? :destroy, @feat
     %a{href: feat_path(@feat), data: {method: :delete, confirm: "Are you sure you want to delete #{@feat}?"}}
       %span.glyphicon.glyphicon-trash
-%h1.title Feat #{@feat}
+%h1.title Feat: #{@feat} [#{link_me @feat.feat_type}]
 %p
-  %b Name:
-  = @feat.name
-%p
-  %b Feat type:
-  = link_me @feat.feat_type
+  %b Prerequisites:
+  = @feat.prerequisites
+  - @feat.prerequisite_feats.each do |pf|
+    = link_me(pf)
+
 :markdown
   #{@feat.desc}
 %p
   %b Modifiers:
   = @feat.modifiers
-%p
-  %b Prerequisites:
-  = @feat.prerequisites
 %p
   %b Benefit:
   = @feat.benefit

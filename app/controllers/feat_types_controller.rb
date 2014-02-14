@@ -1,5 +1,5 @@
 class FeatTypesController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, except: [:index, :show]
   before_action :build_feat_type, only: [:create]
   # before_action :set_feat_type, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
