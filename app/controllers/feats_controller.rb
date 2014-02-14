@@ -48,7 +48,8 @@ class FeatsController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def feat_params
       params.require(:feat).permit(:name, :desc, :feat_type_id, :modifiers,
-                              :prerequisites, :benefit, prerequisite_feat_ids: [])
+                              :prerequisites, :benefit, :fighter_bonus_feat, 
+                              prerequisite_feat_ids: [])
     end
 
     def clean_params

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140214192941) do
+ActiveRecord::Schema.define(version: 20140214223244) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -101,7 +101,7 @@ ActiveRecord::Schema.define(version: 20140214192941) do
   end
 
   create_table "feats", force: true do |t|
-    t.string   "name",          null: false
+    t.string   "name",               null: false
     t.text     "desc"
     t.integer  "feat_type_id"
     t.text     "modifiers"
@@ -109,9 +109,11 @@ ActiveRecord::Schema.define(version: 20140214192941) do
     t.text     "benefit"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "fighter_bonus_feat"
   end
 
   add_index "feats", ["feat_type_id"], name: "index_feats_on_feat_type_id", using: :btree
+  add_index "feats", ["fighter_bonus_feat"], name: "index_feats_on_fighter_bonus_feat", using: :btree
 
   create_table "hairs", force: true do |t|
     t.string   "name"

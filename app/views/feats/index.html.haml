@@ -4,15 +4,6 @@
       %span.glyphicon.glyphicon-plus
 %h1.title Feats
 
-%table
-  %tr
-    %th Name
-    %th Feat type
-
+%ul
   - @feats.each do |feat|
-    %tr
-      %td
-        %a{href: feat_path(feat)}
-          = feat.name
-      %td= feat.feat_type
-   
+    %li #{link_me feat} [#{link_me feat.feat_type}] 

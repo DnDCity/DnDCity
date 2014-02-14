@@ -9,6 +9,8 @@ class Feat < ActiveRecord::Base
                                      foreign_key:  "prerequisite_id",
                                      association_foreign_key: "feat_id"
 
+  default_scope { order("name") }
+
   def to_s
     name
   end
