@@ -1,5 +1,6 @@
 class Feat < ActiveRecord::Base
   belongs_to :feat_type
+  belongs_to :character_class
   has_and_belongs_to_many :prerequisite_feats, class_name: "Feat", 
                                      join_table: "prerequisite_feats",
                                      foreign_key: "feat_id",

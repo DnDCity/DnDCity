@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140214223244) do
+ActiveRecord::Schema.define(version: 20140218193705) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -110,8 +110,10 @@ ActiveRecord::Schema.define(version: 20140214223244) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "fighter_bonus_feat"
+    t.integer  "character_class_id"
   end
 
+  add_index "feats", ["character_class_id"], name: "index_feats_on_character_class_id", using: :btree
   add_index "feats", ["feat_type_id"], name: "index_feats_on_feat_type_id", using: :btree
   add_index "feats", ["fighter_bonus_feat"], name: "index_feats_on_fighter_bonus_feat", using: :btree
 

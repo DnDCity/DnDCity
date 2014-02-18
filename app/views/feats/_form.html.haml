@@ -4,6 +4,7 @@
   .form-inputs
     = f.input :name
     = f.association :feat_type
+    = f.association :character_class
     = f.association :prerequisite_feats
     = f.input :fighter_bonus_feat, inline_label: 'A fighter may select this feat as one of his fighter bonus feats.'
     = f.input :prerequisites
