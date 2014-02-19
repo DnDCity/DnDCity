@@ -1,0 +1,32 @@
+-if can? :create, SpellLevel
+  .pull-right
+    %a{href: new_spell_level_path}
+      %span.glyphicon.glyphicon-plus
+%h1.title Listing Spell Levels
+
+%table
+  %tr
+    %th Spell
+    %th Character class
+    %th Level
+    %th
+      -if can? :create, SpellLevel
+        %a{href: new_spell_level_path}
+          %span.glyphicon.glyphicon-plus
+
+  - @spell_levels.each do |spell_level|
+    %tr
+      %td= spell_level.spell
+      %td= spell_level.character_class
+      %td= spell_level.level
+      %td
+        %a{href: spell_level_path(spell_level)}
+          %span.glyphicon.glyphicon-file
+        - if can? :edit, spell_level
+          %a{href: edit_spell_level_path(spell_level)}
+            %span.glyphicon.glyphicon-pencil
+        - if can? :destroy, spell_level
+          %a{href: spell_level_path(spell_level), data: {method: :delete, confirm: "Are you sure you want to delete #{spell_level}?"}}
+            %span.glyphicon.glyphicon-trash
+
+

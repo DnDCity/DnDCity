@@ -1,0 +1,2 @@
+module SpellLevelsHelper
+end
