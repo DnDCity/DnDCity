@@ -1,0 +1,14 @@
+.pull-right
+  %a{href: spell_component_types_path}
+    %span.glyphicon.glyphicon-list
+  -if can? :read, SpellComponentType
+    %a{href: spell_component_type_path}
+      %span.glyphicon.glyphicon-file
+  -if can? :create, SpellComponentType
+    %a{href: new_spell_component_type_path}
+      %span.glyphicon.glyphicon-plus
+  - if can? :destroy, @spell_component_type
+    %a{href: spell_component_type_path(@spell_component_type), data: {method: :delete, confirm: "Are you sure you want to delete #{@spell_component_type}?"}}
+      %span.glyphicon.glyphicon-trash
+%h1.title Editing Spell component type #{@spell_component_type}
+= render 'form'

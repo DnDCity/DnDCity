@@ -1,0 +1,14 @@
+.pull-right
+  %a{href: spell_levels_path}
+    %span.glyphicon.glyphicon-list
+  -if can? :read, SpellLevel
+    %a{href: spell_level_path}
+      %span.glyphicon.glyphicon-file
+  -if can? :create, SpellLevel
+    %a{href: new_spell_level_path}
+      %span.glyphicon.glyphicon-plus
+  - if can? :destroy, @spell_level
+    %a{href: spell_level_path(@spell_level), data: {method: :delete, confirm: "Are you sure you want to delete #{@spell_level}?"}}
+      %span.glyphicon.glyphicon-trash
+%h1.title Editing Spell level #{@spell_level}
+= render 'form'

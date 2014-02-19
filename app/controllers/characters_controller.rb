@@ -2,7 +2,7 @@ class CharactersController < ApplicationController
   before_filter :authenticate_user!
   before_action :build_character, only: [:create]
   # before_action :set_character, only: [:update]
-  load_and_authorize_resource
+  load_and_authorize_resource through: :current_user
 
   # GET /characters
   # GET /characters.json
@@ -80,6 +80,6 @@ class CharactersController < ApplicationController
       params.require(:character).permit(:name, :race_id, :size_id, :gender,
         :alignment, :religion, :height, :weight, :age, :looks, :desc,
         :base_str, :base_dex, :base_con, :base_int, :base_wis, :base_cha,
-        :current_hp)
+        :current_hp, :public)
     end
 end

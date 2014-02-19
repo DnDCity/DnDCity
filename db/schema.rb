@@ -11,17 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140129233653) do
+ActiveRecord::Schema.define(version: 20140219185007) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "campaigns", force: true do |t|
-    t.string   "name",       null: false
-    t.integer  "user_id",    null: false
+    t.string   "name",                       null: false
+    t.integer  "user_id",                    null: false
     t.text     "desc"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "public",     default: false
+    t.boolean  "open",       default: false
   end
 
   create_table "character_classes", force: true do |t|
@@ -64,7 +66,7 @@ ActiveRecord::Schema.define(version: 20140129233653) do
     t.string   "gender"
     t.string   "alignment"
     t.string   "religion"
-    t.float    "height"
+    t.string   "height"
     t.float    "weight"
     t.integer  "age"
     t.string   "looks"
@@ -78,14 +80,10 @@ ActiveRecord::Schema.define(version: 20140129233653) do
     t.integer  "current_hp"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "public",     default: false
   end
 
   add_index "characters", ["user_id"], name: "index_characters_on_user_id", using: :btree
-
-  create_table "data_files", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "effects", force: true do |t|
     t.string   "name"
@@ -94,6 +92,45 @@ ActiveRecord::Schema.define(version: 20140129233653) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "feat_types", force: true do |t|
+    t.string   "name",       null: false
+    t.text     "desc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "feats", force: true do |t|
+    t.string   "name",               null: false
+    t.text     "desc"
+    t.integer  "feat_type_id"
+    t.text     "modifiers"
+    t.text     "prerequisites"
+    t.text     "benefit"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "fighter_bonus_feat"
+    t.integer  "character_class_id"
+  end
+
+  add_index "feats", ["character_class_id"], name: "index_feats_on_character_class_id", using: :btree
+  add_index "feats", ["feat_type_id"], name: "index_feats_on_feat_type_id", using: :btree
+  add_index "feats", ["fighter_bonus_feat"], name: "index_feats_on_fighter_bonus_feat", using: :btree
+
+  create_table "hairs", force: true do |t|
+    t.string   "name"
+    t.text     "desc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "prerequisite_feats", id: false, force: true do |t|
+    t.integer "feat_id"
+    t.integer "prerequisite_id"
+  end
+
+  add_index "prerequisite_feats", ["feat_id"], name: "index_prerequisite_feats_on_feat_id", using: :btree
+  add_index "prerequisite_feats", ["prerequisite_id"], name: "index_prerequisite_feats_on_prerequisite_id", using: :btree
 
   create_table "races", force: true do |t|
     t.string   "name"
@@ -138,12 +175,62 @@ ActiveRecord::Schema.define(version: 20140129233653) do
     t.datetime "updated_at"
   end
 
-  create_table "spells", force: true do |t|
+  create_table "spell_component_types", force: true do |t|
+    t.string   "name"
+    t.string   "key"
+    t.text     "desc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "spell_levels", force: true do |t|
+    t.integer  "spell_id"
+    t.integer  "character_class_id"
+    t.integer  "level"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "spell_levels", ["character_class_id"], name: "index_spell_levels_on_character_class_id", using: :btree
+  add_index "spell_levels", ["spell_id"], name: "index_spell_levels_on_spell_id", using: :btree
+
+  create_table "spell_schools", force: true do |t|
     t.string   "name"
     t.text     "desc"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "spell_sub_schools", force: true do |t|
+    t.string   "name"
+    t.text     "desc"
+    t.integer  "spell_school_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "spell_sub_schools", ["spell_school_id"], name: "index_spell_sub_schools_on_spell_school_id", using: :btree
+
+  create_table "spells", force: true do |t|
+    t.string   "name"
+    t.text     "desc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "modifiers"
+    t.text     "prerequisites"
+    t.string   "descriptor"
+    t.string   "casting_time"
+    t.string   "range"
+    t.string   "target"
+    t.string   "area"
+    t.string   "spread"
+    t.string   "duration"
+    t.string   "saving_throw"
+    t.string   "spell_resistance"
+    t.integer  "spell_sub_school_id"
+  end
+
+  add_index "spells", ["spell_sub_school_id"], name: "index_spells_on_spell_sub_school_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name",                   default: "", null: false

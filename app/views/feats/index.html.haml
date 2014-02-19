@@ -1,0 +1,9 @@
+-if can? :create, Feat
+  .pull-right
+    %a{href: new_feat_path}
+      %span.glyphicon.glyphicon-plus
+%h1.title Feats
+
+%ul
+  - @feats.each do |feat|
+    %li #{link_me feat} [#{link_me feat.feat_type}] 

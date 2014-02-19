@@ -1,6 +1,11 @@
+.pull-right
+  = link_to 'Edit', edit_character_path(@character)
+  = link_to 'Back', characters_path
 %p User:
 %p= @character.user.name
 %h2= @character.name
+- if @character.public && current_user == @character.user
+  .warn [Publicly Visible]
 
 .descriptors
 %table.showchar
@@ -10,9 +15,9 @@
   %th Gender
   %tr
   %td
-    = @character.race
+    = link_me @character.race
   %td  
-    = @character.size 
+    = link_me @character.size 
   %td
     = @character.gender
   %tr
@@ -73,6 +78,4 @@
   %td
     = @character.base_cha
 
-%h3= link_to 'Edit', edit_character_path(@character)
-%h3= link_to 'Back', characters_path
 

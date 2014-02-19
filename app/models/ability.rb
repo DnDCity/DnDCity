@@ -7,13 +7,29 @@ class Ability
     user ||= User.new # guest user (not logged in)
 
     if user.has_role? :admin
-      can :manage, :all
-    elsif user.persisted? # user exists
+      can :manage, :all ## remove this later when we have things better defined
+      can :manage, :users
+      can :manage, :roles
+      can :manage, FeatType
+      can :manage, Feat
+      can :manage, Spell
+      
+    end
+
+
+    if user.persisted? # user exists
        #can :read, :all
        can :manage, Campaign, user_id: user.id
        can :manage, Character, user_id: user.id
-    else # visitor
+       can :create, Character
+       can :create, Campaign
     end
+    
+    # Anybody
+    can :read, Campaign#, public: true
+    can :read, Character#, public: true
+    can :read, FeatType
+    can :read, Feat
     #
     # The first argument to `can` is the action you are giving the user 
     # permission to do.

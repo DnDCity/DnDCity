@@ -1,5 +1,5 @@
 class Character < ActiveRecord::Base
-  belongs_to :user
-  belongs_to :race
-  belongs_to :size
+  belongs_to :user # User owns characters
+  belongs_to :race # Race classifies Character
+  belongs_to :size # Size classifies Character
 end

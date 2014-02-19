@@ -1,0 +1,10 @@
+= simple_form_for(@spell_level) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :spell
+    = f.association :character_class
+    = f.input :level
+
+  .form-actions
+    = f.button :submit

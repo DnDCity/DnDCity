@@ -1,11 +1,18 @@
 class User < ActiveRecord::Base
-  rolify
+  rolify # user has many roles
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :invitable, :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :characters
+  has_many :campaigns
+
   def to_s
-    email
+    if name && !name.empty?
+      name
+    else
+      email
+    end
   end
 end

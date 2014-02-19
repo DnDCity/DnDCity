@@ -1,0 +1,12 @@
+-if can? :create, FeatType
+  .pull-right
+    %a{href: new_feat_type_path}
+      %span.glyphicon.glyphicon-plus
+%h1.title Feat Types
+
+%ul
+  - @feat_types.each do |feat_type|
+    %li
+      %a{href: feat_type_path(feat_type)}
+        = feat_type.name
+

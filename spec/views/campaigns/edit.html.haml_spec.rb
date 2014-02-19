@@ -4,8 +4,7 @@ describe "campaigns/edit" do
   before(:each) do
     @campaign = assign(:campaign, stub_model(Campaign,
       :name => "MyString",
-      :reference => "",
-      :desc => "MyText"
+      :user => nil
     ))
   end
 
@@ -15,8 +14,7 @@ describe "campaigns/edit" do
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "form[action=?][method=?]", campaign_path(@campaign), "post" do
       assert_select "input#campaign_name[name=?]", "campaign[name]"
-      assert_select "input#campaign_reference[name=?]", "campaign[reference]"
-      assert_select "textarea#campaign_desc[name=?]", "campaign[desc]"
+      assert_select "input#campaign_user[name=?]", "campaign[user]"
     end
   end
 end

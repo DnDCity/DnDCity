@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-ruby '1.9.3'
+ruby '2.1.0'
 gem 'rails', '4.0.2'
-gem 'pg' # https://devcenter.heroku.com/articles/getting-started-with-rails4#use-postgres
+gem 'pg'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -13,25 +13,28 @@ gem 'devise'
 gem 'devise_invitable'
 gem 'figaro'
 gem 'haml-rails'
+gem 'redcarpet'
 gem 'simple_form'
 gem 'thin'
 gem 'cancan'
-## gem 'cancan_strong_parameters' ## patch may not always be necessary ## didn't help
 gem 'rolify'
-gem 'redcarpet'
-group :development, :test do
-  gem 'rspec-rails'
-end
-group :test do
-  gem 'cucumber-rails', :require => false
-  # gem 'database-cleaner'
-end
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
   gem 'html2haml'
   gem 'quiet_assets'
   gem 'rails_layout'
+end
+group :development, :test do
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
+end
+group :test do
+  gem 'capybara'
+  gem 'cucumber-rails', :require=>false
+  gem 'database_cleaner', '1.0.1'
+  gem 'email_spec'
+  gem 'launchy'
 end
 group :production do
   gem 'rails_12factor'
