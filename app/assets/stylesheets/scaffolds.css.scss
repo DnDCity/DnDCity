@@ -13,6 +13,7 @@ th.showchardesc{
 table.home1, th.home1{
  color: #52B698;
  text-align: center;
+ border-width: 1px;
  border-top-style: groove;
  border-left-style: groove;
  border-right-style: groove;
@@ -31,6 +32,7 @@ th.home2{
  border-left-style: groove;
  border-right-style: groove;
  border-bottom-style: none;
+ border-width: 1px;
  font-size: 20px;
  margin-left: auto;
  margin-right: auto;
@@ -45,6 +47,7 @@ th.home3{
  border-left-style: groove;
  border-right-style: groove;
  border-bottom-style: groove;
+ border-width: 1px;
  font-size: 20px;
  margin-left: auto;
  margin-right: auto;
@@ -55,20 +58,21 @@ th.home3{
 
 
 table, th, td{
- color: #52B698;
+ color: #000;
  border-style: solid;
  padding: 10px;
- background-color: #356B1B;
+ background-color: #fff;
+ border-width: 1px;
 }
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
-  color: #52B698;
+  color: #000;
 }
 
 pre {
-  background-color: #FFBA40;
+  background-color: #eee;
   color: #000;
   padding: 10px;
   font-size: 11px;
