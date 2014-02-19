@@ -26,5 +26,7 @@ function showDiv4(){
 }
 function showDiv5(){
  document.getElementById("sec5").style.display = "block";
- document.getElementById("sec5").style.display = "block";
+ document.getElementById("sec6").style.display = "block";
+ document.getElementById("sec7").style.display = "block";
+
 }
