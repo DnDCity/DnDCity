@@ -1,0 +1,30 @@
+-if can? :create, SpellSchool
+  .pull-right
+    %a{href: new_spell_school_path}
+      %span.glyphicon.glyphicon-plus
+%h1.title Listing Spell Schools
+
+%table
+  %tr
+    %th Name
+    %th Desc
+    %th
+      -if can? :create, SpellSchool
+        %a{href: new_spell_school_path}
+          %span.glyphicon.glyphicon-plus
+
+  - @spell_schools.each do |spell_school|
+    %tr
+      %td= spell_school.name
+      %td= spell_school.desc
+      %td
+        %a{href: spell_school_path(spell_school)}
+          %span.glyphicon.glyphicon-file
+        - if can? :edit, spell_school
+          %a{href: edit_spell_school_path(spell_school)}
+            %span.glyphicon.glyphicon-pencil
+        - if can? :destroy, spell_school
+          %a{href: spell_school_path(spell_school), data: {method: :delete, confirm: "Are you sure you want to delete #{spell_school}?"}}
+            %span.glyphicon.glyphicon-trash
+
+

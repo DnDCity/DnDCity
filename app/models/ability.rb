@@ -12,6 +12,8 @@ class Ability
       can :manage, :roles
       can :manage, FeatType
       can :manage, Feat
+      can :manage, Spell
+      
     end
 
 

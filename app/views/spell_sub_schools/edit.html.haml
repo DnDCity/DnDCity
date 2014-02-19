@@ -1,0 +1,14 @@
+.pull-right
+  %a{href: spell_sub_schools_path}
+    %span.glyphicon.glyphicon-list
+  -if can? :read, SpellSubSchool
+    %a{href: spell_sub_school_path}
+      %span.glyphicon.glyphicon-file
+  -if can? :create, SpellSubSchool
+    %a{href: new_spell_sub_school_path}
+      %span.glyphicon.glyphicon-plus
+  - if can? :destroy, @spell_sub_school
+    %a{href: spell_sub_school_path(@spell_sub_school), data: {method: :delete, confirm: "Are you sure you want to delete #{@spell_sub_school}?"}}
+      %span.glyphicon.glyphicon-trash
+%h1.title Editing Spell sub school #{@spell_sub_school}
+= render 'form'

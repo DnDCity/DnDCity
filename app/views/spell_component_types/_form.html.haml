@@ -1,0 +1,10 @@
+= simple_form_for(@spell_component_type) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :key
+    = f.input :desc
+
+  .form-actions
+    = f.button :submit

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140218193705) do
+ActiveRecord::Schema.define(version: 20140219185007) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -175,12 +175,62 @@ ActiveRecord::Schema.define(version: 20140218193705) do
     t.datetime "updated_at"
   end
 
-  create_table "spells", force: true do |t|
+  create_table "spell_component_types", force: true do |t|
+    t.string   "name"
+    t.string   "key"
+    t.text     "desc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "spell_levels", force: true do |t|
+    t.integer  "spell_id"
+    t.integer  "character_class_id"
+    t.integer  "level"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "spell_levels", ["character_class_id"], name: "index_spell_levels_on_character_class_id", using: :btree
+  add_index "spell_levels", ["spell_id"], name: "index_spell_levels_on_spell_id", using: :btree
+
+  create_table "spell_schools", force: true do |t|
     t.string   "name"
     t.text     "desc"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "spell_sub_schools", force: true do |t|
+    t.string   "name"
+    t.text     "desc"
+    t.integer  "spell_school_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "spell_sub_schools", ["spell_school_id"], name: "index_spell_sub_schools_on_spell_school_id", using: :btree
+
+  create_table "spells", force: true do |t|
+    t.string   "name"
+    t.text     "desc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "modifiers"
+    t.text     "prerequisites"
+    t.string   "descriptor"
+    t.string   "casting_time"
+    t.string   "range"
+    t.string   "target"
+    t.string   "area"
+    t.string   "spread"
+    t.string   "duration"
+    t.string   "saving_throw"
+    t.string   "spell_resistance"
+    t.integer  "spell_sub_school_id"
+  end
+
+  add_index "spells", ["spell_sub_school_id"], name: "index_spells_on_spell_sub_school_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name",                   default: "", null: false
