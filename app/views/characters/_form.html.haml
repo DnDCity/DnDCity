@@ -2,29 +2,46 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :name
+    .main1.row
+    .section1.col-md-2
+      = f.input :name
+      %input{ :onclick => "showDiv2()", type: "button", value: "Characteristics"}
+      %input{ :onclick => "showDiv3()", type: "button", value: "Philosophies"}
+      %input{ :onclick => "showDiv4()", type: "button", value: "Pysical Apperance"}
+      %input{ :onclick => "showDiv5()", type: "button", value: "Base Stats"}
     .descriptors
+    .main.row
+    .section2.col-md-2{id: "sec2"}
       = f.input :race
       = f.input :size 
       = f.input :gender
-      = f.input :alignment 
+    .section3.col-md-2{id: "sec3"}
+      = f.input :alignment
       = f.input :religion
+    .section4.col-md-2{id: "sec4"}
       = f.input :height # meters?
       = f.input :weight # kilograms?
       = f.input :age
       = f.input :looks 
-      = f.input :desc
-
- 
+    
     .ability_scores
+    .main2.row
+    .section5.col-md-2{id: "sec5"}
       = f.input :base_str
       = f.input :base_dex
       = f.input :base_con
+    .section6.col-md-2{id: "sec6"}
       = f.input :base_int
       = f.input :base_wis
       = f.input :base_cha
     .hp
+    .section7.col-md-2
       = f.input :current_hp
-
+    .text_fields
+    .main4.row
+    .section8.col-md-2
+      = f.input :desc
   .form-actions
+  .mainlast.row
+  .section9.col-md-2
     = f.button :submit

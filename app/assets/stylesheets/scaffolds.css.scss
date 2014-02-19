@@ -1,31 +1,87 @@
 body {
-  background-color: #fff;
-  color: #333;
+  background-color: #FFF;
+  color: #52B698;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
 }
 
+th.showchardesc{
+ text-align: center;
+}
+
+table.home1, th.home1{
+ color: #52B698;
+ text-align: center;
+ border-top-style: groove;
+ border-left-style: groove;
+ border-right-style: groove;
+ border-bottom-style: none;
+ font-size: 20px;
+ margin-left: auto;
+ margin-right: auto;
+ padding: 10px;
+ background-color: none;
+}
+
+th.home2{
+ color: #52B698;
+ text-align: center;
+ border-top-style: none;
+ border-left-style: groove;
+ border-right-style: groove;
+ border-bottom-style: none;
+ font-size: 20px;
+ margin-left: auto;
+ margin-right: auto;
+ padding: 10px;
+ background-color: none;
+
+}
+th.home3{
+ color: #52B698;
+ text-align: center;
+ border-top-style: none;
+ border-left-style: groove;
+ border-right-style: groove;
+ border-bottom-style: groove;
+ font-size: 20px;
+ margin-left: auto;
+ margin-right: auto;
+ padding: 10px;
+ background-color: none;
+
+}
+
+
+table, th, td{
+ color: #52B698;
+ border-style: solid;
+ padding: 10px;
+ background-color: #356B1B;
+}
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  color: #52B698;
 }
 
 pre {
-  background-color: #eee;
+  background-color: #FFBA40;
+  color: #000;
   padding: 10px;
   font-size: 11px;
 }
 
 a {
-  color: #000;
+  color: #12356E;
   &:visited {
-    color: #666;
+    color: #85A3D4;
   }
   &:hover {
     color: #fff;
-    background-color: #000;
+    background-color: #FFCB70;
   }
 }
 

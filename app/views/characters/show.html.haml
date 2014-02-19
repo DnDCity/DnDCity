@@ -1,61 +1,78 @@
-.pull-right
-  = link_to 'Edit', edit_character_path(@character)
-  = link_to 'Back', characters_path
-  %p
-    %b User:
-    = @character.user
-%h1= @character.name
+%p User:
+%p= @character.user.name
+%h2= @character.name
 
 .descriptors
-  %p
-    %b race:
+%table.showchar
+  %tr
+  %th Race
+  %th Size
+  %th Gender
+  %tr
+  %td
     = @character.race
-  %p
-    %b size:
+  %td  
     = @character.size 
-  %p
-    %b gender:
+  %td
     = @character.gender
-  %p
-    %b alignment:
-    = @character.alignment 
-  %p
-    %b religion:
+  %tr
+  %th Alignment
+  %th Religion
+  %th Height
+  %tr
+  %td
+    = @character.alignment
+  %td
     = @character.religion
-  %p
-    %b height:
+  %td
     = @character.height
-  %p
-    %b weight:
+  %tr
+  %th Weight
+  %th Age
+  %th Looks
+  %tr
+  %td
     = @character.weight
-  %p
-    %b age:
+  %td
     = @character.age
-  %p
-    %b looks:
+  %td
     = @character.looks 
-  %p
-    %b desc:
+  %tr
+  %th.showchardesc{:colspan => 3} Description
+  %tr
+  %td{:colspan => 3}
     = @character.desc
 
 
 .abilities
+%table.showchar
+  %tr
   .ability.str
-    %b Str:
-    = @character.base_str
+  %th Strength
   .ability.dex
-    %b Dex:
-    = @character.base_dex
+  %th Dexterity
   .ability.con
-    %b Con:
-    = @character.base_con
+  %th Constitution
   .ability.int
-    %b Int:
-    = @character.base_int
+  %th Intelligence
   .ability.wis
-    %b Wis:
-    = @character.base_wis
+  %th Wisdom
   .ability.cha
-    %b Cha:
+  %th Charisma
+  %tr
+  %td
+    = @character.base_str
+  %td
+    = @character.base_dex
+  %td
+    = @character.base_con
+  %td
+    = @character.base_int
+  %td
+    = @character.base_wis
+  %td
     = @character.base_cha
+
+%h3= link_to 'Edit', edit_character_path(@character)
+%h3= link_to 'Back', characters_path
 

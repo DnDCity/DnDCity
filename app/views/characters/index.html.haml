@@ -1,5 +1,3 @@
-.pull-right
-  = link_to 'New Character', new_character_path
 %h1 Your Characters
 
 %table
@@ -28,4 +26,5 @@
       %td= link_to 'Edit', edit_character_path(character)
       %td= link_to 'Destroy', character, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
+%h3= link_to 'New Character', new_character_path
 

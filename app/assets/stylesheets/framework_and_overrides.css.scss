@@ -11,6 +11,28 @@ img {
   font-size: inherit;
   }
 
+.section1{
+ border-style: groove;
+ height: 75px;
+ width: 600px;
+ background-color: #356B1B;
+}
+
+
+.sectioncamp{
+ border-style: groove;
+ height: 200px;
+ width: 225px;
+ background-color: #356B1B;
+}
+
+.section2, .section3, .section4, .section5, .section6, .section7{
+ border-style: groove;
+ height: 200px;
+ width: 200px;
+ background-color: #356B1B;
+}
+
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create your own classes
 // to make views framework-neutral
@@ -34,7 +56,7 @@ img {
 // to make views framework-neutral
 main {
   @extend .container;
-  background-color: #eee;
+  background-color: #2E8F00;
   padding-bottom: 80px;
   width: 100%;
   margin-top: 51px; // accommodate the navbar

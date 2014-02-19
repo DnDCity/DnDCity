@@ -1,3 +1,22 @@
 // Place all the styles related to the Campaigns controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+table, th, td{
+ border-style: solid;
+}
+th{
+ padding: 10px;
+ text-align:center;
+}
+th.weird1{
+text-align:center;
+}
+td{
+ padding: 10px;
+ text-align:center;
+}
+td.c1, td.c2, td.c3{
+ border-style: solid;
+ background-color: #303030;
+ padding: 10px;
+}
