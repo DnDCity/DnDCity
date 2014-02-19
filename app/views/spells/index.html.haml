@@ -1,7 +1,7 @@
 %h1 Listing spells
 
 %table
-  %tr
+  %tr 
     %th Name
     %th Desc
     %th
@@ -10,7 +10,7 @@
 
   - @spells.each do |spell|
     %tr
-      %td= spell.name
+      %td= link_to spell.name ,spell
       %td= spell.desc
       %td= link_to 'Show', spell
       %td= link_to 'Edit', edit_spell_path(spell)
