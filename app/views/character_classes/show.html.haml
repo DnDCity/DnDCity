@@ -1,12 +1,40 @@
-%p#notice= notice
-
+.pull-right
+  %a{href: character_classes_path}
+    %span.glyphicon.glyphicon-list
+  -if can? :create, CharacterClass
+    %a{href: new_character_class_path}
+      %span.glyphicon.glyphicon-plus
+  - if can? :edit, @character_class
+    %a{href: edit_character_class_path(@character_class)}
+      %span.glyphicon.glyphicon-pencil
+  - if can? :destroy, @character_class
+    %a{href: character_class_path(@character_class), data: {method: :delete, confirm: "Are you sure you want to delete #{@character_class}?"}}
+      %span.glyphicon.glyphicon-trash
+%h1.title Character class #{@character_class}
 %p
   %b Name:
   = @character_class.name
 %p
   %b Desc:
   = @character_class.desc
-
-= link_to 'Edit', edit_character_class_path(@character_class)
-\|
-= link_to 'Back', character_classes_path
+%p
+  %b Class abilities:
+  = @character_class.class_abilities
+%p
+  %b Hit die:
+  = @character_class.hit_die
+%p
+  %b Bab progression:
+  = @character_class.BAB_progression
+%p
+  %b Base fort progression:
+  = @character_class.base_fort_progression
+%p
+  %b Base ref progression:
+  = @character_class.base_ref_progression
+%p
+  %b Base will progression:
+  = @character_class.base_will_progression
+%p
+  %b Skill points per level:
+  = @character_class.skill_points_per_level

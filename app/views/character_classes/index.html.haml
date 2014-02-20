@@ -1,21 +1,44 @@
-%h1 Listing character_classes
+-if can? :create, CharacterClass
+  .pull-right
+    %a{href: new_character_class_path}
+      %span.glyphicon.glyphicon-plus
+%h1.title Listing Character Classes
 
 %table
   %tr
     %th Name
     %th Desc
+    %th Class abilities
+    %th Hit die
+    %th Bab progression
+    %th Base fort progression
+    %th Base ref progression
+    %th Base will progression
+    %th Skill points per level
     %th
-    %th
-    %th
+      -if can? :create, CharacterClass
+        %a{href: new_character_class_path}
+          %span.glyphicon.glyphicon-plus
 
   - @character_classes.each do |character_class|
     %tr
       %td= character_class.name
       %td= character_class.desc
-      %td= link_to 'Show', character_class
-      %td= link_to 'Edit', edit_character_class_path(character_class)
-      %td= link_to 'Destroy', character_class, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= character_class.class_abilities
+      %td= character_class.hit_die
+      %td= character_class.BAB_progression
+      %td= character_class.base_fort_progression
+      %td= character_class.base_ref_progression
+      %td= character_class.base_will_progression
+      %td= character_class.skill_points_per_level
+      %td
+        %a{href: character_class_path(character_class)}
+          %span.glyphicon.glyphicon-file
+        - if can? :edit, character_class
+          %a{href: edit_character_class_path(character_class)}
+            %span.glyphicon.glyphicon-pencil
+        - if can? :destroy, character_class
+          %a{href: character_class_path(character_class), data: {method: :delete, confirm: "Are you sure you want to delete #{character_class}?"}}
+            %span.glyphicon.glyphicon-trash
 
-%br
 
-= link_to 'New Character class', new_character_class_path
