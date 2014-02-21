@@ -1,5 +1,13 @@
 DnDCity::Application.routes.draw do
 
+  resources :spell_sub_schools
+
+  resources :spell_schools
+
+  resources :spell_component_types
+
+  resources :spell_levels
+
   resources :feats
 
   resources :feat_types
