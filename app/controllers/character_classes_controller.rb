@@ -57,6 +57,6 @@ class CharacterClassesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def character_class_params
-      params.require(:character_class).permit(:name, :desc, :class_abilities, :hit_die, :BAB_progression, :base_fort_progression, :base_ref_progression, :base_will_progression, :skill_points_per_level)
+      params.require(:character_class).permit(:name, :desc, :class_abilities, :hit_die, :base_attack_bonus, :base_fort_progression, :base_ref_progression, :base_will_progression, :skill_points_per_level)
     end
 end
