@@ -173,6 +173,11 @@ ActiveRecord::Schema.define(version: 20140219185007) do
     t.text     "desc"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "key"
+    t.string   "url"
+    t.string   "key_ability"
+    t.boolean  "trained_only"
+    t.boolean  "armor_check_penalty"
   end
 
   create_table "spell_component_types", force: true do |t|
