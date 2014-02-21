@@ -2,6 +2,13 @@
   %a{href: campaigns_path} Campaigns
 %li
   %a{href: characters_path} Characters
-%li
-  %a{href: feats_path} Feats
+%li.dropdown
+  %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+    Docs
+    %b.caret
+  %ul.dropdown-menu
+    %li
+      %a{href: feats_path} Feats
+    %li
+      %a{href: skills_path} Skills
 

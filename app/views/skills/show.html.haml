@@ -1,12 +1,8 @@
-%p#notice= notice
+.pull-right
+  = link_to 'Edit', edit_skill_path(@skill)
+  = link_to 'Back', skills_path%p
 
-%p
-  %b Name:
-  = @skill.name
-%p
-  %b Desc:
-  = @skill.desc
+%h1 Skill: #{@skill.name}
+:maruku
+  #{@skill.desc}
 
-= link_to 'Edit', edit_skill_path(@skill)
-\|
-= link_to 'Back', skills_path
