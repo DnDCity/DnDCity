@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140219185007) do
+ActiveRecord::Schema.define(version: 20140224185350) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,6 +84,16 @@ ActiveRecord::Schema.define(version: 20140219185007) do
   end
 
   add_index "characters", ["user_id"], name: "index_characters_on_user_id", using: :btree
+
+  create_table "consumable_items", force: true do |t|
+    t.string   "name"
+    t.text     "desc"
+    t.text     "effects"
+    t.string   "weight"
+    t.string   "cost"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "effects", force: true do |t|
     t.string   "name"

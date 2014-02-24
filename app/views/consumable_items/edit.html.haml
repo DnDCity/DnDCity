@@ -1,0 +1,14 @@
+.pull-right
+  %a{href: consumable_items_path}
+    %span.glyphicon.glyphicon-list
+  -if can? :read, ConsumableItem
+    %a{href: consumable_item_path}
+      %span.glyphicon.glyphicon-file
+  -if can? :create, ConsumableItem
+    %a{href: new_consumable_item_path}
+      %span.glyphicon.glyphicon-plus
+  - if can? :destroy, @consumable_item
+    %a{href: consumable_item_path(@consumable_item), data: {method: :delete, confirm: "Are you sure you want to delete #{@consumable_item}?"}}
+      %span.glyphicon.glyphicon-trash
+%h1.title Editing Consumable item #{@consumable_item}
+= render 'form'
