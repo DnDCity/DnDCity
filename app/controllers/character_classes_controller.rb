@@ -2,10 +2,20 @@ class CharacterClassesController < ApplicationController
   before_filter :authenticate_user!
   before_action :build_character_class, only: [:create]
   # before_action :set_character_class, only: [:show, :edit, :update, :destroy]
-  load_and_authorize_resource
+  load_and_authorize_resource find_by: :key
 
   # GET /character_classes
   def index
+    @base = []
+    @npc = []
+    @prestige = []
+    @character_classes.each do |cc|
+      case cc.class_type.downcase
+      when 'base' then @base.push cc
+      when 'npc' then @npc.push cc
+      when 'prestige' then @prestige.push cc
+      end
+    end
   end
 
   # GET /character_classes/1

@@ -2,7 +2,7 @@
 
 ##### Alignment
 
-A cleric’s [alignment](/srd/description.htm#alignment) must be within one step of his deity’s (that is, it may be one step away on either the lawful-chaotic axis or the good-evil axis, but not both). A cleric may not be neutral unless his deity’s alignment is also neutral.
+within one step of deity on one alignment axis. A cleric may not be neutral unless his deity’s alignment is also neutral.
 
 ##### Hit Die
 

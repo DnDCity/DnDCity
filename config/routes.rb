@@ -1,5 +1,7 @@
 DnDCity::Application.routes.draw do
 
+  resources :class_skills
+
   resources :spell_sub_schools
 
   resources :spell_schools

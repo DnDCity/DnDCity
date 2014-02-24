@@ -1,0 +1,14 @@
+.pull-right
+  %a{href: class_skills_path}
+    %span.glyphicon.glyphicon-list
+  -if can? :read, ClassSkill
+    %a{href: class_skill_path}
+      %span.glyphicon.glyphicon-file
+  -if can? :create, ClassSkill
+    %a{href: new_class_skill_path}
+      %span.glyphicon.glyphicon-plus
+  - if can? :destroy, @class_skill
+    %a{href: class_skill_path(@class_skill), data: {method: :delete, confirm: "Are you sure you want to delete #{@class_skill}?"}}
+      %span.glyphicon.glyphicon-trash
+%h1.title Editing Class skill #{@class_skill}
+= render 'form'

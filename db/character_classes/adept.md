@@ -6,7 +6,7 @@ d6.
 
 #### Class Skills
 
-The adept’s class skills (and the key ability for each skill) are [Concentration](/srd/skills/concentration.htm) (Con), [Craft](/srd/skills/craft.htm) (Int), [Handle Animal](/srd/skills/handleAnimal.htm) (Cha), [Heal](/srd/skills/heal.htm) (Wis), [Knowledge](/srd/skills/knowledge.htm) (all skills taken individually) (Int), [Profession](/srd/skills/profession.htm) (Wis), [Spellcraft](/srd/skills/spellcraft.htm) (Int), and [Survival](/srd/skills/survival.htm) (Wis).
+The adept’s class skills (and the key ability for each skill) are [Concentration](/srd/skills/concentration.htm) (Con), [Craft](/srd/skills/craft.htm) (Int), [Handle Animal](/srd/skills/handleAnimal.htm) (Cha), [Heal](/srd/skills/heal.htm) (Wis), [Knowledge](/srd/skills/knowledge.htm) (Int), [Profession](/srd/skills/profession.htm) (Wis), [Spellcraft](/srd/skills/spellcraft.htm) (Int), and [Survival](/srd/skills/survival.htm) (Wis).
 
 ##### Skill Points at 1st Level
 

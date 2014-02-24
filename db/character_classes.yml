@@ -1,0 +1,65 @@
+base: 
+  barbarian:
+    name: Barbarian
+  bard:
+    name: Bard
+  cleric:
+    name: Cleric
+  druid:
+    name: Druid
+  fighter:
+    name: Fighter
+  monk:
+    name: Monk
+  paladin:
+    name: Paladin
+  ranger:
+    name: Ranger
+  rogue:
+    name: Rogue
+  sorcerer:
+    name: Sorcerer
+  wizard:
+    name: Wizard
+prestige:
+  arcane_archer:
+    name: Arcane Archer
+  arcane_trickster:
+    name: Arcane Trickster
+  archmage:
+    name: Archmage
+  assassin:
+    name: Assassin
+  blackguard:
+    name: Blackguard
+  dragon_disciple:
+    name: Dragon Disciple
+  duelist:
+    name: Duelist
+  dwarven_defender:
+    name: Dwarven Defender
+  eldritch_knight:
+    name: Eldritch Knight
+  hierophant:
+    name: hierophant
+  horizon_walker:
+    name: Horizon Walker
+  loremaster:
+    name: Loremaster
+  mystic_theurge:
+    name: Mystic Theurge
+  shadowdancer:
+    name: Shadowdancer
+  thaumaturgist:
+    name: Thaumaturgist
+npc:
+  adept:
+    name: Adept
+  aristocrat:
+    name: Aristocrat
+  commoner:
+    name: Commoner
+  expert:
+    name: Expert
+  warrior:
+    name: Warrior

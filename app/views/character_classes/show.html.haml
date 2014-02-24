@@ -10,19 +10,23 @@
   - if can? :destroy, @character_class
     %a{href: character_class_path(@character_class), data: {method: :delete, confirm: "Are you sure you want to delete #{@character_class}?"}}
       %span.glyphicon.glyphicon-trash
-%h1.title Character class #{@character_class}
+%h1.title #{@character_class}
 %p
   %b Name:
   = @character_class.name
-%p
-  %b Desc:
-  = @character_class.desc
 %p
   %b Class abilities:
   = @character_class.class_abilities
 %p
   %b Hit die:
   = @character_class.hit_die
+%h3 Class Skills
+%ul
+  - @character_class.class_skills.each do |cs|
+    %li
+      = link_me cs.skill
+      = cs.subject
+      (#{cs.skill.key_ability})
 %p
   %b Bab progression:
   = @character_class.base_attack_bonus
@@ -38,3 +42,7 @@
 %p
   %b Skill points per level:
   = @character_class.skill_points_per_level
+  + Int Modifier
+:maruku
+  #{@character_class.desc}
+

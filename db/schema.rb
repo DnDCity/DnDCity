@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140221192133) do
+ActiveRecord::Schema.define(version: 20140224223249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 20140221192133) do
     t.float    "base_ref_progression"
     t.float    "base_will_progression"
     t.integer  "skill_points_per_level"
+    t.string   "key"
+    t.string   "class_type"
   end
 
   create_table "character_levels", force: true do |t|
@@ -79,6 +81,17 @@ ActiveRecord::Schema.define(version: 20140221192133) do
   end
 
   add_index "characters", ["user_id"], name: "index_characters_on_user_id", using: :btree
+
+  create_table "class_skills", force: true do |t|
+    t.integer  "character_class_id"
+    t.integer  "skill_id"
+    t.string   "subject"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "class_skills", ["character_class_id"], name: "index_class_skills_on_character_class_id", using: :btree
+  add_index "class_skills", ["skill_id"], name: "index_class_skills_on_skill_id", using: :btree
 
   create_table "effects", force: true do |t|
     t.string   "name"
