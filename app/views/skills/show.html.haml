@@ -2,6 +2,12 @@
   = link_to 'Edit', edit_skill_path(@skill)
   = link_to 'Back', skills_path%p
 
+.pull-right
+  %h2 Classes
+  %ul
+    - @skill.character_classes.each do |cc|
+      %li= link_me cc
+
 %h1 Skill: #{@skill.name}
 :maruku
   #{@skill.desc}
