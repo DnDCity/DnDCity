@@ -1,12 +1,14 @@
-%p#notice= notice
+.pull-right
+  = link_to 'Edit', edit_skill_path(@skill)
+  = link_to 'Back', skills_path%p
 
-%p
-  %b Name:
-  = @skill.name
-%p
-  %b Desc:
-  = @skill.desc
+.pull-right
+  %h2 Classes
+  %ul
+    - @skill.character_classes.each do |cc|
+      %li= link_me cc
 
-= link_to 'Edit', edit_skill_path(@skill)
-\|
-= link_to 'Back', skills_path
+%h1 Skill: #{@skill.name}
+:maruku
+  #{@skill.desc}
+

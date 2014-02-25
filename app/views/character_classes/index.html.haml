@@ -1,21 +1,17 @@
-%h1 Listing character_classes
 
-%table
-  %tr
-    %th Name
-    %th Desc
-    %th
-    %th
-    %th
+-if can? :create, CharacterClass
+  .pull-right
+    %a{href: new_character_class_path}
+      %span.glyphicon.glyphicon-plus
+%h1.title Character Classes
 
-  - @character_classes.each do |character_class|
-    %tr
-      %td= character_class.name
-      %td= character_class.desc
-      %td= link_to 'Show', character_class
-      %td= link_to 'Edit', edit_character_class_path(character_class)
-      %td= link_to 'Destroy', character_class, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Character class', new_character_class_path
+.row
+  .col-xs-4
+    %h2 Base
+    = render partial: 'ul', object: @base
+  .col-xs-4
+    %h2 Prestige
+    = render partial: 'ul', object: @prestige
+  .col-xs-4
+    %h2 Npc
+    = render partial: 'ul', object: @npc

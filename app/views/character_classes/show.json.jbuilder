@@ -1,1 +1,1 @@
-json.extract! @character_class, :id, :name, :desc, :created_at, :updated_at
+json.extract! @character_class, :id, :name, :desc, :class_abilities, :hit_die, :BAB_progression, :base_fort_progression, :base_ref_progression, :base_will_progression, :skill_points_per_level, :created_at, :updated_at

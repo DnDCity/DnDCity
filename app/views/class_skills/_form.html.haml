@@ -1,0 +1,10 @@
+= simple_form_for(@class_skill) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :character_class
+    = f.association :skill
+    = f.input :subject
+
+  .form-actions
+    = f.button :submit
