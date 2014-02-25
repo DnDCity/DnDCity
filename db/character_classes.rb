@@ -22,6 +22,42 @@ def class_skills cc, skills
   end
 end
 
+def class_table cc
+  key = cc.key
+  puts "Class Table: #{key}"
+  file = __FILE__.sub(/\.rb$/,"/#{key.pluralize}_table.html")
+  html = IO.read(file)
+  table = Nokogiri::HTML(html)   
+  babpl = 1
+  forts = [0,0,0,0,0]
+  refs = [0,0,0,0,0]
+  wills = [0,0,0,0,0]
+  table.css('tr').each do |tr|
+    level, bab, fort, ref, will, special, *td =  tr.css('td').to_a.collect{|td| td.content}
+    case level
+    when /^(\d+)\w+/ # valid row
+      level = $1.to_i
+      bab = bab.gsub('+','').split('/').first.to_i
+      babpl = (bab.to_f * 4 / level).ceil / 4.0
+      fort = fort.sub('+','').to_i
+      ref = ref.sub('+','').to_i
+      will = will.sub('+','').to_i
+      forts[fort] ||= 0
+      refs[ref] ||= 0
+      wills[will] ||= 0
+      forts[fort] += 1
+      refs[ref] += 1
+      wills[will] += 1
+    end
+  end
+  cc.base_attack_bonus = babpl
+  puts forts.inspect
+  cc.base_fort_progression = 1.0 / forts.max
+  cc.base_ref_progression = 1.0 / refs.max
+  cc.base_will_progression = 1.0 / wills.max
+  cc.save
+end
+
 yaml = IO.read(__FILE__.sub(/\.rb$/,'.yml'))
 class_types = YAML.load yaml
 
@@ -56,6 +92,7 @@ class_types.each do |class_type, character_classes|
     cc.update_attributes! character_class
 
     class_skills cc, skills
+    class_table cc
   end
 end
 

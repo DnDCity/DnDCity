@@ -27,16 +27,16 @@
   = @character_class.hit_die
 %p
   %b Bab progression:
-  = @character_class.base_attack_bonus
+  = bab_fraction @character_class.base_attack_bonus
 %p
   %b Base fort progression:
-  = @character_class.base_fort_progression
+  = save_fraction @character_class.base_fort_progression
 %p
   %b Base ref progression:
-  = @character_class.base_ref_progression
+  = save_fraction @character_class.base_ref_progression
 %p
   %b Base will progression:
-  = @character_class.base_will_progression
+  = save_fraction @character_class.base_will_progression
 %p
   %b Skill points per level:
   = @character_class.skill_points_per_level
