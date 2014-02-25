@@ -1,0 +1,32 @@
+-if can? :create, ClassSkill
+  .pull-right
+    %a{href: new_class_skill_path}
+      %span.glyphicon.glyphicon-plus
+%h1.title Listing Class Skills
+
+%table
+  %tr
+    %th Character class
+    %th Skill
+    %th Subject
+    %th
+      -if can? :create, ClassSkill
+        %a{href: new_class_skill_path}
+          %span.glyphicon.glyphicon-plus
+
+  - @class_skills.each do |class_skill|
+    %tr
+      %td= class_skill.character_class
+      %td= class_skill.skill
+      %td= class_skill.subject
+      %td
+        %a{href: class_skill_path(class_skill)}
+          %span.glyphicon.glyphicon-file
+        - if can? :edit, class_skill
+          %a{href: edit_class_skill_path(class_skill)}
+            %span.glyphicon.glyphicon-pencil
+        - if can? :destroy, class_skill
+          %a{href: class_skill_path(class_skill), data: {method: :delete, confirm: "Are you sure you want to delete #{class_skill}?"}}
+            %span.glyphicon.glyphicon-trash
+
+

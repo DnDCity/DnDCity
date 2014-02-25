@@ -16,14 +16,14 @@
 
   - @spell_levels.each do |spell_level|
     %tr
-      %td= spell_level.spell
+      %td= link_to spell_level.spell, spell_level
       %td= spell_level.character_class
       %td= spell_level.level
       %td
         %a{href: spell_level_path(spell_level)}
           %span.glyphicon.glyphicon-file
         - if can? :edit, spell_level
-          %a{href: edit_spell_level_path(spell_level)}
+          %a{href: edit_spell_level_path(spell_leve
             %span.glyphicon.glyphicon-pencil
         - if can? :destroy, spell_level
           %a{href: spell_level_path(spell_level), data: {method: :delete, confirm: "Are you sure you want to delete #{spell_level}?"}}

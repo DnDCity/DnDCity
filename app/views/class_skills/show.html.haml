@@ -1,0 +1,22 @@
+.pull-right
+  %a{href: class_skills_path}
+    %span.glyphicon.glyphicon-list
+  -if can? :create, ClassSkill
+    %a{href: new_class_skill_path}
+      %span.glyphicon.glyphicon-plus
+  - if can? :edit, @class_skill
+    %a{href: edit_class_skill_path(@class_skill)}
+      %span.glyphicon.glyphicon-pencil
+  - if can? :destroy, @class_skill
+    %a{href: class_skill_path(@class_skill), data: {method: :delete, confirm: "Are you sure you want to delete #{@class_skill}?"}}
+      %span.glyphicon.glyphicon-trash
+%h1.title Class skill #{@class_skill}
+%p
+  %b Character class:
+  = @class_skill.character_class
+%p
+  %b Skill:
+  = @class_skill.skill
+%p
+  %b Subject:
+  = @class_skill.subject

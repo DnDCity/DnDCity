@@ -1,0 +1,12 @@
+= simple_form_for(@consumable_item) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :desc
+    = f.input :effects
+    = f.input :weight
+    = f.input :cost
+
+  .form-actions
+    = f.button :submit

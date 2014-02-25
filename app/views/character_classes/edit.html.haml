@@ -1,7 +1,14 @@
-%h1 Editing character_class
-
+.pull-right
+  %a{href: character_classes_path}
+    %span.glyphicon.glyphicon-list
+  -if can? :read, CharacterClass
+    %a{href: character_class_path}
+      %span.glyphicon.glyphicon-file
+  -if can? :create, CharacterClass
+    %a{href: new_character_class_path}
+      %span.glyphicon.glyphicon-plus
+  - if can? :destroy, @character_class
+    %a{href: character_class_path(@character_class), data: {method: :delete, confirm: "Are you sure you want to delete #{@character_class}?"}}
+      %span.glyphicon.glyphicon-trash
+%h1.title Editing Character class #{@character_class}
 = render 'form'
-
-= link_to 'Show', @character_class
-\|
-= link_to 'Back', character_classes_path

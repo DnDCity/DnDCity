@@ -1,0 +1,2 @@
+module ConsumableItemsHelper
+end
