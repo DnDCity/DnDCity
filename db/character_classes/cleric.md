@@ -1,28 +1,21 @@
-# Cleric
-
-##### Alignment
-
-within one step of deity on one alignment axis. A cleric may not be neutral unless his deity’s alignment is also neutral.
-
-##### Hit Die
-
-d8.
-
-#### Class Skills
-
-The cleric’s class skills (and the key ability for each skill) are [Concentration](/srd/skills/concentration.htm) (Con), [Craft](/srd/skills/craft.htm) (Int), [Diplomacy](/srd/skills/diplomacy.htm) (Cha), [Heal](/srd/skills/heal.htm) (Wis), [Knowledge](/srd/skills/knowledge.htm) (arcana) (Int), [Knowledge](/srd/skills/knowledge.htm) (history) (Int), [Knowledge](/srd/skills/knowledge.htm) (religion) (Int), [Knowledge](/srd/skills/knowledge.htm) (the planes) (Int), [Profession](/srd/skills/profession.htm) (Wis), and [Spellcraft](/srd/skills/spellcraft.htm) (Int).
 
 ##### Domains and Class Skills
 
-A cleric who chooses the [Animal](/srd/spellLists/clericDomains.htm#animalDomain) or [Plant domain](/srd/spellLists/clericDomains.htm#plantDomain) adds [Knowledge](/srd/skills/knowledge.htm) (nature) (Int) to the cleric class skills listed above. A cleric who chooses the [Knowledge domain](/srd/spellLists/clericDomains.htm#knowledgeDomain) adds all [Knowledge](/srd/skills/knowledge.htm) (Int) skills to the list. A cleric who chooses the [Travel domain](/srd/spellLists/clericDomains.htm#travelDomain) adds [Survival](/srd/skills/survival.htm) (Wis) to the list. A cleric who chooses the [Trickery domain](/srd/spellLists/clericDomains.htm#trickeryDomain) adds [Bluff](/srd/skills/bluff.htm) (Cha), [Disguise](/srd/skills/disguise.htm) (Cha), and [Hide](/srd/skills/hide.htm) (Dex) to the list. See Deity, Domains, and Domain Spells, for more information.
+A cleric who chooses the 
+[Animal](/srd/spellLists/clericDomains.htm#animalDomain) or 
+[Plant domain](/srd/spellLists/clericDomains.htm#plantDomain) adds [Knowledge](/srd/skills/knowledge.htm) (nature) (Int) to the cleric class skills listed above. 
 
-##### Skill Points at 1st Level
+A cleric who chooses the [Knowledge domain](/srd/spellLists/clericDomains.htm#knowledgeDomain) adds all [Knowledge](/srd/skills/knowledge.htm) (Int) skills to the list. 
 
-(2 + Int modifier) ×4.
+A cleric who chooses the [Travel domain](/srd/spellLists/clericDomains.htm#travelDomain) adds [Survival](/srd/skills/survival.htm) (Wis) to the list. 
 
-##### Skill Points at Each Additional Level
+A cleric who chooses the [Trickery domain](/srd/spellLists/clericDomains.htm#trickeryDomain) adds 
+[Bluff](/srd/skills/bluff.htm) (Cha), 
+[Disguise](/srd/skills/disguise.htm) (Cha), and 
+[Hide](/srd/skills/hide.htm) (Dex) 
+to the list. 
 
-2 + Int modifier.
+See Deity, Domains, and Domain Spells, for more information.
 
 #### Class Features
 

@@ -1,9 +1,3 @@
-# Duelist
-
-##### Hit Die
-
-d10.
-
 #### Requirements
 
 To qualify to become a duelist, a character must fulfill all the following criteria.
@@ -19,14 +13,6 @@ To qualify to become a duelist, a character must fulfill all the following crite
 ##### Feats
 
   [Dodge](/srd/feats.htm#dodge), [Mobility](/srd/feats.htm#mobility), [Weapon Finesse](/srd/feats.htm#weaponFinesse).
-
-#### Class Skills
-
-The duelist’s class skills (and the key ability for each skill) are [Balance](/srd/skills/balance.htm) (Dex), [Bluff](/srd/skills/bluff.htm) (Cha), [Escape Artist](/srd/skills/escapeArtist.htm) (Dex), [Jump](/srd/skills/jump.htm) (Str), [Listen](/srd/skills/listen.htm) (Wis), [Perform](/srd/skills/perform.htm) (Cha), [Sense Motive](/srd/skills/senseMotive.htm) (Wis), [Spot](/srd/skills/spot.htm) (Wis), and [Tumble](/srd/skills/tumble.htm) (Dex).
-
-##### Skill Points at Each Level
-
-4 + Int modifier.
 
 #### Class Features
 

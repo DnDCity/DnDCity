@@ -1,9 +1,3 @@
-# Horizon Walker
-
-##### Hit Die
-
-d8.
-
 #### Requirements
 
 To qualify to become a horizon walker, a character must fulfill all the following criteria.
@@ -15,14 +9,6 @@ To qualify to become a horizon walker, a character must fulfill all the followin
 ##### Feats
 
   [Endurance](/srd/feats.htm#endurance).
-
-#### Class Skills
-
-The horizon walker’s class skills (and the key ability for each skill) are [Balance](/srd/skills/balance.htm) (Dex), [Climb](/srd/skills/climb.htm) (Str), [Diplomacy](/srd/skills/diplomacy.htm) (Cha), [Handle Animal](/srd/skills/handleAnimal.htm) (Cha), [Hide](/srd/skills/hide.htm) (Dex), [Knowledge](/srd/skills/knowledge.htm) (geography) (Int), [Listen](/srd/skills/listen.htm) (Wis), [Move Silently](/srd/skills/moveSilently.htm) (Dex), [Profession](/srd/skills/profession.htm) (Wis), [Ride](/srd/skills/ride.htm) (Dex), [Speak Language](/srd/skills/speakLanguage.htm) (None), [Spot](/srd/skills/spot.htm) (Wis), and [Survival](/srd/skills/survival.htm) (Wis).
-
-##### Skill Points at Each Level
-
-4 + Int modifier.
 
 #### Class Features
 

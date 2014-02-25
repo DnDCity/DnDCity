@@ -1,9 +1,3 @@
-# Dragon Disciple
-
-##### Hit Die
-
-d12.
-
 #### Requirements
 
 To qualify to become a dragon disciple, a character must fulfill all the following criteria.
@@ -27,14 +21,6 @@ Ability to cast arcane spells without preparation.
 ##### Special
 
 The player chooses a dragon variety when taking the first level in this prestige class.
-
-#### Class Skills
-
-The dragon disciple’s class skills (and the key ability for each skill) are [Concentration](/srd/skills/concentration.htm) (Con), [Craft](/srd/skills/craft.htm) (Int), [Diplomacy](/srd/skills/diplomacy.htm) (Cha), [Escape Artist](/srd/skills/escapeArtist.htm) (Dex), [Gather Information](/srd/skills/gatherInformation.htm) (Cha), [Knowledge](/srd/skills/knowledge.htm) (all skills taken individually) (Int), [Listen](/srd/skills/listen.htm) (Wis), [Profession](/srd/skills/profession.htm) (Wis), [Search](/srd/skills/search.htm) (Int), [Speak Language](/srd/skills/speakLanguage.htm) (None), [Spellcraft](/srd/skills/spellcraft.htm) (Int), and [Spot](/srd/skills/spot.htm) (Wis).  
-
-##### Skill Points at Each Level
-
-2 + Int modifier.
 
 #### Class Features
 

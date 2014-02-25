@@ -1,25 +1,3 @@
-# Monk
-
-##### Alignment
-
-Any lawful.
-
-##### Hit Die
-
-d8.
-
-#### Class Skills
-
-The monk’s class skills (and the key ability for each skill) are [Balance](/srd/skills/balance.htm) (Dex), [Climb](/srd/skills/climb.htm) (Str), [Concentration](/srd/skills/concentration.htm) (Con), [Craft](/srd/skills/craft.htm) (Int), [Diplomacy](/srd/skills/diplomacy.htm) (Cha), [Escape Artist](/srd/skills/escapeArtist.htm) (Dex), [Hide](/srd/skills/hide.htm) (Dex), [Jump](/srd/skills/jump.htm) (Str), [Knowledge](/srd/skills/knowledge.htm) (arcana) (Int), [Knowledge](/srd/skills/knowledge.htm) (religion) (Int), [Listen](/srd/skills/listen.htm) (Wis), [Move Silently](/srd/skills/moveSilently.htm) (Dex), [Perform](/srd/skills/perform.htm) (Cha), [Profession](/srd/skills/profession.htm) (Wis), [Sense Motive](/srd/skills/senseMotive.htm) (Wis), [Spot](/srd/skills/spot.htm) (Wis), [Swim](/srd/skills/swim.htm) (Str), and [Tumble](/srd/skills/tumble.htm) (Dex).
-
-##### Skill Points at 1st Level
-
-(4 + Int modifier) ×4.
-
-##### Skill Points at Each Additional Level
-
-4 + Int modifier.
-
 #### Class Features
 
 All of the following are class features of the monk.

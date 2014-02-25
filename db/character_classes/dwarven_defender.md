@@ -1,9 +1,3 @@
-# Dwarven Defender
-
-##### Hit Die
-
-d12.
-
 #### Requirements
 
 To qualify to become a defender, a character must fulfill all the following criteria.
@@ -23,14 +17,6 @@ Any lawful.
 ##### Feats
 
   [Dodge](/srd/feats.htm#dodge), [Endurance](/srd/feats.htm#endurance), [Toughness](/srd/feats.htm#toughness).
-
-#### Class Skills
-
-The defender’s class skills (and the key ability for each skill) are [Craft](/srd/skills/craft.htm) (Int), [Listen](/srd/skills/listen.htm) (Wis), [Sense Motive](/srd/skills/senseMotive.htm) (Wis), and [Spot](/srd/skills/spot.htm) (Wis).
-
-##### Skill Points at Each Level
-
-2 + Int modifier.
 
 #### Class Features
 
