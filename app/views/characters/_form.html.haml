@@ -1,48 +1,55 @@
 = simple_form_for(@character) do |f|
   = f.error_notification
 
+
   .form-inputs
     .main1.row
-    .section1.col-md-2
+    .section1.col-md-12
       = f.input :name
       = f.input :public, inline_label: "Allow everybody see this Character."
-      %input{ :onclick => "showDiv2()", type: "button", value: "Characteristics"}
-      %input{ :onclick => "showDiv3()", type: "button", value: "Philosophies"}
-      %input{ :onclick => "showDiv4()", type: "button", value: "Pysical Apperance"}
-      %input{ :onclick => "showDiv5()", type: "button", value: "Base Stats"}
-    .descriptors
-    .main.row
-    .section2.col-md-2{id: "sec2"}
-      = f.association :race
-      = f.association :size 
-      = f.input :gender
-    .section3.col-md-2{id: "sec3"}
-      = f.input :alignment
-      = f.input :religion
-    .section4.col-md-2{id: "sec4"}
-      = f.input :height # meters?
-      = f.input :weight # kilograms?
-      = f.input :age
-      = f.input :looks 
-    
-    .ability_scores
-    .main2.row
-    .section5.col-md-2{id: "sec5"}
-      = f.input :base_str
-      = f.input :base_dex
-      = f.input :base_con
-    .section6.col-md-2{id: "sec6"}
-      = f.input :base_int
-      = f.input :base_wis
-      = f.input :base_cha
-    .hp
-    .section7.col-md-2{id: "sec7"}
-      = f.input :current_hp
-    .text_fields
-    .main4.row
-    .section8.col-md-2
       = f.input :desc
-  .form-actions
-  .mainlast.row
-  .section9.col-md-2
-    = f.button :submit
+       
+    
+    .sectiontabs.col-md-6
+      %ul#myTab.nav.nav-tabs
+        %li.active
+          %a{"data-toggle" => "tab", href: "#classification"} Classification
+        %li
+          %a{"data-toggle" => "tab", href: "#philosophies"} Philosophies
+        %li
+          %a{"data-toggle" => "tab", href: "#physicalapp"} Physial Appearance
+        %li
+          %a{"data-toggle" => "tab", href: "#stats"} Base Stats
+      .tab-content
+        #classification.tab-pane.fade.in.active
+          .section2.col-md-2{id: "sec2"}
+            = f.association :race
+            = f.association :size 
+            = f.input :gender
+        #philosophies.tab-pane.fade
+          .section3.col-md-2{id: "sec3"}
+            = f.input :alignment
+            = f.input :religion
+        #physicalapp.tab-pane.fade
+          .section4.col-md-2{id: "sec4"}
+            = f.input :height # meters?
+            = f.input :weight # kilograms?
+            = f.input :age
+            = f.input :looks 
+        #stats.tab-pane.fade
+          .main2.row
+          .section5.col-md-2{id: "sec5"}
+            = f.input :base_str
+            = f.input :base_dex
+            = f.input :base_con
+          .section6.col-md-2{id: "sec6"}
+            = f.input :base_int
+            = f.input :base_wis
+            = f.input :base_cha
+          .section7.col-md-2{id: "sec7"}
+            = f.input :current_hp
+  .mainbutton.row
+  .sectionbutton.col-md-2
+    .form-actions
+      = f.button :submit, :class => "subbutton"
+

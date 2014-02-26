@@ -4,78 +4,101 @@
 %p User:
 %p= @character.user.name
 %h2= @character.name
-- if @character.public && current_user == @character.user
+-if @character.public && current_user == @character.user
   .warn [Publicly Visible]
 
+
+.sectiontabs.col-md-6
+  %ul#myTab.nav.nav-tabs
+    %li.active
+      %a{"data-toggle" => "tab", href: "#classification"} Classification
+    %li
+      %a{"data-toggle" => "tab", href: "#philosophies"} Philosophies
+    %li
+      %a{"data-toggle" => "tab", href: "#physicalapp"} Physial Appearance
+    %li
+      %a{"data-toggle" => "tab", href: "#stats"} Base Stats
+  .tab-content
+    #classification.tab-pane.fade.in.active
+      %table.showchar
+        %tr
+        %th Race
+        %th Size
+        %th Gender
+        %tr
+        %td
+          = link_me @character.race
+        %td  
+          = link_me @character.size 
+        %td
+          = @character.gender
+    #philosophies.tab-pane.fade
+      %table.showchar
+        %tr
+        %th Alignment
+        %th Religion
+        %tr
+        %td
+          = @character.alignment
+        %td
+          = @character.religion
+    #physicalapp.tab-pane.fade
+      %table.showchar
+        %th Height
+        %th Weight
+        %th Age
+        %th Looks
+        %tr
+        %td
+          = @character.height
+        %td
+          = @character.weight
+        %td
+          = @character.age
+        %td
+          = @character.looks
+
+    #stats.tab-pane.fade
+      %table.showchar
+        %tr
+        .ability.str
+        %th Strength
+        %td
+          = @character.base_str
+        %tr
+        .ability.dex
+        %th Dexterity
+        %td
+          = @character.base_dex
+        %tr
+        .ability.con
+        %th Constitution
+        %td
+          = @character.base_con
+        %tr
+        .ability.int
+        %th Intelligence
+        %td
+          = @character.base_int
+        %tr
+        .ability.wis
+        %th Wisdom
+        %td
+          = @character.base_wis
+        %tr
+        .ability.cha
+        %th Charisma
+        %td
+          = @character.base_cha
+
+
+          
+
 .descriptors
-%table.showchar
-  %tr
-  %th Race
-  %th Size
-  %th Gender
-  %tr
-  %td
-    = link_me @character.race
-  %td  
-    = link_me @character.size 
-  %td
-    = @character.gender
-  %tr
-  %th Alignment
-  %th Religion
-  %th Height
-  %tr
-  %td
-    = @character.alignment
-  %td
-    = @character.religion
-  %td
-    = @character.height
-  %tr
-  %th Weight
-  %th Age
-  %th Looks
-  %tr
-  %td
-    = @character.weight
-  %td
-    = @character.age
-  %td
-    = @character.looks 
-  %tr
-  %th.showchardesc{:colspan => 3} Description
-  %tr
-  %td{:colspan => 3}
-    = @character.desc
-
-
-.abilities
-%table.showchar
-  %tr
-  .ability.str
-  %th Strength
-  .ability.dex
-  %th Dexterity
-  .ability.con
-  %th Constitution
-  .ability.int
-  %th Intelligence
-  .ability.wis
-  %th Wisdom
-  .ability.cha
-  %th Charisma
-  %tr
-  %td
-    = @character.base_str
-  %td
-    = @character.base_dex
-  %td
-    = @character.base_con
-  %td
-    = @character.base_int
-  %td
-    = @character.base_wis
-  %td
-    = @character.base_cha
-
-
+  .mainchardesc.row
+    %table.showchard
+      %tr.showchard
+      %th.showchard2 Description
+      %tr.showchard
+      %td.showchard
+        = @character.desc
