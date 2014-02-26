@@ -8,6 +8,7 @@ class CharacterClass < ActiveRecord::Base
   default_scope { order("name") }
 
   validates :name, presence: true
+## Broken validations?
 #  validates :bab_type , :inclusion => { :in => BAB_TYPES }
 #  validates :fort_type, :inclusion => { :in => SAVE_TYPES }
 #  validates :ref_type , :inclusion => { :in => SAVE_TYPES }

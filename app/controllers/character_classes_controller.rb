@@ -1,5 +1,5 @@
 class CharacterClassesController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, except: [:index, :show]
   before_action :build_character_class, only: [:create]
   # before_action :set_character_class, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource find_by: :key

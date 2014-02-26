@@ -8,32 +8,11 @@
 .row
   .col-xs-4
     %h2 Base
-    = render partial: 'ul', object: @base
+    = render partial: 'index_table', object: @base
   .col-xs-4
     %h2 Prestige
-    = render partial: 'ul', object: @prestige
+    = render partial: 'index_table', object: @prestige
   .col-xs-4
     %h2 Npc
-    = render partial: 'ul', object: @npc
-
-%table
-  %tr
-    %th Type
-    %th Class
-    %th HD
-    %th Skill
-    %th Bab
-    %th Fort
-    %th Ref
-    %th Will
-  - @character_classes.each do |cc|
-    %tr
-      %td= cc.class_type
-      %td= cc.name
-      %td= cc.hit_die
-      %td= cc.skill_points_per_level
-      %td= cc.bab_type
-      %td= cc.fort_type
-      %td= cc.ref_type
-      %td= cc.will_type
+    = render partial: 'index_table', object: @npc
 
