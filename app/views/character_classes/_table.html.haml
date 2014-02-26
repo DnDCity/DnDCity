@@ -1,0 +1,21 @@
+%table.compact
+  %tr
+    %th 
+    %th Bab
+    %th Fort
+    %th Ref
+    %th Will
+  %tr
+    %th Lvl
+    %th= @character_class.bab_type
+    %th= @character_class.fort_type
+    %th= @character_class.ref_type
+    %th= @character_class.will_type
+  - (1..20).each do |lvl|
+    %tr
+      %td= lvl.ordinalize
+      %td= format_bab @character_class.bab_at lvl
+      %td +#{@character_class.fort_at lvl}
+      %td +#{@character_class.ref_at lvl}
+      %td +#{@character_class.will_at lvl}
+

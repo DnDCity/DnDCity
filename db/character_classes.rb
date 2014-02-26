@@ -1,4 +1,5 @@
-#!/usr/bin/env rails runner
+#!/usr/bin/env ruby
+require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
 require 'fileutils'
 
 def link_skill cc, name, subject = nil
@@ -28,7 +29,7 @@ def class_table cc
   file = __FILE__.sub(/\.rb$/,"/#{key.pluralize}_table.html")
   html = IO.read(file)
   table = Nokogiri::HTML(html)   
-  babpl = 1
+  bab_type = 0
   forts = [0,0,0,0,0]
   refs = [0,0,0,0,0]
   wills = [0,0,0,0,0]
@@ -38,7 +39,7 @@ def class_table cc
     when /^(\d+)\w+/ # valid row
       level = $1.to_i
       bab = bab.gsub('+','').split('/').first.to_i
-      babpl = (bab.to_f * 4 / level).ceil / 4.0
+      bab_type = (bab.to_f * 4 / level).ceil - 2
       fort = fort.sub('+','').to_i
       ref = ref.sub('+','').to_i
       will = will.sub('+','').to_i
@@ -50,11 +51,10 @@ def class_table cc
       wills[will] += 1
     end
   end
-  cc.base_attack_bonus = babpl
-  puts forts.inspect
-  cc.base_fort_progression = 1.0 / forts.max
-  cc.base_ref_progression = 1.0 / refs.max
-  cc.base_will_progression = 1.0 / wills.max
+  cc.bab_type = CharacterClass::BAB_TYPES[bab_type]
+  cc.fort_type = CharacterClass::SAVE_TYPES[3 - forts.max]
+  cc.ref_type = CharacterClass::SAVE_TYPES[3 - refs.max]
+  cc.will_type = CharacterClass::SAVE_TYPES[3 - wills.max]
   cc.save
 end
 
@@ -88,6 +88,10 @@ class_types.each do |class_type, character_classes|
     character_class[:class_type] = class_type
     character_class[:desc] = md
     skills = character_class.delete('class_skills')
+    character_class.delete('base_attack_bonus')
+    character_class.delete('base_fort_progression')
+    character_class.delete('base_ref_progression')
+    character_class.delete('base_will_progression')
     cc = CharacterClass.find_or_create_by_key!(character_class)
     cc.update_attributes! character_class
 

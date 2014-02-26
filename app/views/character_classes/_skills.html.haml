@@ -1,0 +1,9 @@
+.class-skills
+  %h3 Class Skills
+  %ul
+    - @character_class.class_skills.each do |cs|
+      %li
+        = link_me cs.skill
+        = cs.subject
+        (#{cs.skill.key_ability})
+
