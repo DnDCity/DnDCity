@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140219185007) do
+ActiveRecord::Schema.define(version: 20140224223249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,18 +32,15 @@ ActiveRecord::Schema.define(version: 20140219185007) do
     t.string   "hit_die"
     t.string   "alignment_restrictions"
     t.float    "base_attack_bonus"
-    t.float    "attack_bonus_per_level"
-    t.float    "base_fort_save"
-    t.float    "fort_save_bonus_per_level"
-    t.float    "base_reflex_save"
-    t.float    "reflex_save_bonus_per_level"
-    t.float    "base_will_save"
-    t.float    "will_save_bonus_per_level"
-    t.integer  "bonus_feat"
-    t.integer  "bonus_skill_points"
-    t.integer  "bonus_skill_points_per_level"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "class_abilities"
+    t.float    "base_fort_progression"
+    t.float    "base_ref_progression"
+    t.float    "base_will_progression"
+    t.integer  "skill_points_per_level"
+    t.string   "key"
+    t.string   "class_type"
   end
 
   create_table "character_levels", force: true do |t|
@@ -85,6 +82,27 @@ ActiveRecord::Schema.define(version: 20140219185007) do
 
   add_index "characters", ["user_id"], name: "index_characters_on_user_id", using: :btree
 
+  create_table "class_skills", force: true do |t|
+    t.integer  "character_class_id"
+    t.integer  "skill_id"
+    t.string   "subject"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "class_skills", ["character_class_id"], name: "index_class_skills_on_character_class_id", using: :btree
+  add_index "class_skills", ["skill_id"], name: "index_class_skills_on_skill_id", using: :btree
+
+  create_table "consumable_items", force: true do |t|
+    t.string   "name"
+    t.text     "desc"
+    t.text     "effects"
+    t.string   "weight"
+    t.string   "cost"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "data_files", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -121,6 +139,13 @@ ActiveRecord::Schema.define(version: 20140219185007) do
   add_index "feats", ["character_class_id"], name: "index_feats_on_character_class_id", using: :btree
   add_index "feats", ["feat_type_id"], name: "index_feats_on_feat_type_id", using: :btree
   add_index "feats", ["fighter_bonus_feat"], name: "index_feats_on_fighter_bonus_feat", using: :btree
+
+  create_table "hairs", force: true do |t|
+    t.string   "name"
+    t.text     "desc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "prerequisite_feats", id: false, force: true do |t|
     t.integer "feat_id"
@@ -171,6 +196,11 @@ ActiveRecord::Schema.define(version: 20140219185007) do
     t.text     "desc"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "key"
+    t.string   "url"
+    t.string   "key_ability"
+    t.boolean  "trained_only"
+    t.boolean  "armor_check_penalty"
   end
 
   create_table "spell_component_types", force: true do |t|

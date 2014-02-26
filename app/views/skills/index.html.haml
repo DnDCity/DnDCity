@@ -1,21 +1,19 @@
+.pull-right
+  = link_to 'New Skill', new_skill_path
 %h1 Listing skills
 
 %table
   %tr
     %th Name
-    %th Desc
-    %th
-    %th
-    %th
+    %th Key Ability
+    %th Trained Only
+    %th Armor Check Penalty
 
   - @skills.each do |skill|
     %tr
-      %td= skill.name
-      %td= skill.desc
-      %td= link_to 'Show', skill
-      %td= link_to 'Edit', edit_skill_path(skill)
-      %td= link_to 'Destroy', skill, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_me skill
+      %td= skill.key_ability
+      %td= skill.trained_only && 'Trained Only'
+      %td= skill.armor_check_penalty && 'Armor Check Penalty'
 
-%br
 
-= link_to 'New Skill', new_skill_path

@@ -1,0 +1,9 @@
+%ul
+  - ul.each do |cc|
+    %li.character_class
+      %span.name= link_me cc
+      (
+      %span.hit_die= cc.hit_die
+      %span.skill_points= cc.skill_points_per_level
+      )
+

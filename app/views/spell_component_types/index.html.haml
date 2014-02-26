@@ -16,8 +16,8 @@
 
   - @spell_component_types.each do |spell_component_type|
     %tr
-      %td= spell_component_type.name
-      %td= spell_component_type.key
+      %td= link_to spell_component_type.name, spell_component_type
+      %td= link_to spell_component_type.key, spell_component_type
       %td= spell_component_type.desc
       %td
         %a{href: spell_component_type_path(spell_component_type)}

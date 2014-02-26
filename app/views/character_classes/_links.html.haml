@@ -1,0 +1,9 @@
+      %td
+        - if can? :edit, character_class
+          %a{href: edit_character_class_path(character_class)}
+            %span.glyphicon.glyphicon-pencil
+        - if can? :destroy, character_class
+          %a{href: character_class_path(character_class), data: {method: :delete, confirm: "Are you sure you want to delete #{character_class}?"}}
+            %span.glyphicon.glyphicon-trash
+
+
