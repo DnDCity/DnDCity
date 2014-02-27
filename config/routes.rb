@@ -1,5 +1,7 @@
 DnDCity::Application.routes.draw do
 
+  resources :character_class_levels
+
   resources :consumable_items
 
   resources :class_skills
