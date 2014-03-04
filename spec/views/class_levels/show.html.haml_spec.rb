@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe "character_class_levels/show" do
+describe "class_levels/show" do
   before(:each) do
-    @character_class_level = assign(:character_class_level, stub_model(CharacterClassLevel,
+    @class_level = assign(:class_level, stub_model(ClassLevel,
       :character => nil,
       :character_class => nil,
       :class_level => 1

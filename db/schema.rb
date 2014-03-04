@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140226223707) do
+ActiveRecord::Schema.define(version: 20140227024514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,19 +25,6 @@ ActiveRecord::Schema.define(version: 20140226223707) do
     t.boolean  "public",     default: false
     t.boolean  "open",       default: false
   end
-
-  create_table "character_class_levels", force: true do |t|
-    t.integer  "character_id"
-    t.integer  "character_class_id"
-    t.integer  "order"
-    t.integer  "class_level"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "character_class_levels", ["character_class_id"], name: "index_character_class_levels_on_character_class_id", using: :btree
-  add_index "character_class_levels", ["character_id", "order"], name: "index_character_class_levels_on_character_id_and_order", using: :btree
-  add_index "character_class_levels", ["character_id"], name: "index_character_class_levels_on_character_id", using: :btree
 
   create_table "character_classes", force: true do |t|
     t.string   "name"
@@ -94,6 +81,17 @@ ActiveRecord::Schema.define(version: 20140226223707) do
   end
 
   add_index "characters", ["user_id"], name: "index_characters_on_user_id", using: :btree
+
+  create_table "class_levels", force: true do |t|
+    t.integer  "character_id"
+    t.integer  "character_class_id"
+    t.integer  "class_level"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "class_levels", ["character_class_id"], name: "index_class_levels_on_character_class_id", using: :btree
+  add_index "class_levels", ["character_id"], name: "index_class_levels_on_character_id", using: :btree
 
   create_table "class_skills", force: true do |t|
     t.integer  "character_class_id"

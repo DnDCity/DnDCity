@@ -1,6 +1,6 @@
 DnDCity::Application.routes.draw do
 
-  resources :character_class_levels
+
 
   resources :consumable_items
 
@@ -26,7 +26,9 @@ DnDCity::Application.routes.draw do
   resources :character_classes
   resources :races
 
-  resources :characters
+  resources :characters do 
+    resources :class_levels
+  end
   resources :campaigns do 
     resources :members
   end

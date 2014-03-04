@@ -1,0 +1,15 @@
+-if can? :create, ClassLevel
+  .pull-right
+    %a{href: new_character_class_level_path(@character)}
+      %span.glyphicon.glyphicon-plus
+%h1.title Listing Class Levels
+
+%table
+  %tr
+    %th Character class
+    %th Class level
+  - @class_levels.each do |class_level|
+    %tr
+      %td= class_level.character_class
+      %td= class_level.class_level
+

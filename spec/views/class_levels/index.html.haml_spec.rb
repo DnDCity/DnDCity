@@ -1,14 +1,14 @@
 require 'spec_helper'
 
-describe "character_class_levels/index" do
+describe "class_levels/index" do
   before(:each) do
-    assign(:character_class_levels, [
-      stub_model(CharacterClassLevel,
+    assign(:class_levels, [
+      stub_model(ClassLevel,
         :character => nil,
         :character_class => nil,
         :class_level => 1
       ),
-      stub_model(CharacterClassLevel,
+      stub_model(ClassLevel,
         :character => nil,
         :character_class => nil,
         :class_level => 1
@@ -16,7 +16,7 @@ describe "character_class_levels/index" do
     ])
   end
 
-  it "renders a list of character_class_levels" do
+  it "renders a list of class_levels" do
     render
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "tr>td", :text => nil.to_s, :count => 2
