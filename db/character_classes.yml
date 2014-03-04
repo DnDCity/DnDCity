@@ -1,65 +1,720 @@
-base: 
-  barbarian:
-    name: Barbarian
-  bard:
-    name: Bard
-  cleric:
-    name: Cleric
-  druid:
-    name: Druid
-  fighter:
-    name: Fighter
-  monk:
-    name: Monk
-  paladin:
-    name: Paladin
-  ranger:
-    name: Ranger
-  rogue:
-    name: Rogue
-  sorcerer:
-    name: Sorcerer
-  wizard:
-    name: Wizard
+---
 prestige:
-  arcane_archer:
-    name: Arcane Archer
-  arcane_trickster:
-    name: Arcane Trickster
-  archmage:
-    name: Archmage
-  assassin:
-    name: Assassin
-  blackguard:
-    name: Blackguard
-  dragon_disciple:
-    name: Dragon Disciple
-  duelist:
-    name: Duelist
   dwarven_defender:
     name: Dwarven Defender
+    hit_die: d12
+    alignment_restrictions: Any lawful.
+    base_attack_bonus: 
+    class_abilities: 
+    base_fort_progression: 
+    base_ref_progression: 
+    base_will_progression: 
+    skill_points_per_level: 2
+    class_skills:
+    - Craft
+    - Listen
+    - Sense Motive
+    - Spot
+  arcane_trickster:
+    name: Arcane Trickster
+    hit_die: d4
+    alignment_restrictions: Any nonlawful.
+    base_attack_bonus: 
+    class_abilities: 
+    base_fort_progression: 
+    base_ref_progression: 
+    base_will_progression: 
+    skill_points_per_level: 4
+    class_skills:
+    - Appraise
+    - Balance
+    - Bluff
+    - Climb
+    - Concentration
+    - Craft
+    - Decipher Script
+    - Diplomacy
+    - Disable Device
+    - Disguise
+    - Escape Artist
+    - Gather Information
+    - Hide
+    - Jump
+    - Knowledge
+    - Listen
+    - Move Silently
+    - Open Lock
+    - Profession
+    - Search
+    - Sense Motive
+    - Speak Language
+    - Spellcraft
+    - Spot
+    - Swim
+    - Tumble
+    - Use Rope
+    - Sleight Of Hand
+  duelist:
+    name: Duelist
+    hit_die: d10
+    alignment_restrictions: 
+    base_attack_bonus: 
+    class_abilities: 
+    base_fort_progression: 
+    base_ref_progression: 
+    base_will_progression: 
+    skill_points_per_level: 4
+    class_skills:
+    - Balance
+    - Bluff
+    - Escape Artist
+    - Jump
+    - Listen
+    - Perform
+    - Sense Motive
+    - Spot
+    - Tumble
   eldritch_knight:
     name: Eldritch Knight
+    hit_die: d6
+    alignment_restrictions: 
+    base_attack_bonus: 
+    class_abilities: 
+    base_fort_progression: 
+    base_ref_progression: 
+    base_will_progression: 
+    skill_points_per_level: 2
+    class_skills:
+    - Concentration
+    - Craft
+    - Decipher Script
+    - Jump
+    - Knowledge (arcana)
+    - Knowledge (nobility and royalty)
+    - Ride
+    - Sense Motive
+    - Spellcraft
+    - Swim
   hierophant:
     name: hierophant
+    hit_die: d8
+    alignment_restrictions: 
+    base_attack_bonus: 
+    class_abilities: 
+    base_fort_progression: 
+    base_ref_progression: 
+    base_will_progression: 
+    skill_points_per_level: 2
+    class_skills:
+    - Concentration
+    - Craft
+    - Diplomacy
+    - Heal
+    - Knowledge (arcana)
+    - Knowledge (religion)
+    - Profession
+    - Spellcraft
   horizon_walker:
     name: Horizon Walker
+    hit_die: d8
+    alignment_restrictions: 
+    base_attack_bonus: 
+    class_abilities: 
+    base_fort_progression: 
+    base_ref_progression: 
+    base_will_progression: 
+    skill_points_per_level: 4
+    class_skills:
+    - Balance
+    - Climb
+    - Diplomacy
+    - Handle Animal
+    - Hide
+    - Knowledge (geography)
+    - Listen
+    - Move Silently
+    - Profession
+    - Ride
+    - Speak Language
+    - Spot
+    - Survival
   loremaster:
     name: Loremaster
+    hit_die: d4
+    alignment_restrictions: 
+    base_attack_bonus: 
+    class_abilities: 
+    base_fort_progression: 
+    base_ref_progression: 
+    base_will_progression: 
+    skill_points_per_level: 4
+    class_skills:
+    - Appraise
+    - Concentration
+    - Craft
+    - Decipher Script
+    - Gather Information
+    - Handle Animal
+    - Heal
+    - Knowledge
+    - Perform
+    - Profession
+    - Speak Language
+    - Spellcraft
+    - Use Magic Device
   mystic_theurge:
     name: Mystic Theurge
+    hit_die: d4
+    alignment_restrictions: 
+    base_attack_bonus: 
+    class_abilities: 
+    base_fort_progression: 
+    base_ref_progression: 
+    base_will_progression: 
+    skill_points_per_level: 2
+    class_skills:
+    - Concentration
+    - Craft
+    - Decipher Script
+    - Knowledge (arcana)
+    - Knowledge (religion)
+    - Profession
+    - Sense Motive
+    - Spellcraft
   shadowdancer:
     name: Shadowdancer
+    hit_die: d8
+    alignment_restrictions: 
+    base_attack_bonus: 
+    class_abilities: 
+    base_fort_progression: 
+    base_ref_progression: 
+    base_will_progression: 
+    skill_points_per_level: 6
+    class_skills:
+    - Balance
+    - Bluff
+    - Decipher Script
+    - Diplomacy
+    - Disguise
+    - Escape Artist
+    - Hide
+    - Jump
+    - Listen
+    - Move Silently
+    - Perform
+    - Profession
+    - Search
+    - Spot
+    - Tumble
+    - Use Rope
+    - Sleight Of Hand
   thaumaturgist:
     name: Thaumaturgist
+    hit_die: d4
+    alignment_restrictions: 
+    base_attack_bonus: 
+    class_abilities: 
+    base_fort_progression: 
+    base_ref_progression: 
+    base_will_progression: 
+    skill_points_per_level: 2
+    class_skills:
+    - Concentration
+    - Craft
+    - Diplomacy
+    - Knowledge (religion)
+    - Knowledge (the planes)
+    - Profession
+    - Sense Motive
+    - Speak Language
+    - Spellcraft
+  dragon_disciple:
+    name: Dragon Disciple
+    hit_die: d12
+    alignment_restrictions: 
+    base_attack_bonus: 
+    class_abilities: 
+    base_fort_progression: 
+    base_ref_progression: 
+    base_will_progression: 
+    skill_points_per_level: 2
+    class_skills:
+    - Concentration
+    - Craft
+    - Diplomacy
+    - Escape Artist
+    - Gather Information
+    - Knowledge
+    - Listen
+    - Profession
+    - Search
+    - Speak Language
+    - Spellcraft
+    - Spot
+  arcane_archer:
+    name: Arcane Archer
+    hit_die: d8
+    alignment_restrictions: 
+    base_attack_bonus: 
+    class_abilities: 
+    base_fort_progression: 
+    base_ref_progression: 
+    base_will_progression: 
+    skill_points_per_level: 4
+    class_skills:
+    - Craft
+    - Hide
+    - Move Silently
+    - Ride
+    - Spot
+    - Survival
+    - Use Rope
+  archmage:
+    name: Archmage
+    hit_die: d4
+    alignment_restrictions: 
+    base_attack_bonus: 
+    class_abilities: 
+    base_fort_progression: 
+    base_ref_progression: 
+    base_will_progression: 
+    skill_points_per_level: 2
+    class_skills:
+    - Concentration
+    - Craft
+    - Knowledge
+    - Profession
+    - Search
+    - Spellcraft
+  assassin:
+    name: Assassin
+    hit_die: d6
+    alignment_restrictions: Any evil.
+    base_attack_bonus: 
+    class_abilities: 
+    base_fort_progression: 
+    base_ref_progression: 
+    base_will_progression: 
+    skill_points_per_level: 4
+    class_skills:
+    - Balance
+    - Bluff
+    - Climb
+    - Craft
+    - Decipher Script
+    - Diplomacy
+    - Disable Device
+    - Disguise
+    - Escape Artist
+    - Forgery
+    - Gather Information
+    - Hide
+    - Intimidate
+    - Jump
+    - Listen
+    - Move Silently
+    - Open Lock
+    - Search
+    - Sense Motive
+    - Spot
+    - Swim
+    - Tumble
+    - Use Magic Device
+    - Use Rope
+    - Sleight Of Hand
+  blackguard:
+    name: Blackguard
+    hit_die: d10
+    alignment_restrictions: Any evil.
+    base_attack_bonus: 
+    class_abilities: 
+    base_fort_progression: 
+    base_ref_progression: 
+    base_will_progression: 
+    skill_points_per_level: 2
+    class_skills:
+    - Concentration
+    - Craft
+    - Diplomacy
+    - Handle Animal
+    - Heal
+    - Hide
+    - Intimidate
+    - Knowledge (religion)
+    - Profession
+    - Ride
 npc:
   adept:
     name: Adept
-  aristocrat:
-    name: Aristocrat
-  commoner:
-    name: Commoner
+    hit_die: d6
+    alignment_restrictions: 
+    base_attack_bonus: 
+    class_abilities: 
+    base_fort_progression: 
+    base_ref_progression: 
+    base_will_progression: 
+    skill_points_per_level: 2
+    class_skills:
+    - Concentration
+    - Craft
+    - Handle Animal
+    - Heal
+    - Knowledge
+    - Profession
+    - Spellcraft
+    - Survival
   expert:
     name: Expert
+    hit_die: d6
+    alignment_restrictions: 
+    base_attack_bonus: 
+    class_abilities: 
+    base_fort_progression: 
+    base_ref_progression: 
+    base_will_progression: 
+    skill_points_per_level: 6
+    class_skills: 
+    - Knowledge
   warrior:
     name: Warrior
+    hit_die: d8
+    alignment_restrictions: 
+    base_attack_bonus: 
+    class_abilities: 
+    base_fort_progression: 
+    base_ref_progression: 
+    base_will_progression: 
+    skill_points_per_level: 2
+    class_skills:
+    - Climb
+    - Handle Animal
+    - Intimidate
+    - Jump
+    - Ride
+    - Swim
+  aristocrat:
+    name: Aristocrat
+    hit_die: d8
+    alignment_restrictions: 
+    base_attack_bonus: 
+    class_abilities: 
+    base_fort_progression: 
+    base_ref_progression: 
+    base_will_progression: 
+    skill_points_per_level: 4
+    class_skills:
+    - Appraise
+    - Bluff
+    - Diplomacy
+    - Disguise
+    - Forgery
+    - Gather Information
+    - Handle Animal
+    - Intimidate
+    - Knowledge
+    - Listen
+    - Perform
+    - Ride
+    - Sense Motive
+    - Speak Language
+    - Spot
+    - Swim
+    - Survival
+  commoner:
+    name: Commoner
+    hit_die: d4
+    alignment_restrictions: 
+    base_attack_bonus: 
+    class_abilities: 
+    base_fort_progression: 
+    base_ref_progression: 
+    base_will_progression: 
+    skill_points_per_level: 2
+    class_skills:
+    - Climb
+    - Craft
+    - Handle Animal
+    - Jump
+    - Listen
+    - Profession
+    - Ride
+    - Spot
+    - Swim
+    - Use Rope
+base:
+  ranger:
+    name: Ranger
+    hit_die: d8
+    alignment_restrictions: 
+    base_attack_bonus: 
+    class_abilities: 
+    base_fort_progression: 
+    base_ref_progression: 
+    base_will_progression: 
+    skill_points_per_level: 6
+    class_skills:
+    - Climb
+    - Concentration
+    - Craft
+    - Handle Animal
+    - Heal
+    - Hide
+    - Jump
+    - Knowledge (dungeoneering)
+    - Knowledge (geography)
+    - Knowledge (nature)
+    - Listen
+    - Move Silently
+    - Profession
+    - Ride
+    - Search
+    - Spot
+    - Survival
+    - Swim
+    - Use Rope
+  rogue:
+    name: Rogue
+    hit_die: d6
+    alignment_restrictions: 
+    base_attack_bonus: 
+    class_abilities: 
+    base_fort_progression: 
+    base_ref_progression: 
+    base_will_progression: 
+    skill_points_per_level: 8
+    class_skills:
+    - Appraise
+    - Balance
+    - Bluff
+    - Climb
+    - Craft
+    - Decipher Script
+    - Diplomacy
+    - Disable Device
+    - Disguise
+    - Escape Artist
+    - Forgery
+    - Gather Information
+    - Hide
+    - Intimidate
+    - Jump
+    - Knowledge (local)
+    - Listen
+    - Move Silently
+    - Open Lock
+    - Perform
+    - Profession
+    - Search
+    - Sense Motive
+    - Spot
+    - Swim
+    - Tumble
+    - Use Magic Device
+    - Use Rope
+    - Sleight Of Hand
+  barbarian:
+    name: Barbarian
+    hit_die: d12
+    alignment_restrictions: Any nonlawful.
+    base_attack_bonus: 
+    class_abilities: 
+    base_fort_progression: 
+    base_ref_progression: 
+    base_will_progression: 
+    skill_points_per_level: 4
+    class_skills:
+    - Climb
+    - Craft
+    - Handle Animal
+    - Intimidate
+    - Jump
+    - Listen
+    - Ride
+    - Survival
+    - Swim
+  cleric:
+    name: Cleric
+    hit_die: d8
+    alignment_restrictions: within one step of deity on one alignment axis. A cleric
+      may not be neutral unless his deity’s alignment is also neutral.
+    base_attack_bonus: 
+    class_abilities: ''
+    base_fort_progression: 
+    base_ref_progression: 
+    base_will_progression: 
+    skill_points_per_level: 2
+    class_skills:
+    - Concentration
+    - Craft
+    - Diplomacy
+    - Heal
+    - Knowledge (arcana)
+    - Knowledge (history)
+    - Knowledge (religion)
+    - Knowledge (the planes)
+    - Profession
+    - Spellcraft
+  druid:
+    name: Druid
+    hit_die: d8
+    alignment_restrictions: Neutral good, lawful neutral, neutral, chaotic neutral,
+      or neutral evil.
+    base_attack_bonus: 
+    class_abilities: 
+    base_fort_progression: 
+    base_ref_progression: 
+    base_will_progression: 
+    skill_points_per_level: 4
+    class_skills:
+    - Concentration
+    - Craft
+    - Diplomacy
+    - Handle Animal
+    - Heal
+    - Knowledge (nature)
+    - Listen
+    - Profession
+    - Ride
+    - Spellcraft
+    - Spot
+    - Survival
+    - Swim
+  monk:
+    name: Monk
+    hit_die: d8
+    alignment_restrictions: Any lawful.
+    base_attack_bonus: 
+    class_abilities: 
+    base_fort_progression: 
+    base_ref_progression: 
+    base_will_progression: 
+    skill_points_per_level: 4
+    class_skills:
+    - Balance
+    - Climb
+    - Concentration
+    - Craft
+    - Diplomacy
+    - Escape Artist
+    - Hide
+    - Jump
+    - Knowledge (arcana)
+    - Knowledge (religion)
+    - Listen
+    - Move Silently
+    - Perform
+    - Profession
+    - Sense Motive
+    - Spot
+    - Swim
+    - Tumble
+  paladin:
+    name: Paladin
+    hit_die: d10
+    alignment_restrictions: Lawful good.
+    base_attack_bonus: 
+    class_abilities: 
+    base_fort_progression: 
+    base_ref_progression: 
+    base_will_progression: 
+    skill_points_per_level: 2
+    class_skills:
+    - Concentration
+    - Craft
+    - Diplomacy
+    - Handle Animal
+    - Heal
+    - Knowledge (nobility and royalty)
+    - Knowledge (religion)
+    - Profession
+    - Ride
+    - Sense Motive
+  wizard:
+    name: Wizard
+    hit_die: d4
+    alignment_restrictions: 
+    base_attack_bonus: 
+    class_abilities: 
+    base_fort_progression: 
+    base_ref_progression: 
+    base_will_progression: 
+    skill_points_per_level: 2
+    class_skills:
+    - Concentration
+    - Craft
+    - Decipher Script
+    - Knowledge
+    - Profession
+    - Spellcraft
+  bard:
+    name: Bard
+    hit_die: d6
+    alignment_restrictions: Any nonlawful.
+    base_attack_bonus: 
+    class_abilities: 
+    base_fort_progression: 
+    base_ref_progression: 
+    base_will_progression: 
+    skill_points_per_level: 6
+    class_skills:
+    - Appraise
+    - Balance
+    - Bluff
+    - Climb
+    - Concentration
+    - Craft
+    - Decipher Script
+    - Diplomacy
+    - Disguise
+    - Escape Artist
+    - Gather Information
+    - Hide
+    - Jump
+    - Knowledge
+    - Listen
+    - Move Silently
+    - Perform
+    - Profession
+    - Sense Motive
+    - Speak Language
+    - Spellcraft
+    - Swim
+    - Tumble
+    - Use Magic Device
+    - Sleight Of Hand
+  fighter:
+    name: Fighter
+    hit_die: d10
+    alignment_restrictions: 
+    base_attack_bonus: 
+    class_abilities: 
+    base_fort_progression: 
+    base_ref_progression: 
+    base_will_progression: 
+    skill_points_per_level: 2
+    class_skills:
+    - Climb
+    - Craft
+    - Handle Animal
+    - Intimidate
+    - Jump
+    - Ride
+    - Swim
+  sorcerer:
+    name: Sorcerer
+    hit_die: d4
+    alignment_restrictions: 
+    base_attack_bonus: 
+    class_abilities: 
+    base_fort_progression: 
+    base_ref_progression: 
+    base_will_progression: 
+    skill_points_per_level: 2
+    class_skills:
+    - Bluff
+    - Concentration
+    - Craft
+    - Knowledge (arcana)
+    - Profession
+    - Spellcraft

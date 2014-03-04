@@ -1,23 +1,3 @@
-##### Alignment
-
-Any.
-
-##### Hit Die
-
-d4.
-
-#### Class Skills
-
-The sorcerer’s class skills (and the key ability for each skill) are [Bluff](/srd/skills/bluff.htm) (Cha), [Concentration](/srd/skills/concentration.htm) (Con), [Craft](/srd/skills/craft.htm) (Int), [Knowledge](/srd/skills/knowledge.htm) (arcana) (Int), [Profession](/srd/skills/profession.htm) (Wis), and [Spellcraft](/srd/skills/spellcraft.htm) (Int).
-
-##### Skill Points at 1st Level
-
-(2 + Int modifier) × 4.
-
-##### Skill Points at Each Additional Level
-
-2 + Int modifier.
-
 #### Class Features
 
 All of the following are class features of the sorcerer.

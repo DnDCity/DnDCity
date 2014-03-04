@@ -1,25 +1,3 @@
-# Paladin
-
-##### Alignment
-
-Lawful good.
-
-##### Hit Die
-
-d10.
-
-#### Class Skills
-
-The paladin’s class skills (and the key ability for each skill) are [Concentration](/srd/skills/concentration.htm) (Con), [Craft](/srd/skills/craft.htm) (Int), [Diplomacy](/srd/skills/diplomacy.htm) (Cha), [Handle Animal](/srd/skills/handleAnimal.htm) (Cha), [Heal](/srd/skills/heal.htm) (Wis), [Knowledge](/srd/skills/knowledge.htm) (nobility and royalty) (Int), [Knowledge](/srd/skills/knowledge.htm) (religion) (Int), [Profession](/srd/skills/profession.htm) (Wis), [Ride](/srd/skills/ride.htm) (Dex), and [Sense Motive](/srd/skills/senseMotive.htm) (Wis).
-
-##### Skill Points at 1st Level
-
-(2 + Int modifier) ×4.
-
-##### Skill Points at Each Additional Level
-
-2 + Int modifier.
-
 #### Class Features
 
 All of the following are class features of the paladin.

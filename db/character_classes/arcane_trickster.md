@@ -1,9 +1,3 @@
-# Arcane Trickster
-
-##### Hit Die
-
-d4.
-
 #### Requirements
 
 To qualify to become an arcane trickster, a character must fulfill all of the following criteria.
@@ -23,14 +17,6 @@ Ability to cast [mage hand](/srd/spells/mageHand.htm) and at least one arcane sp
 ##### Special
 
 Sneak attack +2d6.
-
-#### Class Skills
-
-The arcane trickster’s class skills (and the key ability for each skill) are [Appraise](/srd/skills/appraise.htm) (Int), [Balance](/srd/skills/balance.htm) (Dex), [Bluff](/srd/skills/bluff.htm) (Cha), [Climb](/srd/skills/climb.htm) (Str), [Concentration](/srd/skills/concentration.htm) (Con), [Craft](/srd/skills/craft.htm) (Int), [Decipher Script](/srd/skills/decipherScript.htm) (Int), [Diplomacy](/srd/skills/diplomacy.htm) (Cha), [Disable Device](/srd/skills/disableDevice.htm) (Int), [Disguise](/srd/skills/disguise.htm) (Cha), [Escape Artist](/srd/skills/escapeArtist.htm) (Dex), [Gather Information](/srd/skills/gatherInformation.htm) (Cha), [Hide](/srd/skills/hide.htm) (Dex), [Jump](/srd/skills/jump.htm) (Str), [Knowledge](/srd/skills/knowledge.htm) (Int), [Listen](/srd/skills/listen.htm) (Wis), [Move Silently](/srd/skills/moveSilently.htm) (Dex), [Open Lock](/srd/skills/openLock.htm) (Dex), [Profession](/srd/skills/profession.htm) (Wis), [Search](/srd/skills/search.htm) (Int), [Sense Motive](/srd/skills/senseMotive.htm) (Wis), [Sleight of Hand](/srd/skills/sleightOfHand.htm) (Dex), [Speak Language](/srd/skills/speakLanguage.htm) (None), [Spellcraft](/srd/skills/spellcraft.htm) (Int), [Spot](/srd/skills/spot.htm) (Wis), [Swim](/srd/skills/swim.htm) (Str), [Tumble](/srd/skills/tumble.htm) (Dex), and [Use Rope](/srd/skills/useRope.htm) (Dex).
-
-##### Skill Points at Each Level
-
-4 + Int modifier.
 
 #### Class Features
 

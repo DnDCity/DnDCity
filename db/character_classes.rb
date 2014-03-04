@@ -1,25 +1,6 @@
-#!/usr/bin/env rails runner
+#!/usr/bin/env ruby
+require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
 require 'fileutils'
-
-def skill sections
-  skill_each = sections['Skill Points at Each Level'] || sections['Skill Points at Each Additional Level']
-  if skill_each &&  /(\d) \+ Int/ =~ skill_each
-    return $1
-  else
-    nil
-  end
-end
-
-def alignment a
-  case a = (a || "").strip
-  when /^\s*$/
-    nil
-  when /Any\./
-    nil
-  else
-    a
-  end
-end
 
 def link_skill cc, name, subject = nil
   if skill = Skill.find_by_name(name)
@@ -29,28 +10,52 @@ def link_skill cc, name, subject = nil
   end
 end
 
-def class_skills cc, txt
-  txt.sub! /The [\w ]+’s class skills \(and the key ability for each skill\) are /, ''
-  puts "Class Skills #{cc}:"
-  skills = txt.split(/,\s+/)
+def class_skills cc, skills
   skills.each do |skill|
     case skill
-    when /\[Knowledge\]\(([\w\/\.]+)\)\s*\(([\w ]+)\)/
-      subject = $2
-      link_skill cc, "Knowledge", subject
-    when /\[Knowledge\]\(([\w\/\.]+)\)\s*\(([\w ]+)\)\s*\(Int\)/
-      subject = $2
-      link_skill cc, "Knowledge", subject
-    when /\[([\w ]+)\]\(([\w\/\.]+)\)\s*\((\w+)\)/
+    when /([\w ]+) \(([\w ]+)\)/
       name = $1
-      link = $2
-      key_ability = $3
-      name.sub!(' of ',' Of ')
-      link_skill cc, name
+      subject = $2
+      link_skill cc, name, subject
     else
-      puts "  * #{skill}"
+      link_skill cc, skill
     end
   end
+end
+
+def class_table cc
+  key = cc.key
+  puts "Class Table: #{key}"
+  file = __FILE__.sub(/\.rb$/,"/#{key.pluralize}_table.html")
+  html = IO.read(file)
+  table = Nokogiri::HTML(html)   
+  bab_type = 0
+  forts = [0,0,0,0,0]
+  refs = [0,0,0,0,0]
+  wills = [0,0,0,0,0]
+  table.css('tr').each do |tr|
+    level, bab, fort, ref, will, special, *td =  tr.css('td').to_a.collect{|td| td.content}
+    case level
+    when /^(\d+)\w+/ # valid row
+      level = $1.to_i
+      bab = bab.gsub('+','').split('/').first.to_i
+      bab_type = (bab.to_f * 4 / level).ceil - 2
+      fort = fort.sub('+','').to_i
+      ref = ref.sub('+','').to_i
+      will = will.sub('+','').to_i
+      forts[fort] ||= 0
+      refs[ref] ||= 0
+      wills[will] ||= 0
+      forts[fort] += 1
+      refs[ref] += 1
+      wills[will] += 1
+    end
+  end
+  cc.bab_type = CharacterClass::BAB_TYPES[bab_type]
+  cc.fort_type = CharacterClass::SAVE_TYPES[3 - forts.max]
+  cc.ref_type = CharacterClass::SAVE_TYPES[3 - refs.max]
+  cc.will_type = CharacterClass::SAVE_TYPES[3 - wills.max]
+  cc.save
 end
 
 yaml = IO.read(__FILE__.sub(/\.rb$/,'.yml'))
@@ -79,16 +84,19 @@ class_types.each do |class_type, character_classes|
 
     # puts sections.keys.inspect
     FileUtils.touch file
-    character_class[:hit_die] = sections['Hit Die'].strip.sub(/\./,'')
-    character_class[:skill_points_per_level] = skill sections
-    character_class[:alignment_restrictions] = alignment sections['Alignment']
     character_class[:key] = key
     character_class[:class_type] = class_type
     character_class[:desc] = md
+    skills = character_class.delete('class_skills')
+    character_class.delete('base_attack_bonus')
+    character_class.delete('base_fort_progression')
+    character_class.delete('base_ref_progression')
+    character_class.delete('base_will_progression')
     cc = CharacterClass.find_or_create_by_key!(character_class)
     cc.update_attributes! character_class
 
-    class_skills cc, sections['Class Skills']
+    class_skills cc, skills
+    class_table cc
   end
 end
 

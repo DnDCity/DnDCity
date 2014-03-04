@@ -1,9 +1,3 @@
-# Archmage
-
-##### Hit Die
-
-d4.
-
 #### Requirements
 
 To qualify to become an archmage, a character must fulfill all the following criteria.
@@ -19,14 +13,6 @@ To qualify to become an archmage, a character must fulfill all the following cri
 ##### Spells
 
 Ability to cast 7th-level arcane spells, knowledge of 5th-level or higher spells from at least five schools.
-
-#### Class Skills
-
-The archmage’s class skills (and the key ability for each skill) are [Concentration](/srd/skills/concentration.htm) (Con), [Craft](/srd/skills/craft.htm) (alchemy) (Int), [Knowledge](/srd/skills/knowledge.htm) (all skills taken individually) (Int), [Profession](/srd/skills/profession.htm) (Wis), [Search](/srd/skills/search.htm) (Int), and [Spellcraft](/srd/skills/spellcraft.htm) (Int).
-
-##### Skill Points at Each Level
-
-2 + Int modifier.
 
 #### Class Features
 

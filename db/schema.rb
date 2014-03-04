@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140224223249) do
+ActiveRecord::Schema.define(version: 20140226192158) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,16 +31,16 @@ ActiveRecord::Schema.define(version: 20140224223249) do
     t.text     "desc"
     t.string   "hit_die"
     t.string   "alignment_restrictions"
-    t.float    "base_attack_bonus"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "class_abilities"
-    t.float    "base_fort_progression"
-    t.float    "base_ref_progression"
-    t.float    "base_will_progression"
     t.integer  "skill_points_per_level"
     t.string   "key"
     t.string   "class_type"
+    t.string   "bab_type"
+    t.string   "fort_type"
+    t.string   "ref_type"
+    t.string   "will_type"
   end
 
   create_table "character_levels", force: true do |t|

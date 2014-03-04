@@ -1,9 +1,3 @@
-# Shadowdancer
-
-##### Hit Die
-
-d8.
-
 #### Requirements
 
 To qualify to become a shadowdancer, a character must fulfill all the following criteria.
@@ -15,14 +9,6 @@ To qualify to become a shadowdancer, a character must fulfill all the following 
 ##### Feats
 
   [Combat Reflexes](/srd/feats.htm#combatReflexes), [Dodge](/srd/feats.htm#dodge), [Mobility](/srd/feats.htm#mobility).
-
-#### Class Skills
-
-The shadowdancer’s class skills (and the key ability for each skill) are [Balance](/srd/skills/balance.htm) (Dex), [Bluff](/srd/skills/bluff.htm) (Cha), [Decipher Script](/srd/skills/decipherScript.htm) (Int), [Diplomacy](/srd/skills/diplomacy.htm) (Cha), [Disguise](/srd/skills/disguise.htm) (Cha), [Escape Artist](/srd/skills/escapeArtist.htm) (Dex), [Hide](/srd/skills/hide.htm) (Dex), [Jump](/srd/skills/jump.htm) (Str), [Listen](/srd/skills/listen.htm) (Wis), [Move Silently](/srd/skills/moveSilently.htm) (Dex), [Perform](/srd/skills/perform.htm) (Cha), [Profession](/srd/skills/profession.htm) (Wis), [Search](/srd/skills/search.htm) (Int), [Sleight of Hand](/srd/skills/sleightOfHand.htm) (Dex), [Spot](/srd/skills/spot.htm) (Wis), [Tumble](/srd/skills/tumble.htm) (Dex), and [Use Rope](/srd/skills/useRope.htm) (Dex).
-
-##### Skill Points at Each Level
-
-6 + Int modifier.
 
 #### Class Features
 

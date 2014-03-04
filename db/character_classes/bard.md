@@ -1,25 +1,3 @@
-# Bard
-
-##### Alignment
-
-Any nonlawful.
-
-##### Hit Die
-
-d6.
-
-#### Class Skills
-
-The bard’s class skills (and the key ability for each skill) are [Appraise](/srd/skills/appraise.htm) (Int), [Balance](/srd/skills/balance.htm) (Dex), [Bluff](/srd/skills/bluff.htm) (Cha), [Climb](/srd/skills/climb.htm) (Str), [Concentration](/srd/skills/concentration.htm) (Con), [Craft](/srd/skills/craft.htm) (Int), [Decipher Script](/srd/skills/decipherScript.htm) (Int), [Diplomacy](/srd/skills/diplomacy.htm) (Cha), [Disguise](/srd/skills/disguise.htm) (Cha), [Escape Artist](/srd/skills/escapeArtist.htm) (Dex), [Gather Information](/srd/skills/gatherInformation.htm) (Cha), [Hide](/srd/skills/hide.htm) (Dex), [Jump](/srd/skills/jump.htm) (Str), [Knowledge](/srd/skills/knowledge.htm) (all skills taken individually) (Int), [Listen](/srd/skills/listen.htm) (Wis), [Move Silently](/srd/skills/moveSilently.htm) (Dex), [Perform](/srd/skills/perform.htm) (Cha), [Profession](/srd/skills/profession.htm) (Wis), [Sense Motive](/srd/skills/senseMotive.htm) (Wis), [Sleight of Hand](/srd/skills/sleightOfHand.htm) (Dex), [Speak Language](/srd/skills/speakLanguage.htm) (None), [Spellcraft](/srd/skills/spellcraft.htm) (Int), [Swim](/srd/skills/swim.htm) (Str), [Tumble](/srd/skills/tumble.htm) (Dex), and [Use Magic Device](/srd/skills/useMagicDevice.htm) (Cha).
-
-##### Skill Points at 1st Level
-
-(6 + Int modifier) ×4.
-
-##### Skill Points at Each Additional Level
-
-6 + Int modifier.
-
 #### Class Features
 
 All of the following are class features of the bard.

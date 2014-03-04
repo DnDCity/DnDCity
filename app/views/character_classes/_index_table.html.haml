@@ -1,0 +1,19 @@
+%table.compact
+  %tr
+    %th Class
+    %th HD
+    %th Sk
+    %th Bab
+    %th Fort
+    %th Ref
+    %th Will
+  - index_table.each do |cc|
+    %tr
+      %td= link_to cc.name, cc
+      %td= cc.hit_die
+      %td= cc.skill_points_per_level
+      %td= cc.bab_type
+      %td= cc.fort_type
+      %td= cc.ref_type
+      %td= cc.will_type
+

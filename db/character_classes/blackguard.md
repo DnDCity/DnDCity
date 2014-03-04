@@ -1,9 +1,3 @@
-# Blackguard
-
-##### Hit Die
-
-d10.
-
 #### Requirements
 
 To qualify to become a blackguard, a character must fulfill all the following criteria.
@@ -27,14 +21,6 @@ Any evil.
 ##### Special
 
 The character must have made peaceful contact with an evil [outsider](/srd/typesSubtypes.htm#outsiderType) who was summoned by him or someone else.
-
-#### Class Skills
-
-The blackguard’s class skills (and the key ability for each skill) are [Concentration](/srd/skills/concentration.htm) (Con), [Craft](/srd/skills/craft.htm) (Int), [Diplomacy](/srd/skills/diplomacy.htm) (Cha), [Handle Animal](/srd/skills/handleAnimal.htm) (Cha), [Heal](/srd/skills/heal.htm) (Wis), [Hide](/srd/skills/hide.htm) (Dex), [Intimidate](/srd/skills/intimidate.htm) (Cha), [Knowledge](/srd/skills/knowledge.htm) (religion) (Int), [Profession](/srd/skills/profession.htm) (Wis), and [Ride](/srd/skills/ride.htm) (Dex).
-
-##### Skill Points at Each Level
-
-2 + Int modifier.
 
 #### Class Features
 

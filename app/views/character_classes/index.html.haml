@@ -8,10 +8,11 @@
 .row
   .col-xs-4
     %h2 Base
-    = render partial: 'ul', object: @base
+    = render partial: 'index_table', object: @base
   .col-xs-4
     %h2 Prestige
-    = render partial: 'ul', object: @prestige
+    = render partial: 'index_table', object: @prestige
   .col-xs-4
     %h2 Npc
-    = render partial: 'ul', object: @npc
+    = render partial: 'index_table', object: @npc
+
