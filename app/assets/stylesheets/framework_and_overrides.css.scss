@@ -10,11 +10,11 @@ img {
 .navbar-brand {
   font-size: inherit;
   }
-
+//NIT-PICKY STYLING FOR SECTIONS
 .section1{
  border-style: groove;
- height: 75px;
- width: 600px;
+ height: 241px;
+ width: 300px;
  background-color: #fff;
 }
 
@@ -26,12 +26,28 @@ img {
  background-color: #fff;
 }
 
-.section2, .section3, .section4, .section5, .section6, .section7{
+.section2, .section3, .section4, .section5, .section6, .section7, .sectiontest{
  border-style: groove;
  height: 200px;
  width: 200px;
  background-color: #fff;
 }
+
+.sectionbutton{
+ padding: 10px;
+ padding-left: 0px;
+}
+
+//TABS, BUTTONS, AND ETC.
+.subbutton{
+ background-color: #AD5C5C;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active >a:hover, .nav-tabs > li.active > a:focus{
+ background-color: #AD5C5C;  
+}
+.nav-tabs > li > a:hover{
+ background-color: #AD5C5C;
+} 
 
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create your own classes
@@ -56,10 +72,15 @@ img {
 // to make views framework-neutral
 main {
   @extend .container;
-  background-color: #eee;
+  background: -webkit-linear-gradient(#E8DA8E, #D9AC27); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#E8DA8E, #D9AC27); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#E8DA8E, #D9AC27); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#E8DA8E, #D9AC27); /* Standard syntax */
   padding-bottom: 80px;
   width: 100%;
   margin-top: 51px; // accommodate the navbar
+  border-top-style: groove;
+  border-bottom-style: groove;
   }
 section {
   @extend .row;

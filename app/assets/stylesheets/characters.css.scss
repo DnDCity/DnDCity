@@ -4,4 +4,15 @@
 table.newchar, tr.newchar, td.newchar{
  border-style: solid;
 }
+table.showchard, th.showchard, td.showchard{
+ height: 150px;
+ width: 500px;
+ text-align: center;
+ background-color: #FFF;
+}
+th.showchard2{
+ height: 25px;
+ text-align: center;
+ background-color: #DDD;
+}
 

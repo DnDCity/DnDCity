@@ -151,13 +151,6 @@ ActiveRecord::Schema.define(version: 20140227024514) do
   add_index "feats", ["feat_type_id"], name: "index_feats_on_feat_type_id", using: :btree
   add_index "feats", ["fighter_bonus_feat"], name: "index_feats_on_fighter_bonus_feat", using: :btree
 
-  create_table "hairs", force: true do |t|
-    t.string   "name"
-    t.text     "desc"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "prerequisite_feats", id: false, force: true do |t|
     t.integer "feat_id"
     t.integer "prerequisite_id"
