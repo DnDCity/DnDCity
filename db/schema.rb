@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140305205617) do
+ActiveRecord::Schema.define(version: 20140305214855) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -209,7 +209,10 @@ ActiveRecord::Schema.define(version: 20140305205617) do
     t.text     "desc"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "modifier"
   end
+
+  add_index "sizes", ["modifier"], name: "index_sizes_on_modifier", using: :btree
 
   create_table "skills", force: true do |t|
     t.string   "name"

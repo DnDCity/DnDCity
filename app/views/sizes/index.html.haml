@@ -7,6 +7,7 @@
 %table
   %tr
     %th Name
+    %th Modifier
     %th Desc
     %th
       -if can? :create, Size
@@ -16,6 +17,7 @@
   - @sizes.each do |size|
     %tr
       %td= size.name
+      %td= size.modifier
       %td= size.desc
       %td
         %a{href: size_path(size)}

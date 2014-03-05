@@ -5,6 +5,8 @@ class ClassLevel < ActiveRecord::Base
   validates :class_level, presence: true
   validates :character_class_id, presence: true, uniqueness: { scope: :character_id }
 
+  default_scope { includes(:character_class) }
+
   def to_s
     "#{character_class.name} #{class_level}"
   end
