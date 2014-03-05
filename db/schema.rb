@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140227024514) do
+ActiveRecord::Schema.define(version: 20140305205617) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,15 +82,21 @@ ActiveRecord::Schema.define(version: 20140227024514) do
 
   add_index "characters", ["user_id"], name: "index_characters_on_user_id", using: :btree
 
+  create_table "class_level_seqn", id: false, force: true do |t|
+    t.integer "character_id",             null: false
+    t.integer "seqn",         default: 1, null: false
+  end
+
   create_table "class_levels", force: true do |t|
     t.integer  "character_id"
     t.integer  "character_class_id"
-    t.integer  "class_level"
+    t.integer  "class_level",        default: 1
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "class_levels", ["character_class_id"], name: "index_class_levels_on_character_class_id", using: :btree
+  add_index "class_levels", ["character_id", "character_class_id"], name: "index_class_levels_on_character_id_and_character_class_id", unique: true, using: :btree
   add_index "class_levels", ["character_id"], name: "index_class_levels_on_character_id", using: :btree
 
   create_table "class_skills", force: true do |t|
@@ -151,6 +157,13 @@ ActiveRecord::Schema.define(version: 20140227024514) do
   add_index "feats", ["feat_type_id"], name: "index_feats_on_feat_type_id", using: :btree
   add_index "feats", ["fighter_bonus_feat"], name: "index_feats_on_fighter_bonus_feat", using: :btree
 
+  create_table "hairs", force: true do |t|
+    t.string   "name"
+    t.text     "desc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "prerequisite_feats", id: false, force: true do |t|
     t.integer "feat_id"
     t.integer "prerequisite_id"
@@ -175,7 +188,10 @@ ActiveRecord::Schema.define(version: 20140227024514) do
     t.text     "desc"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "key"
   end
+
+  add_index "races", ["key"], name: "index_races_on_key", using: :btree
 
   create_table "roles", force: true do |t|
     t.string   "name"

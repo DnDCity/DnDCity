@@ -3,4 +3,10 @@ class Character < ActiveRecord::Base
   belongs_to :race # Race classifies Character
   belongs_to :size # Size classifies Character
   has_many :class_levels
+  validates :name, presence: true
+  validates :user, presence: true
+
+  def to_s
+    name
+  end
 end

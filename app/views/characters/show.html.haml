@@ -1,11 +1,13 @@
 .pull-right
   = link_to 'Edit', edit_character_path(@character)
   = link_to 'Back', characters_path
-%p User:
-%p= @character.user.name
-%h2= @character.name
--if @character.public && current_user == @character.user
-  .warn [Publicly Visible]
+  %p
+    User:
+    = @character.user.name
+  -if @character.public && current_user == @character.user
+    .warn [Publicly Visible]
+%h2
+  = @character.name
 
 
 .sectiontabs.col-md-6
@@ -32,6 +34,16 @@
           = link_me @character.size 
         %td
           = @character.gender
+      %table.showchar
+        %tr
+          %th Class
+          %th Level
+          %td= link_to "New", new_character_class_level_path(@character)
+        - @character.class_levels.each do |cl|
+          %tr
+            %td=cl.character_class.name
+            %td=cl.class_level
+            %td= link_to "Edit", edit_character_class_level_path(@character,cl)
     #philosophies.tab-pane.fade
       %table.showchar
         %tr

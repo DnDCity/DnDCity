@@ -1,0 +1,43 @@
+---
+humans: 
+  name: Human
+  size: Medium
+  speed: 30
+  bonus_feat: 1
+  bonus_skill_points: 1
+dwarves:
+  name: Dwarf
+  size: Medium
+  speed: 30
+  con: 2
+  cha: -2
+elves:
+  name: Elf
+  size: Medium
+  speed: 30
+  dex: 2
+  con: -2
+gnomes:
+  name: Gnome
+  size: Small
+  speed: 20
+  con: 2
+  str: -2
+half-elves:
+  name: Half Elf
+  size: Medium
+  speed: 30
+half-orcs:
+  name: Half Orc
+  size: Medium
+  str: 2
+  int: -2
+  cha: -2
+  speed: 30
+halflings:
+  name: Halfling
+  size: Small
+  speed: 20
+  dex: 2
+  str: -2
+
