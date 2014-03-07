@@ -73,36 +73,26 @@
     #stats.tab-pane.fade
       %table.showchar
         %tr
-        .ability.str
-        %th Strength
-        %td
-          = @character.base_str
-        %tr
-        .ability.dex
-        %th Dexterity
-        %td
-          = @character.base_dex
-        %tr
-        .ability.con
-        %th Constitution
-        %td
-          = @character.base_con
-        %tr
-        .ability.int
-        %th Intelligence
-        %td
-          = @character.base_int
-        %tr
-        .ability.wis
-        %th Wisdom
-        %td
-          = @character.base_wis
-        %tr
-        .ability.cha
-        %th Charisma
-        %td
-          = @character.base_cha
-
+          %th Ability
+          %th Base
+          %th Race
+          %th Temp
+          %th Total
+          %th Mod
+        - Character::ABILITIES.each do |ability|
+          %tr
+          .ability.str
+          %th= Character::ABILITY_NAMES[ability]
+          %td
+            = @character.send "base_#{ability}"
+          %td
+            = @character.send "race_#{ability}"
+          %td
+            = @character.send "temp_#{ability}"
+          %td
+            = @character.send ability
+          %td
+            = @character.send "#{ability}_modifier"
 
           
 

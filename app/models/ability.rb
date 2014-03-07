@@ -29,6 +29,8 @@ class Ability
     can :read, FeatType
     can :read, Feat
     can :read, CharacterClass
+    can :read, Race
+    can :read, Size
     #
     # The first argument to `can` is the action you are giving the user 
     # permission to do.
