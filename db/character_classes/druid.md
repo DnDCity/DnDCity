@@ -1,25 +1,3 @@
-# Druid
-
-##### Alignment
-
-Neutral good, lawful neutral, neutral, chaotic neutral, or neutral evil.
-
-##### Hit Die
-
-d8.
-
-#### Class Skills
-
-The druid’s class skills (and the key ability for each skill) are [Concentration](/srd/skills/concentration.htm) (Con), [Craft](/srd/skills/craft.htm) (Int), [Diplomacy](/srd/skills/diplomacy.htm) (Cha), [Handle Animal](/srd/skills/handleAnimal.htm) (Cha), [Heal](/srd/skills/heal.htm) (Wis), [Knowledge](/srd/skills/knowledge.htm) (nature) (Int), [Listen](/srd/skills/listen.htm) (Wis), [Profession](/srd/skills/profession.htm) (Wis), [Ride](/srd/skills/ride.htm) (Dex), [Spellcraft](/srd/skills/spellcraft.htm) (Int), [Spot](/srd/skills/spot.htm) (Wis), [Survival](/srd/skills/survival.htm) (Wis), and [Swim](/srd/skills/swim.htm) (Str).
-
-##### Skill Points at 1st Level
-
-(4 + Int modifier) ×4.
-
-##### Skill Points at Each Additional Level
-
-4 + Int modifier.
-
 #### Class Features
 
 All of the following are class features of the druid.

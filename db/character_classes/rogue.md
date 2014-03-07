@@ -1,25 +1,3 @@
-## Rogue
-
-##### Alignment
-
-Any.
-
-##### Hit Die
-
-d6.
-
-#### Class Skills
-
-The rogue’s class skills (and the key ability for each skill) are [Appraise](/srd/skills/appraise.htm) (Int), [Balance](/srd/skills/balance.htm) (Dex), [Bluff](/srd/skills/bluff.htm) (Cha), [Climb](/srd/skills/climb.htm) (Str), [Craft](/srd/skills/craft.htm) (Int), [Decipher Script](/srd/skills/decipherScript.htm) (Int), [Diplomacy](/srd/skills/diplomacy.htm) (Cha), [Disable Device](/srd/skills/disableDevice.htm) (Int), [Disguise](/srd/skills/disguise.htm) (Cha), [Escape Artist](/srd/skills/escapeArtist.htm) (Dex), [Forgery](/srd/skills/forgery.htm) (Int), [Gather Information](/srd/skills/gatherInformation.htm) (Cha), [Hide](/srd/skills/hide.htm) (Dex), [Intimidate](/srd/skills/intimidate.htm) (Cha), [Jump](/srd/skills/jump.htm) (Str), [Knowledge](/srd/skills/knowledge.htm) (local) (Int), [Listen](/srd/skills/listen.htm) (Wis), [Move Silently](/srd/skills/moveSilently.htm) (Dex), [Open Lock](/srd/skills/openLock.htm) (Dex), [Perform](/srd/skills/perform.htm) (Cha), [Profession](/srd/skills/profession.htm) (Wis), [Search](/srd/skills/search.htm) (Int), [Sense Motive](/srd/skills/senseMotive.htm) (Wis), [Sleight of Hand](/srd/skills/sleightOfHand.htm) (Dex), [Spot](/srd/skills/spot.htm) (Wis), [Swim](/srd/skills/swim.htm) (Str), [Tumble](/srd/skills/tumble.htm) (Dex), [Use Magic Device](/srd/skills/useMagicDevice.htm) (Cha), and [Use Rope](/srd/skills/useRope.htm) (Dex).
-
-##### Skill Points at 1st Level
-
-(8 + Int modifier) ×4.
-
-##### Skill Points at Each Additional Level
-
-8 + Int modifier.
-
 #### Class Features
 
 All of the following are class features of the rogue.

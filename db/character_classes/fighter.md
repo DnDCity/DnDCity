@@ -1,25 +1,3 @@
-# Fighter
-
-##### Alignment
-
-Any.
-
-##### Hit Die
-
-d10.
-
-#### Class Skills
-
-The fighter’s class skills (and the key ability for each skill) are [Climb](/srd/skills/climb.htm) (Str), [Craft](/srd/skills/craft.htm) (Int), [Handle Animal](/srd/skills/handleAnimal.htm) (Cha), [Intimidate](/srd/skills/intimidate.htm) (Cha), [Jump](/srd/skills/jump.htm) (Str), [Ride](/srd/skills/ride.htm) (Dex), and [Swim](/srd/skills/swim.htm) (Str).
-
-##### Skill Points at 1st Level
-
-(2 + Int modifier) ×4.
-
-##### Skill Points at Each Additional Level
-
-2 + Int modifier.
-
 #### Class Features
 
 All of the following are class features of the fighter.

@@ -1,23 +1,3 @@
-##### Alignment
-
-Any.
-
-##### Hit Die
-
-d4.
-
-#### Class Skills
-
-The wizard’s class skills (and the key ability for each skill) are [Concentration](/srd/skills/concentration.htm) (Con), [Craft](/srd/skills/craft.htm) (Int), [Decipher Script](/srd/skills/decipherScript.htm) (Int), [Knowledge](/srd/skills/knowledge.htm) (all skills taken individually) (Int), [Profession](/srd/skills/profession.htm) (Wis), and [Spellcraft](/srd/skills/spellcraft.htm) (Int).
-
-##### Skill Points at 1st Level
-
-(2 + Int modifier) ×4.
-
-##### Skill Points at Each Additional Level
-
-2 + Int modifier.
-
 #### Class Features
 
 All of the following are class features of the wizard.

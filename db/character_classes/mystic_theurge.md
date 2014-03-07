@@ -1,9 +1,3 @@
-# Mystic Theurge
-
-##### Hit Die
-
-d4.
-
 #### Requirements
 
 To qualify to become a mystic theurge, a character must fulfill all the following criteria.
@@ -15,14 +9,6 @@ To qualify to become a mystic theurge, a character must fulfill all the followin
 ##### Spells
 
 Able to cast 2nd-level divine spells and 2nd-level arcane spells.
-
-#### Class Skills
-
-The mystic theurge’s class skills (and the key ability for each skill) are [Concentration](/srd/skills/concentration.htm) (Con), [Craft](/srd/skills/craft.htm) (Int), [Decipher Script](/srd/skills/decipherScript.htm) (Int), [Knowledge](/srd/skills/knowledge.htm) (arcana) (Int), [Knowledge](/srd/skills/knowledge.htm) (religion) (Int), [Profession](/srd/skills/profession.htm) (Wis), [Sense Motive](/srd/skills/senseMotive.htm) (Wis), and [Spellcraft](/srd/skills/spellcraft.htm) (Int).
-
-##### Skill Points at Each Level
-
-2 + Int modifier.
 
 #### Class Features
 

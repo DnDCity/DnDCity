@@ -1,9 +1,3 @@
-# Thaumaturgist
-
-##### Hit Die
-
-d4.
-
 #### Requirements
 
 To qualify to become a thaumaturgist, a character must fulfill all the following criteria.
@@ -15,14 +9,6 @@ To qualify to become a thaumaturgist, a character must fulfill all the following
 ##### Spells
 
 Able to cast [lesser planar ally](/srd/spells/planarAllyLesser.htm).
-
-#### Class Skills
-
-The thaumaturgist’s class skills (and the key ability for each skill) are [Concentration](/srd/skills/concentration.htm) (Con), [Craft](/srd/skills/craft.htm) (Int), [Diplomacy](/srd/skills/diplomacy.htm) (Cha), [Knowledge](/srd/skills/knowledge.htm) (religion) (Int), [Knowledge](/srd/skills/knowledge.htm) (the planes) (Int), [Profession](/srd/skills/profession.htm) (Wis), [Sense Motive](/srd/skills/senseMotive.htm) (Wis), [Speak Language](/srd/skills/speakLanguage.htm) (None), and [Spellcraft](/srd/skills/spellcraft.htm) (Int).
-
-##### Skill Points at Each Level
-
-2 + Int modifier.
 
 #### Class Features
 

@@ -1,25 +1,3 @@
-# Barbarian
-
-##### Alignment
-
-Any nonlawful.
-
-##### Hit Die
-
-d12.
-
-#### Class Skills
-
-The barbarian’s class skills (and the key ability for each skill) are [Climb](/srd/skills/climb.htm) (Str), [Craft](/srd/skills/craft.htm) (Int), [Handle Animal](/srd/skills/handleAnimal.htm) (Cha), [Intimidate](/srd/skills/intimidate.htm) (Cha), [Jump](/srd/skills/jump.htm) (Str), [Listen](/srd/skills/listen.htm) (Wis), [Ride](/srd/skills/ride.htm) (Dex), [Survival](/srd/skills/survival.htm) (Wis), and [Swim](/srd/skills/swim.htm) (Str).
-
-##### Skill Points at 1st Level
-
-(4 + Int modifier) ×4.
-
-##### Skill Points at Each Additional Level
-
-4 + Int modifier.
-
 #### Class Features
 
 All of the following are class features of the barbarian.
