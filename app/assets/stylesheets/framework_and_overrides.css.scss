@@ -14,7 +14,7 @@ img {
 //NIT-PICKY STYLING FOR SECTIONS
 .section1{
  border-style: groove;
- height: 241px;
+ min-height: 241px;
  width: 300px;
  background-color: #fff;
 }
@@ -22,9 +22,10 @@ img {
 
 .sectioncamp{
  border-style: groove;
- height: 200px;
+ min-height: 200px;
  width: 225px;
  background-color: #fff;
+ padding-bottom: 5px;
 }
 
 .section2, .section3, .section4, .section5, .section6, .section7, .sectiontest{

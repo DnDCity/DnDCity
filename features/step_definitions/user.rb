@@ -32,3 +32,30 @@ Then(/^I should have a user account with the email of "(.*?)"$/) do |email|
   User.where(email: email).count.should eq 1
 end
 
+Given(/^I am a logged in user$/) do
+  name = "Fred"
+  email = "fred@bedrock.com"
+  pw = "WilmaPebbles"
+  @user = User.create! name: name, email: email, password: pw, password_confirmation: pw
+  @user.confirm!
+  visit "/users/sign_in"
+  within "form" do
+    fill_in "Email", with: email
+    fill_in "Password", with: pw
+    click_on "Sign in"
+  end
+  page.should have_content("Signed in successfully.")
+end
+
+Given(/^I am on the home page$/) do
+  visit "/"
+end
+
+Then(/^I should have a campaign named "(.*?)"$/) do |name|
+  @campaign = Campaign.find_by!(name: name)
+end
+
+Then(/^I should be on the page for my new campaign\.$/) do
+  current_path.should eq campaign_path(@campaign) 
+end
+

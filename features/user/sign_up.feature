@@ -16,8 +16,7 @@ So that I can use the system to keep track of my DnD data.
 
 #  Scenario: User Confirms Email
 #    Given that I have signed up
-#    And I have received a confirmation email
 #    When I click on the confirmation link
-#    Then I should be informed that my account has been confirmed. 
+#    Then I should see "Your account was successfully confirmed."
 #    And I should be able to login. 
 
