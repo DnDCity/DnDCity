@@ -7,6 +7,7 @@
 %table
   %tr
     %th Name
+    %th Size
     %th Speed
     %th Str
     %th Dex
@@ -24,6 +25,7 @@
       %td
         %a{href: race_path(race)}
           = race.name
+      %td= link_me race.size
       %td= race.speed
       %td= race.str
       %td= race.dex

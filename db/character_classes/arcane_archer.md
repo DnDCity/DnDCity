@@ -1,9 +1,3 @@
-# Arcane Archer
-
-##### Hit Die
-
-d8.
-
 #### Requirements
 
 To qualify to become an arcane archer, a character must fulfill all the following criteria.
@@ -23,14 +17,6 @@ Elf or half-elf.
 ##### Spells
 
 Ability to cast 1st-level arcane spells.
-
-#### Class Skills
-
-The arcane archer’s class skills (and the key ability for each skill) are [Craft](/srd/skills/craft.htm) (Int), [Hide](/srd/skills/hide.htm) (Dex). [Listen](/srd/skills/listen.htm) (Wis), [Move Silently](/srd/skills/moveSilently.htm) (Dex), [Ride](/srd/skills/ride.htm) (Dex), [Spot](/srd/skills/spot.htm) (Wis), [Survival](/srd/skills/survival.htm) (Wis), and [Use Rope](/srd/skills/useRope.htm) (Dex).
-
-##### Skill Points at Each Level
-
-4 + Int modifier.
 
 #### Class Features
 

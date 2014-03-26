@@ -1,9 +1,3 @@
-# Hierophant
-
-##### Hit Die
-
-d8.
-
 #### Requirements
 
 To qualify to become a hierophant, a character must fulfill all the following criteria.
@@ -19,14 +13,6 @@ Any metamagic feat.
 ##### Spells
 
 Able to cast 7th-level divine spells.
-
-#### Class Skills
-
-The hierophant’s class skills (and the key ability for each skill) are [Concentration](/srd/skills/concentration.htm) (Con), [Craft](/srd/skills/craft.htm) (Int), [Diplomacy](/srd/skills/diplomacy.htm) (Cha), [Heal](/srd/skills/heal.htm) (Wis), [Knowledge](/srd/skills/knowledge.htm) (arcana) (Int), [Knowledge](/srd/skills/knowledge.htm) (religion) (Int), [Profession](/srd/skills/profession.htm) (Wis), and [Spellcraft](/srd/skills/spellcraft.htm) (Int).
-
-##### Skill Points at Each Level
-
-2 + Int modifier.
 
 #### Class Features
 

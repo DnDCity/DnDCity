@@ -1,0 +1,18 @@
+-if can? :create, ClassLevel
+  .pull-right
+    %a{href: new_character_class_level_path(@character)}
+      %span.glyphicon.glyphicon-plus
+%h1.title 
+  = link_to (@character.name + "'s"), @character
+  Class Levels
+
+%table
+  %tr
+    %th Character class
+    %th Class level
+  - @class_levels.each do |class_level|
+    %tr
+      %td= link_to class_level.character_class, [@character, class_level]
+      %td= class_level.class_level
+      %td= link_to "Edit", edit_character_class_level_path(@character, class_level)
+

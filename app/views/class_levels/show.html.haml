@@ -1,0 +1,22 @@
+.pull-right
+  %a{href: character_class_levels_path(@character)}
+    %span.glyphicon.glyphicon-list
+  -if can? :create, ClassLevel
+    %a{href: new_character_class_level_path(@character)}
+      %span.glyphicon.glyphicon-plus
+  - if can? :edit, @class_level
+    %a{href: edit_character_class_level_path(@character, @class_level)}
+      %span.glyphicon.glyphicon-pencil
+  - if can? :destroy, @class_level
+    %a{href: character_class_level_path(@character, @class_level), data: {method: :delete, confirm: "Are you sure you want to delete #{@class_level}?"}}
+      %span.glyphicon.glyphicon-trash
+%h1.title #{link_me @character} #{@class_level}
+%p
+  %b Character:
+  = @class_level.character
+%p
+  %b Character class:
+  = @class_level.character_class
+%p
+  %b Class level:
+  = @class_level.class_level

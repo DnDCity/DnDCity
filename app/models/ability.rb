@@ -13,23 +13,24 @@ class Ability
       can :manage, FeatType
       can :manage, Feat
       can :manage, Spell
-      
     end
-
 
     if user.persisted? # user exists
        #can :read, :all
-       can :manage, Campaign, user_id: user.id
-       can :manage, Character, user_id: user.id
+       can :manage, Campaign, user_id: user.id # you can manage your own
+       can :manage, Character, user_id: user.id # you can manage your own
        can :create, Character
        can :create, Campaign
     end
     
     # Anybody
-    can :read, Campaign#, public: true
-    can :read, Character#, public: true
+    can :read, Campaign, public: true # only allow public viewing if public
+    can :read, Character, public: true # only allow public viewing if public
     can :read, FeatType
     can :read, Feat
+    can :read, CharacterClass
+    can :read, Race
+    can :read, Size
     #
     # The first argument to `can` is the action you are giving the user 
     # permission to do.

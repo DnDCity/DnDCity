@@ -1,0 +1,14 @@
+.pull-right
+  %a{href: character_class_levels_path(@character)}
+    %span.glyphicon.glyphicon-list
+  -if can? :read, ClassLevel
+    %a{href: character_class_level_path(@character,@class_level)}
+      %span.glyphicon.glyphicon-file
+  -if can? :create, ClassLevel
+    %a{href: new_character_class_level_path(@character)}
+      %span.glyphicon.glyphicon-plus
+  - if can? :destroy, @class_level
+    %a{href: character_class_level_path(@character,@class_level), data: {method: :delete, confirm: "Are you sure you want to delete #{@class_level}?"}}
+      %span.glyphicon.glyphicon-trash
+%h1.title Editing Class level #{@class_level} for #{@character}
+= render 'form'

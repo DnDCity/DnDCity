@@ -1,81 +1,106 @@
 .pull-right
   = link_to 'Edit', edit_character_path(@character)
   = link_to 'Back', characters_path
-%p User:
-%p= @character.user.name
-%h2= @character.name
-- if @character.public && current_user == @character.user
-  .warn [Publicly Visible]
+  %p
+    User:
+    = @character.user.name
+  -if @character.public && current_user == @character.user
+    .warn [Publicly Visible]
+%h2
+  = @character.name
+
+
+.sectiontabs.col-md-6
+  %ul#myTab.nav.nav-tabs
+    %li.active
+      %a{"data-toggle" => "tab", href: "#classification"} Classification
+    %li
+      %a{"data-toggle" => "tab", href: "#philosophies"} Philosophies
+    %li
+      %a{"data-toggle" => "tab", href: "#physicalapp"} Physial Appearance
+    %li
+      %a{"data-toggle" => "tab", href: "#stats"} Base Stats
+  .tab-content
+    #classification.tab-pane.fade.in.active
+      %table.showchar
+        %tr
+        %th Race
+        %th Size
+        %th Gender
+        %tr
+        %td
+          = link_me @character.race
+        %td  
+          = link_me @character.size 
+        %td
+          = @character.gender
+      %table.showchar
+        %tr
+          %th Class
+          %th Level
+          %td= link_to "New", new_character_class_level_path(@character)
+        - @character.class_levels.each do |cl|
+          %tr
+            %td=cl.character_class.name
+            %td=cl.class_level
+            %td= link_to "Edit", edit_character_class_level_path(@character,cl)
+    #philosophies.tab-pane.fade
+      %table.showchar
+        %tr
+        %th Alignment
+        %th Religion
+        %tr
+        %td
+          = @character.alignment
+        %td
+          = @character.religion
+    #physicalapp.tab-pane.fade
+      %table.showchar
+        %th Height
+        %th Weight
+        %th Age
+        %th Looks
+        %tr
+        %td
+          = @character.height
+        %td
+          = @character.weight
+        %td
+          = @character.age
+        %td
+          = @character.looks
+
+    #stats.tab-pane.fade
+      %table.showchar
+        %tr
+          %th Ability
+          %th Base
+          %th Race
+          %th Temp
+          %th Total
+          %th Mod
+        - Character::ABILITIES.each do |ability|
+          %tr
+          .ability.str
+          %th= Character::ABILITY_NAMES[ability]
+          %td
+            = @character.send "base_#{ability}"
+          %td
+            = @character.send "race_#{ability}"
+          %td
+            = @character.send "temp_#{ability}"
+          %td
+            = @character.send ability
+          %td
+            = @character.send "#{ability}_modifier"
+
+          
 
 .descriptors
-%table.showchar
-  %tr
-  %th Race
-  %th Size
-  %th Gender
-  %tr
-  %td
-    = link_me @character.race
-  %td  
-    = link_me @character.size 
-  %td
-    = @character.gender
-  %tr
-  %th Alignment
-  %th Religion
-  %th Height
-  %tr
-  %td
-    = @character.alignment
-  %td
-    = @character.religion
-  %td
-    = @character.height
-  %tr
-  %th Weight
-  %th Age
-  %th Looks
-  %tr
-  %td
-    = @character.weight
-  %td
-    = @character.age
-  %td
-    = @character.looks 
-  %tr
-  %th.showchardesc{:colspan => 3} Description
-  %tr
-  %td{:colspan => 3}
-    = @character.desc
-
-
-.abilities
-%table.showchar
-  %tr
-  .ability.str
-  %th Strength
-  .ability.dex
-  %th Dexterity
-  .ability.con
-  %th Constitution
-  .ability.int
-  %th Intelligence
-  .ability.wis
-  %th Wisdom
-  .ability.cha
-  %th Charisma
-  %tr
-  %td
-    = @character.base_str
-  %td
-    = @character.base_dex
-  %td
-    = @character.base_con
-  %td
-    = @character.base_int
-  %td
-    = @character.base_wis
-  %td
-    = @character.base_cha
-
-
+  .mainchardesc.row
+    %table.showchard
+      %tr.showchard
+      %th.showchard2 Description
+      %tr.showchard
+      %td.showchard
+        = @character.desc

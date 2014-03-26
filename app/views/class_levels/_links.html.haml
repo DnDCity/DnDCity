@@ -1,0 +1,13 @@
+      -if can? :create, ClassLevel
+        %a{href: new_character_class_level_path(@character)}
+          %span.glyphicon.glyphicon-plus
+        %a{href: class_level_path(class_level)}
+          %span.glyphicon.glyphicon-file
+        - if can? :edit, class_level
+          %a{href: edit_class_level_path(class_level)}
+            %span.glyphicon.glyphicon-pencil
+        - if can? :destroy, class_level
+          %a{href: class_level_path(class_level), data: {method: :delete, confirm: "Are you sure you want to delete #{class_level}?"}}
+            %span.glyphicon.glyphicon-trash
+
+

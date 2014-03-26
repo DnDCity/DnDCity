@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140224223249) do
+ActiveRecord::Schema.define(version: 20140307194404) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,16 +31,16 @@ ActiveRecord::Schema.define(version: 20140224223249) do
     t.text     "desc"
     t.string   "hit_die"
     t.string   "alignment_restrictions"
-    t.float    "base_attack_bonus"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "class_abilities"
-    t.float    "base_fort_progression"
-    t.float    "base_ref_progression"
-    t.float    "base_will_progression"
     t.integer  "skill_points_per_level"
     t.string   "key"
     t.string   "class_type"
+    t.string   "bab_type"
+    t.string   "fort_type"
+    t.string   "ref_type"
+    t.string   "will_type"
   end
 
   create_table "character_levels", force: true do |t|
@@ -78,9 +78,28 @@ ActiveRecord::Schema.define(version: 20140224223249) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "public",     default: false
+    t.integer  "temp_str",   default: 0
+    t.integer  "temp_dex",   default: 0
+    t.integer  "temp_con",   default: 0
+    t.integer  "temp_int",   default: 0
+    t.integer  "temp_wis",   default: 0
+    t.integer  "temp_cha",   default: 0
+    t.integer  "base_hp",    default: 0
   end
 
   add_index "characters", ["user_id"], name: "index_characters_on_user_id", using: :btree
+
+  create_table "class_levels", force: true do |t|
+    t.integer  "character_id"
+    t.integer  "character_class_id"
+    t.integer  "class_level"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "class_levels", ["character_class_id"], name: "index_class_levels_on_character_class_id", using: :btree
+  add_index "class_levels", ["character_id", "character_class_id"], name: "index_class_levels_on_character_id_and_character_class_id", unique: true, using: :btree
+  add_index "class_levels", ["character_id"], name: "index_class_levels_on_character_id", using: :btree
 
   create_table "class_skills", force: true do |t|
     t.integer  "character_class_id"
@@ -164,7 +183,10 @@ ActiveRecord::Schema.define(version: 20140224223249) do
     t.text     "desc"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "key"
   end
+
+  add_index "races", ["key"], name: "index_races_on_key", using: :btree
 
   create_table "roles", force: true do |t|
     t.string   "name"
@@ -182,7 +204,10 @@ ActiveRecord::Schema.define(version: 20140224223249) do
     t.text     "desc"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "modifier"
   end
+
+  add_index "sizes", ["modifier"], name: "index_sizes_on_modifier", using: :btree
 
   create_table "skills", force: true do |t|
     t.string   "name"

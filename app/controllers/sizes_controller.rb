@@ -1,5 +1,5 @@
 class SizesController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, except: [:index, :show]
   before_action :build_size, only: [:create]
   # before_action :set_size, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource

@@ -15,18 +15,7 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
-function showDiv2(){
- document.getElementById("sec2").style.display = "block";
-}
-function showDiv3(){
- document.getElementById("sec3").style.display = "block";
-}
-function showDiv4(){
- document.getElementById("sec4").style.display = "block";
-}
-function showDiv5(){
- document.getElementById("sec5").style.display = "block";
- document.getElementById("sec6").style.display = "block";
- document.getElementById("sec7").style.display = "block";
-
-}
+$('#myTab a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})

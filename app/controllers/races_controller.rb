@@ -1,5 +1,5 @@
 class RacesController < ApplicationController
-  before_filter :authenticate_user! # see devise
+  before_filter :authenticate_user!, except: [:index, :show]
   before_action :build_race, only: [:create]
   # before_action :set_race, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource # see cancan

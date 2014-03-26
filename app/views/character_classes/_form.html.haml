@@ -3,14 +3,14 @@
 
   .form-inputs
     = f.input :name
-    = f.input :desc
     = f.input :class_abilities
     = f.input :hit_die
-    = f.input :base_attack_bonus
-    = f.input :base_fort_progression
-    = f.input :base_ref_progression
-    = f.input :base_will_progression
+    = f.input :bab_type, collection: CharacterClass::BAB_TYPES
+    = f.input :fort_type, collection: CharacterClass::SAVE_TYPES
+    = f.input :ref_type, collection: CharacterClass::SAVE_TYPES
+    = f.input :will_type, collection: CharacterClass::SAVE_TYPES
     = f.input :skill_points_per_level
+    = f.input :desc
 
   .form-actions
     = f.button :submit

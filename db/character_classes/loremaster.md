@@ -1,9 +1,3 @@
-# Loremaster
-
-##### Hit Die
-
-d4.
-
 #### Requirements
 
 To qualify to become a loremaster, a character must fulfill all the following criteria.
@@ -19,14 +13,6 @@ Any three metamagic or item creation feats, plus [Skill Focus](/srd/feats.htm#sk
 ##### Spells
 
 Able to cast seven different divination spells, one of which must be 3rd level or higher.
-
-#### Class Skills
-
-The loremaster’s class skills (and the key ability for each skill) are [Appraise](/srd/skills/appraise.htm) (Int), [Concentration](/srd/skills/concentration.htm) (Con), [Craft](/srd/skills/craft.htm) (alchemy) (Int), [Decipher Script](/srd/skills/decipherScript.htm) (Int), [Gather Information](/srd/skills/gatherInformation.htm) (Cha), [Handle Animal](/srd/skills/handleAnimal.htm) (Cha), [Heal](/srd/skills/heal.htm) (Wis), [Knowledge](/srd/skills/knowledge.htm) (all skills taken individually) (Int), [Perform](/srd/skills/perform.htm) (Cha), [Profession](/srd/skills/profession.htm) (Wis), [Speak Language](/srd/skills/speakLanguage.htm) (None), [Spellcraft](/srd/skills/spellcraft.htm) (Int), and [Use Magic Device](/srd/skills/useMagicDevice.htm) (Cha).
-
-##### Skill Points at Each Level
-
-4 + Int modifier.
 
 #### Class Features
 

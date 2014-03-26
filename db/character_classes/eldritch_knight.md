@@ -1,9 +1,3 @@
-# Eldritch Knight
-
-##### Hit Die
-
-d6.
-
 #### Requirements
 
 To qualify to become an eldritch knight, a character must fulfill all the following criteria.
@@ -15,14 +9,6 @@ Must be [proficient](/srd/combat/combatModifiers.htm#weaponArmorAndShieldProfici
 ##### Spells
 
 Able to cast 3rd-level arcane spells.
-
-#### Class Skills
-
-The eldritch knight’s class skills (and the key ability for each skill) are [Concentration](/srd/skills/concentration.htm) (Con), [Craft](/srd/skills/craft.htm) (Int), [Decipher Script](/srd/skills/decipherScript.htm) (Int), [Jump](/srd/skills/jump.htm) (Str), [Knowledge](/srd/skills/knowledge.htm) (arcana) (Int), [Knowledge](/srd/skills/knowledge.htm) (nobility and royalty) (Int), [Ride](/srd/skills/ride.htm) (Dex), [Sense Motive](/srd/skills/senseMotive.htm) (Wis), [Spellcraft](/srd/skills/spellcraft.htm) (Int), and [Swim](/srd/skills/swim.htm) (Str).
-
-##### Skill Points at Each Level
-
-2 + Int modifier.
 
 #### Class Features
 
