@@ -13,9 +13,6 @@ Then(/^I should see a table listing the sizes\.$/) do
         within(".modifier") do
           page.should have_content(size.modifier)
         end
-        within(".desc") do
-          page.should have_content(size.desc)
-        end
       end
     end
   end
@@ -62,5 +59,26 @@ end
 
 When(/^I go to the new size path$/) do
   visit new_size_path
+end
+
+Given(/^there is a size of "(.*?)" with a modifier of "(\d+)"$/) do |name, modifier|
+  @size = Size.create!(name: name, modifier: modifier)
+end
+
+Given(/^there is a size of "(.*?)" with a modifier of "(\d+)" and a desc of "(.*?)"$/) do |name, modifier, desc|
+  @size = Size.create!(name: name, modifier: modifier, desc: desc)
+end
+
+
+When(/^I go to the edit size path for the size$/) do
+  visit edit_size_path(@size)
+end
+
+When(/^I go to the size path for the size$/) do
+  visit size_path(@size)
+end
+
+Then(/^there should not be a size of "(.*?)"$/) do |name|
+  Size.where(name: name).count.should eq 0
 end
 

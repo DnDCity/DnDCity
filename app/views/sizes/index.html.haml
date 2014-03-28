@@ -11,7 +11,6 @@
     %th AC
     %th Attack
     %th Hide
-    %th Desc
     -if can? :create, Size
       %th
         %a{href: new_size_path}
@@ -27,7 +26,6 @@
       %td.ac= bonus size.ac
       %td.attack= bonus size.attack
       %td.hide_bonus= bonus size.hide
-      %td.desc= size.desc
       - if can? :edit, size
         %td
           %a{href: edit_size_path(size)}

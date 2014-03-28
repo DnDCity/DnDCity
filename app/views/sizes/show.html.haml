@@ -1,15 +1,19 @@
 .pull-right
   %a{href: sizes_path}
     %span.glyphicon.glyphicon-list
+    List
   -if can? :create, Size
     %a{href: new_size_path}
       %span.glyphicon.glyphicon-plus
+      New
   - if can? :edit, @size
     %a{href: edit_size_path(@size)}
       %span.glyphicon.glyphicon-pencil
+      Edit
   - if can? :destroy, @size
     %a{href: size_path(@size), data: {method: :delete, confirm: "Are you sure you want to delete #{@size}?"}}
       %span.glyphicon.glyphicon-trash
+      Delete
 %h1.title Size #{@size}
 %p
   %b Name:

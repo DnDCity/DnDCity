@@ -84,3 +84,8 @@ Then(/^I should see an? \.?(\w+) of "(.*?)"$/) do |css_class,text|
   end
 end
 
+Then(/^I should not see an? \.?(\w+) of "(.*?)"$/) do |css_class,text|
+  within(".#{css_class}") do
+    page.should_not have_content text
+  end
+end
