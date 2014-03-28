@@ -1,0 +1,14 @@
+.pull-right
+  %a{href: weapons_path}
+    %span.glyphicon.glyphicon-list
+  -if can? :read, Weapon
+    %a{href: weapon_path}
+      %span.glyphicon.glyphicon-file
+  -if can? :create, Weapon
+    %a{href: new_weapon_path}
+      %span.glyphicon.glyphicon-plus
+  - if can? :destroy, @weapon
+    %a{href: weapon_path(@weapon), data: {method: :delete, confirm: "Are you sure you want to delete #{@weapon}?"}}
+      %span.glyphicon.glyphicon-trash
+%h1.title Editing Weapon #{@weapon}
+= render 'form'

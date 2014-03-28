@@ -1,0 +1,52 @@
+-if can? :create, Weapon
+  .pull-right
+    %a{href: new_weapon_path}
+      %span.glyphicon.glyphicon-plus
+%h1.title Listing Weapons
+
+%table
+  %tr
+    %th Name
+    %th Desc
+    %th User
+    %th Damages
+    %th Damagem
+    %th Critical
+    %th Rangeincrement
+    %th Weight
+    %th Isthrowable
+    %th Islight
+    %th Isonehanded
+    %th Istwohanded
+    %th Type
+    %th
+      -if can? :create, Weapon
+        %a{href: new_weapon_path}
+          %span.glyphicon.glyphicon-plus
+
+  - @weapons.each do |weapon|
+    %tr
+      %td= weapon.name
+      %td= weapon.desc
+      %td= weapon.user
+      %td= weapon.damages
+      %td= weapon.damagem
+      %td= weapon.critical
+      %td= weapon.rangeincrement
+      %td= weapon.weight
+      %td= weapon.isthrowable
+      %td= weapon.islight
+      %td= weapon.isonehanded
+      %td= weapon.istwohanded
+      %td= weapon.type
+      %td
+        %a{href: weapon_path(weapon)}
+          %span.glyphicon.glyphicon-file
+        - if can? :edit, weapon
+          %a{href: edit_weapon_path(weapon)}
+            %span.glyphicon.glyphicon-pencil
+        - if can? :destroy, weapon
+          %a{href: weapon_path(weapon), data: {method: :delete, confirm: "Are you sure you want to delete #{weapon}?"}}
+            %span.glyphicon.glyphicon-trash
+
+

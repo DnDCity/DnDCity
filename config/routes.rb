@@ -1,5 +1,7 @@
 DnDCity::Application.routes.draw do
 
+  resources :weapons
+
   resources :consumable_items
 
   resources :class_skills

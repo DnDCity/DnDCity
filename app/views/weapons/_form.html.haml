@@ -1,0 +1,20 @@
+= simple_form_for(@weapon) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :desc
+    = f.association :user
+    = f.input :damages
+    = f.input :damagem
+    = f.input :critical
+    = f.input :rangeincrement
+    = f.input :weight
+    = f.input :isthrowable
+    = f.input :islight
+    = f.input :isonehanded
+    = f.input :istwohanded
+    = f.input :type
+
+  .form-actions
+    = f.button :submit

@@ -1,0 +1,52 @@
+.pull-right
+  %a{href: weapons_path}
+    %span.glyphicon.glyphicon-list
+  -if can? :create, Weapon
+    %a{href: new_weapon_path}
+      %span.glyphicon.glyphicon-plus
+  - if can? :edit, @weapon
+    %a{href: edit_weapon_path(@weapon)}
+      %span.glyphicon.glyphicon-pencil
+  - if can? :destroy, @weapon
+    %a{href: weapon_path(@weapon), data: {method: :delete, confirm: "Are you sure you want to delete #{@weapon}?"}}
+      %span.glyphicon.glyphicon-trash
+%h1.title Weapon #{@weapon}
+%p
+  %b Name:
+  = @weapon.name
+%p
+  %b Desc:
+  = @weapon.desc
+%p
+  %b User:
+  = @weapon.user
+%p
+  %b Damages:
+  = @weapon.damages
+%p
+  %b Damagem:
+  = @weapon.damagem
+%p
+  %b Critical:
+  = @weapon.critical
+%p
+  %b Rangeincrement:
+  = @weapon.rangeincrement
+%p
+  %b Weight:
+  = @weapon.weight
+%p
+  %b Isthrowable:
+  = @weapon.isthrowable
+%p
+  %b Islight:
+  = @weapon.islight
+%p
+  %b Isonehanded:
+  = @weapon.isonehanded
+%p
+  %b Istwohanded:
+  = @weapon.istwohanded
+%p
+  %b Type:
+  = @weapon.type

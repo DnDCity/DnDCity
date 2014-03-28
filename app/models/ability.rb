@@ -13,14 +13,17 @@ class Ability
       can :manage, FeatType
       can :manage, Feat
       can :manage, Spell
+      can :manage, Weapon
     end
 
     if user.persisted? # user exists
        #can :read, :all
        can :manage, Campaign, user_id: user.id # you can manage your own
        can :manage, Character, user_id: user.id # you can manage your own
+       can :manage, Weapon, user_id: user.id
        can :create, Character
        can :create, Campaign
+       can :create, Weapon
     end
     
     # Anybody
