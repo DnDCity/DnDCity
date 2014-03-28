@@ -5,4 +5,17 @@ class Size < ActiveRecord::Base
   def to_s
     name
   end
+
+  def ac
+    modifier
+  end
+
+  def attack
+    modifier
+  end
+
+  def hide
+    4 * modifier
+  end
+
 end
