@@ -79,3 +79,6 @@ pickle-email-*.html
 
 # Ignore application configuration
 /config/application.yml
+
+# ignore gimp files .. they are binary and overly large
+*.xcf

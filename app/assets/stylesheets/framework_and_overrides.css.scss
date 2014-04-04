@@ -2,6 +2,21 @@
 @import "compass";
 @import "bootstrap";
 
+// http://colorschemedesigner.com/#3i200w0w0w0w0
+$backgroundColor: #ffffff;
+$fontColor: #333333;
+$primaryColor: #009999; // teal
+$primaryGrey: #1d7373;
+$primaryDark: #006363;
+$primaryPale: #33cccc;
+$primaryLight: #5ccccc;
+$complimentColor: #ff7400; // Orange
+$complimentGrey: #bf7130;
+$complimentDark: #a64b00;
+$complimentPale: #ff9640;
+$complimentLight: #ffb273;
+
+
 // make all images responsive by default
 img {
   @extend .img-responsive;
@@ -42,13 +57,13 @@ img {
 
 //TABS, BUTTONS, AND ETC.
 .subbutton{
- background-color: #bb9955;
+ background-color: $primaryColor;
 }
 .nav-tabs > li.active > a, .nav-tabs > li.active >a:hover, .nav-tabs > li.active > a:focus{
- background-color: #bb9955;  
+ background-color: $primaryColor;  
 }
 .nav-tabs > li > a:hover{
- background-color: #bb9955;
+ background-color: $primaryColor;
 } 
 
 // THESE ARE EXAMPLES YOU CAN MODIFY
@@ -74,7 +89,6 @@ img {
 // to make views framework-neutral
 main {
   @extend .container;
-  @include background(linear-gradient(top, #ffffee, #ffeecc));
   padding-bottom: 80px;
   width: 100%;
   margin-top: 51px; // accommodate the navbar
