@@ -7,6 +7,8 @@ img {
   margin: 0 auto;
   }
 img.index{
+ width: 250px;
+ height: 300px;
  }
 // override for the 'Home' navigation link
 .navbar-brand {
@@ -20,10 +22,7 @@ img.index{
  right: 30%;
 }
 .carousel-inner{
- height: 300px;
- width: 250px;
- padding: 50px;
-}
+ }
 .carousel-caption{
 }
 .carousel-indicators{
