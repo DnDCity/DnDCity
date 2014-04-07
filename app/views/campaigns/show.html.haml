@@ -1,21 +1,35 @@
-.pull-right
-  %a{href: campaigns_path}
-    %span.glyphicon.glyphicon-list
-  -if can? :create, Campaign
-    %a{href: new_campaign_path}
-      %span.glyphicon.glyphicon-plus
-  - if can? :edit, @campaign
-    %a{href: edit_campaign_path(@campaign)}
-      %span.glyphicon.glyphicon-pencil
-  - if can? :destroy, @campaign
-    %a{href: campaign_path(@campaign), data: {method: :delete, confirm: "Are you sure you want to delete #{@campaign}?"}}
-      %span.glyphicon.glyphicon-trash
-%h1.title Campaign #{@campaign}
-%p
-  %b Created by:
-  = @campaign.user
-%p
-  %b Public:
-  = @campaign.public
-:markdown
-  #{@campaign.desc}
+.row
+  .col-md-8
+    .pull-right
+      %a{href: campaigns_path}
+        %span.glyphicon.glyphicon-list
+        Index
+      -if can? :create, Campaign
+        %a{href: new_campaign_path}
+          %span.glyphicon.glyphicon-plus
+          New
+      - if can? :edit, @campaign
+        %a{href: edit_campaign_path(@campaign)}
+          %span.glyphicon.glyphicon-pencil
+          Edit
+      - if can? :destroy, @campaign
+        %a{href: campaign_path(@campaign), data: {method: :delete, confirm: "Are you sure you want to delete #{@campaign}?"}}
+          %span.glyphicon.glyphicon-trash
+          Delete
+    %h1.title Campaign #{@campaign}
+    %p
+      %b Created by:
+      = @campaign.user
+    %p
+      %b Public:
+      = @campaign.public
+    :markdown
+      #{@campaign.desc}
+  .col-md-4
+    %h3 Owner
+    = link_me @campaign.user
+    %h3 Members
+    - if can? :invite, @campaign
+      = link_to "Invite Players", new_campaign_member_path(@campaign)
+
+

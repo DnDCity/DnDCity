@@ -1,10 +1,16 @@
 %h1.title Invite Members
 %form
   .inputs
-    %p Enter the email address of the people you would like to invite to this campaign.
-    %textarea{name: :emails}
-    %p Enter a message to send to the people you are inviting.
-    %textarea{name: :message}
+    .control-group.text.emails
+      %p Enter the email address of the people you would like to invite to this campaign.
+      %label.text.required.control-label{for: :emails} Emails
+      .controls
+        %textarea.text.required{name: :emails}
+    .control-group.text.message
+      %p Enter a message to send to the people you are inviting.
+      %label.text.optional.control-label{for: :message} Message
+      .controls
+        %textarea.text.optional{name: :message}
   .actions
     %input{type: :submit, value: "Send Invitations"}
 

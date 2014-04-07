@@ -7,11 +7,12 @@ Feature: Organizer Invites Players to their Campaign
     Given that I am a user
     And that I have a campaign named "The Lord of the Rings"
     And I am looking at the campaign
-    When I click on 'Invite Players'
-    And I enter names and email addresses:
-      | name           | email              |
-      | Frodo Baggins  | frodo@bagginds.com |
-      | Samwise Gamgee | sam@gamgee.com     |
+    When I click on "Invite Players"
+    And I enter the email addresses:
+      | email              |
+      | frodo@baggends.com |
+      | sam@gamgee.com     |
+    And I enter a message of "Come with me and have a grand adventure"
     And I click on "Send Invitations"
     Then the players should be sent an email inviting them to join my Campaign.
     And the players should have entries in the User table
