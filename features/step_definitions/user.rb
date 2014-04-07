@@ -59,3 +59,31 @@ Then(/^I should be on the page for my new campaign\.$/) do
   current_path.should eq campaign_path(@campaign) 
 end
 
+Given(/^I have a campaign named "(.*?)"$/) do |name|
+	@campaign = @user.campaigns.create! name: name
+end
+
+Given(/^I choose to edit my campaign$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+When(/^I specify a new name of "(.*?)"$/) do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^my campaign should now be called "(.*?)"$/) do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+
+Given(/^there is a user "(.*?)"$/) do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+
+When(/^I invite "(.*?)" to my campaign$/) do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^they will get an email inviting them to my campaign\.$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
