@@ -15,6 +15,10 @@ class Ability
       can :manage, Spell
     end
 
+    if user.has_role? :editor
+      can :manage, Size
+    end
+
     if user.persisted? # user exists
        #can :read, :all
        can :manage, Campaign, user_id: user.id # you can manage your own
@@ -29,6 +33,8 @@ class Ability
     can :read, FeatType
     can :read, Feat
     can :read, CharacterClass
+    can :read, Race
+    can :read, Size
     #
     # The first argument to `can` is the action you are giving the user 
     # permission to do.

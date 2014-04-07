@@ -1,0 +1,13 @@
+
+http://colorschemedesigner.com/#3i200w0w0w0w0
+
+Main color: 
+  White background 
+  Black text
+
+Primary Color: Teal
+  009999  1D7373  006363  33CCCC  5CCCCC
+
+Complementary Color: Orange
+  FF7400  BF7130  A64B00  FF9640  FFB273
+

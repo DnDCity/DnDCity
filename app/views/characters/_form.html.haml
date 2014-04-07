@@ -37,17 +37,25 @@
             = f.input :age
             = f.input :looks 
         #stats.tab-pane.fade
-          .main2.row
-          .section5.col-md-2{id: "sec5"}
-            = f.input :base_str
-            = f.input :base_dex
-            = f.input :base_con
-          .section6.col-md-2{id: "sec6"}
-            = f.input :base_int
-            = f.input :base_wis
-            = f.input :base_cha
-          .section7.col-md-2{id: "sec7"}
-            = f.input :current_hp
+          %table
+            %tr
+              %th Ability
+              %th Base
+              %th Temp
+            - Character::ABILITIES.each do |ability|
+              %tr
+                %th= Character::ABILITY_NAMES[ability]
+                %td= f.input_field "base_#{ability}", class: 'ability'
+                %td= f.input_field "temp_#{ability}", class: 'ability'
+          %table
+            %tr
+              %th 
+              %th Base
+              %th Current
+            %tr
+              %th HP
+              %td= f.input_field :base_hp, class: :ability
+              %td= f.input_field :current_hp, class: :ability
   .mainbutton.row
   .sectionbutton.col-md-2
     .form-actions

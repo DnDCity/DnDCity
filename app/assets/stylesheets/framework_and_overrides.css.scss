@@ -1,5 +1,21 @@
 // import the CSS framework
+@import "compass";
 @import "bootstrap";
+
+// http://colorschemedesigner.com/#3i200w0w0w0w0
+$backgroundColor: #ffffff;
+$fontColor: #333333;
+$primaryColor: #009999; // teal
+$primaryGrey: #1d7373;
+$primaryDark: #006363;
+$primaryPale: #33cccc;
+$primaryLight: #5ccccc;
+$complimentColor: #ff7400; // Orange
+$complimentGrey: #bf7130;
+$complimentDark: #a64b00;
+$complimentPale: #ff9640;
+$complimentLight: #ffb273;
+
 
 // make all images responsive by default
 img {
@@ -30,7 +46,7 @@ img.index{
 .section1{
  border-style: groove;
  border-color: #917214;
- height: 241px;
+ min-height: 241px;
  width: 300px;
  background-color: #fff;
 }
@@ -39,9 +55,10 @@ img.index{
 .sectioncamp{
  border-style: groove;
  border-color: #917214;
- height: 200px;
+ min-height: 200px;
  width: 225px;
  background-color: #fff;
+ padding-bottom: 5px;
 }
 
 .section2, .section3, .section4, .section5, .section6, .section7, .sectiontest{
@@ -59,13 +76,13 @@ img.index{
 
 //TABS, BUTTONS, AND ETC.
 .subbutton{
- background-color: #AD5C5C;
+ background-color: $primaryColor;
 }
 .nav-tabs > li.active > a, .nav-tabs > li.active >a:hover, .nav-tabs > li.active > a:focus{
- background-color: #AD5C5C;  
+ background-color: $primaryColor;  
 }
 .nav-tabs > li > a:hover{
- background-color: #AD5C5C;
+ background-color: $primaryColor;
 } 
 
 // THESE ARE EXAMPLES YOU CAN MODIFY
@@ -91,17 +108,13 @@ img.index{
 // to make views framework-neutral
 main {
   @extend .container;
-  background: -webkit-linear-gradient(#E8DA8E, #D9AC27); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#E8DA8E, #D9AC27); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#E8DA8E, #D9AC27); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#E8DA8E, #D9AC27); /* Standard syntax */
   padding-bottom: 80px;
   width: 100%;
   margin-top: 51px; // accommodate the navbar
   border-top-style: groove;
-  border-top-color: #BDAE60;
+//  border-top-color: #BDAE60;
   border-bottom-style: groove;
-  border-bottom-color: #917214;
+//  border-bottom-color: #917214;
   }
 section {
   @extend .row;
