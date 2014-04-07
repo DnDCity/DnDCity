@@ -1,13 +1,16 @@
 -# navigation styled for Bootstrap 3.0
 %nav.navbar.navbar-default.navbar-fixed-top
   .container
+    .navbar-left
+      %img.icon{src: 'assets/icon.png'}
     .navbar-header
       %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
         %span.sr-only Toggle navigation
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.navbar-brand{href: root_path} DnD&sdot;City
+      %a.navbar-brand{href: root_path}
+        DnD&sdot;City
     .collapse.navbar-collapse
       %ul.nav.navbar-nav
         = render 'layouts/navigation_links'

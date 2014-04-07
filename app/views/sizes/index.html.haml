@@ -4,29 +4,31 @@
       %span.glyphicon.glyphicon-plus
 %h1.title Listing Sizes
 
-%table
+%table.sizes
   %tr
     %th Name
     %th Modifier
-    %th Desc
-    %th
-      -if can? :create, Size
+    %th AC
+    %th Attack
+    %th Hide
+    -if can? :create, Size
+      %th
         %a{href: new_size_path}
           %span.glyphicon.glyphicon-plus
+          New Size
 
   - @sizes.each do |size|
-    %tr
-      %td= size.name
-      %td= size.modifier
-      %td= size.desc
-      %td
+    %tr{class: "size_#{size.id}"}
+      %td.name
         %a{href: size_path(size)}
-          %span.glyphicon.glyphicon-file
-        - if can? :edit, size
+          = size.name
+      %td.modifier= bonus size.modifier
+      %td.ac= bonus size.ac
+      %td.attack= bonus size.attack
+      %td.hide_bonus= bonus size.hide
+      - if can? :edit, size
+        %td
           %a{href: edit_size_path(size)}
             %span.glyphicon.glyphicon-pencil
-        - if can? :destroy, size
-          %a{href: size_path(size), data: {method: :delete, confirm: "Are you sure you want to delete #{size}?"}}
-            %span.glyphicon.glyphicon-trash
-
+            Edit
 
