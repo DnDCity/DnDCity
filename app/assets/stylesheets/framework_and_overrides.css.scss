@@ -22,13 +22,30 @@ img {
   @extend .img-responsive;
   margin: 0 auto;
   }
+img.index{
+ width: 250px;
+ height: 300px;
+ }
 // override for the 'Home' navigation link
 .navbar-brand {
   font-size: inherit;
   }
 //NIT-PICKY STYLING FOR SECTIONS
+
+.carousel{
+ position: absolute;
+ top: 0%;
+ right: 30%;
+}
+.carousel-inner{
+ }
+.carousel-caption{
+}
+.carousel-indicators{
+}
 .section1{
  border-style: groove;
+ border-color: #917214;
  min-height: 241px;
  width: 300px;
  background-color: #fff;
@@ -37,6 +54,7 @@ img {
 
 .sectioncamp{
  border-style: groove;
+ border-color: #917214;
  min-height: 200px;
  width: 225px;
  background-color: #fff;
@@ -45,6 +63,7 @@ img {
 
 .section2, .section3, .section4, .section5, .section6, .section7, .sectiontest{
  border-style: groove;
+ border-color: #917214;
  height: 200px;
  width: 200px;
  background-color: #fff;
@@ -92,8 +111,10 @@ main {
   padding-bottom: 80px;
   width: 100%;
   margin-top: 51px; // accommodate the navbar
-  // border-top-style: groove;
-  // border-bottom-style: groove;
+  border-top-style: groove;
+//  border-top-color: #BDAE60;
+  border-bottom-style: groove;
+//  border-bottom-color: #917214;
   }
 section {
   @extend .row;

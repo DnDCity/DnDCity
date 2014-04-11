@@ -1,5 +1,5 @@
 .center
-  %img{src: 'assets/dice_480.png'}
+  %img{src: '/assets/dice_480.png'}
 
 -if user_signed_in?
   %table.home1
@@ -16,3 +16,4 @@
     %th.home1= link_to 'Login', new_user_session_path
     %tr
     %th.home3= link_to 'Sign up', new_user_registration_path
+
