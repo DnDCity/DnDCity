@@ -16,6 +16,10 @@ class Ability
       can :manage, Weapon
     end
 
+    if user.has_role? :editor
+      can :manage, Size
+    end
+
     if user.persisted? # user exists
        #can :read, :all
        can :manage, Campaign, user_id: user.id # you can manage your own
