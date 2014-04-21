@@ -15,20 +15,20 @@ Feature: User Creates a Campaign
     Given I am a logged in user 
     And I have a campaign named "Quest for the magic milk bottle"
     And I choose to edit my campaign
-    When I specify a new name of "Epic quest for Mighty Milk"
-    And I submit my selection
+    When I enter a Name of "Epic quest for Mighty Milk"
+    And I click on "Update Campaign"
     Then my campaign should now be called "Epic quest for Mighty Milk"
 
-  Scenario: User invites existing user to their campaign
-    Given I am logged into my account
-    And I have a campaign named "Milk Quest"
-    And there is a user "george@fred.com"
-    When I invite "george@fred.com" to my campaign
-    Then they will get an email inviting them to my campaign.
-
-  Scenario: User invites non user to their campaign
-    Given I am logged into my account
-    And I have a campaign named "Milk Quest"
-    When I invite "george@fred.com" to my campaign
-    Then they will get an email inviting them to my campaign.
+#  Scenario: User invites existing user to their campaign
+#    Given I am a logged in user 
+#    And I have a campaign named "Milk Quest"
+#    And there is a user "george@fred.com"
+#    When I invite "george@fred.com" to my campaign
+#    Then they will get an email inviting them to my campaign.
+#
+#  Scenario: User invites non user to their campaign
+#    Given I am logged into my account
+#    And I have a campaign named "Milk Quest"
+#    When I invite "george@fred.com" to my campaign
+#    Then they will get an email inviting them to my campaign.
 

@@ -1,36 +1,42 @@
+%h1.title Campaigns
 .row
-  .col-md-6
-    %h1.title My Campaigns
-    %table
-      %tr
-        %th Name
-        %th User
-        %th
-          -if can? :create, Campaign
-            %a{href: new_campaign_path}
-              %span.glyphicon.glyphicon-plus
-              New
-
-      - @campaigns.each do |campaign|
-        %tr
-          %td
+  .col-md-4
+    - if not @campaigns.empty?
+      %h2 You Own
+      %ul
+        - @campaigns.each do |campaign|
+          %li
+            - if can? :edit, campaign
+              .pull-right
+                %a{href: edit_campaign_path(campaign)}
+                  %span.glyphicon.glyphicon-pencil
+                  Edit
             %a{href: campaign_path(campaign)}
               = campaign.name
-          %td= campaign.user
-          %td
-            - if can? :edit, campaign
-              %a{href: edit_campaign_path(campaign)}
-                %span.glyphicon.glyphicon-pencil
-                Edit
-
     -if can? :create, Campaign
-      %h3
-        %a{href: new_campaign_path}
-          %span.glyphicon.glyphicon-plus
-          Create a Campaign
+      %a.btn.btn-large.btn-primary{href: new_campaign_path}
+        Create a Campaign
+  .col-md-4
+    - if not @members.empty?
+      %h2 You Play
+      %ul.member
+        - @members.each do |member|
+          %li
+            = link_me member
+    - if not @invitations.empty?
+      %h2 Your Invited to
+      %ul.invitations
+        - @invitations.each do |invite|
+          %li
+            .pull-right
+              = link_to "Accept Invitation", accept_campaign_members_path(invite)
+            = invite
 
 
-  .col-md-6
+   
+    
+  .col-md-4
+
     %h1.title Public Campaigns
 
     %table

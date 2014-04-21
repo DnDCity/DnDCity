@@ -19,6 +19,12 @@ When(/^I click on "(.*?)"$/) do |label|
   page.status_code.should eq 200
 end
 
+When(/^I click on "(.*?)" in the (\w+)$/) do |link,css|
+  within(css) do 
+    click_on link
+  end
+  page.status_code.should eq 200
+end
 
 When(/^I enter an? ([\w ]+) of "(.*?)"$/) do |field, value|
   fill_in(field, with: value, match: :prefer_exact)
@@ -60,22 +66,19 @@ Then(/^I should be on the page for my new campaign\.$/) do
 end
 
 Given(/^I have a campaign named "(.*?)"$/) do |name|
-	@campaign = @user.campaigns.create! name: name
+  @campaign = @user.campaigns.create! name: name
 end
 
 Given(/^I choose to edit my campaign$/) do
-  pending # express the regexp above with the code you wish you had
+  visit edit_campaign_path(@campaign)
 end
 
-When(/^I specify a new name of "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+Then(/^my campaign should now be called "(.*?)"$/) do |name|
+  @campaign.reload
+  @campaign.name.should eq name
 end
 
-Then(/^my campaign should now be called "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
-Given(/^there is a user "(.*?)"$/) do |arg1|
+Given(/^there is a user "(.*?)"$/) do |email|
   pending # express the regexp above with the code you wish you had
 end
 
@@ -87,3 +90,27 @@ Then(/^they will get an email inviting them to my campaign\.$/) do
   pending # express the regexp above with the code you wish you had
 end
 
+Then(/^I should not see "(.*?)"$/) do |content|
+  page.should_not have_content(content)
+end
+
+Then(/^I should not see a link to "(.*?)"$/) do |link|
+  page.should_not have_link link
+end
+
+Then(/^I should see a link to "(.*?)"$/) do |link|
+  page.should have_link link
+end
+
+
+Then(/^I should see an? \.?(\w+) of "(.*?)"$/) do |css_class,text|
+  within(".#{css_class}") do
+    page.should have_content text
+  end
+end
+
+Then(/^I should not see an? \.?(\w+) of "(.*?)"$/) do |css_class,text|
+  within(".#{css_class}") do
+    page.should_not have_content text
+  end
+end
