@@ -2,9 +2,11 @@
   .pull-right
     %a{href: new_race_path}
       %span.glyphicon.glyphicon-plus
-%h1.title Races and Templates
+      New Race
 
-%table
+%h1.title Races
+
+%table.compact
   %tr
     %th Name
     %th Size
@@ -15,11 +17,6 @@
     %th Int
     %th Wis
     %th Cha
-    %th
-      -if can? :create, Race
-        %a{href: new_race_path}
-          %span.glyphicon.glyphicon-plus
-
   - @races.each do |race|
     %tr
       %td
@@ -33,9 +30,5 @@
       %td= race.int
       %td= race.wis
       %td= race.cha
-      %td
-        - if can? :edit, race
-          %a{href: edit_race_path(race)}
-            %span.glyphicon.glyphicon-pencil
 
 

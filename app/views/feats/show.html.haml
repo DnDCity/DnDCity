@@ -1,16 +1,17 @@
 .pull-right
-  %a{href: feats_path}
-    %span.glyphicon.glyphicon-list
   -if can? :create, Feat
     %a{href: new_feat_path}
       %span.glyphicon.glyphicon-plus
+      New
   - if can? :edit, @feat
     %a{href: edit_feat_path(@feat)}
       %span.glyphicon.glyphicon-pencil
+      Edit
   - if can? :destroy, @feat
     %a{href: feat_path(@feat), data: {method: :delete, confirm: "Are you sure you want to delete #{@feat}?"}}
       %span.glyphicon.glyphicon-trash
-%h1.title Feat: #{@feat} [#{link_me @feat.feat_type}]
+      Delete
+%h1.title #{link_to 'Feat', feats_path}: #{@feat} [#{link_me @feat.feat_type}]
 - if @feat.fighter_bonus_feat
   A fighter may select #{@feat} as one of his fighter bonus feats.
 %p

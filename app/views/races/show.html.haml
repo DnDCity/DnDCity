@@ -1,52 +1,59 @@
 .pull-right
-  %a{href: races_path}
-    %span.glyphicon.glyphicon-list
   -if can? :create, Race
     %a{href: new_race_path}
       %span.glyphicon.glyphicon-plus
+      New Race
   - if can? :edit, @race
     %a{href: edit_race_path(@race)}
       %span.glyphicon.glyphicon-pencil
+      Edit
   - if can? :destroy, @race
     %a{href: race_path(@race), data: {method: :delete, confirm: "Are you sure you want to delete #{@race}?"}}
       %span.glyphicon.glyphicon-trash
-%h1.title Race #{@race}
-%p
-  %b Name:
-  = @race.name
+      Delete
+%h1.title #{link_to 'Race', races_path}: #{link_me @race}
 %p 
   %b Size:
   = link_to @race.size, @race.size
 %p
-  %b Desc:
-  = @race.desc
-%p
   %b Speed:
   = @race.speed
+
+- if @race.ability_modifiers?
+  %p
+    %b Ability Modifiers:
+    - if @race.str != 0
+      %b Str:
+      = @race.str
+    - if @race.dex != 0
+      %b Dex:
+      = @race.dex
+    - if @race.con != 0
+      %b Con:
+      = @race.con
+    - if @race.int != 0
+      %b Int:
+      = @race.int
+    - if @race.wis != 0
+      %b Wis:
+      = @race.wis
+    - if @race.cha != 0
+      %b Cha:
+      = @race.cha
+- if bonus_feat = @race.bonus_feat
+  %p
+    %b Bonus feat:
+    = bonus_feat
+- if bonus_skill_points = @race.bonus_skill_points
+  %p
+    %b Bonus skill points:
+    = bonus_skill_points
+- if bonus_skill_points_per_level = @race.bonus_skill_points_per_level
+  %p
+    %b Bonus skill points per level:
+    = bonus_skill_points_per_level
+
 %p
-  %b Str:
-  = @race.str
-%p
-  %b Dex:
-  = @race.dex
-%p
-  %b Con:
-  = @race.con
-%p
-  %b Int:
-  = @race.int
-%p
-  %b Wis:
-  = @race.wis
-%p
-  %b Cha:
-  = @race.cha
-%p
-  %b Bonus feat:
-  = @race.bonus_feat
-%p
-  %b Bonus skill points:
-  = @race.bonus_skill_points
-%p
-  %b Bonus skill points per level:
-  = @race.bonus_skill_points_per_level
+  %b Desc:
+  :maruku
+    #{ @race.desc }

@@ -1,6 +1,8 @@
-.pull-right
-  = link_to 'Edit', edit_skill_path(@skill)
-  = link_to 'Back', skills_path%p
+- if can? :manage, @skill
+  .pull-right
+    %a{href: edit_skill_path(@skill)}
+      %span.glyphicon.glyphicon-pencil
+      Edit
 
 .pull-right
   %h2 Classes
@@ -8,7 +10,11 @@
     - @skill.character_classes.each do |cc|
       %li= link_me cc
 
-%h1 Skill: #{@skill.name}
-:maruku
-  #{@skill.desc}
+%h1 
+  %a{href: skills_path}
+    Skill: 
+  #{@skill.name}
+.skill
+  :maruku
+    #{@skill.desc}
 
