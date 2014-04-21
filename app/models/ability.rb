@@ -24,6 +24,8 @@ class Ability
        can :read, Campaign, :id => Campaign.with_role(:member, user).pluck(:id)
        can :manage, Campaign, user_id: user.id # you can manage your own
        can :manage, Character, user_id: user.id # you can manage your own
+       can :manage, ClassLevel, :id => Character.where(user_id: user.id).pluck(:id)
+       can :create, ClassLevel
        can :create, Character
        can :create, Campaign
     end
@@ -36,6 +38,7 @@ class Ability
     can :read, CharacterClass
     can :read, Race
     can :read, Size
+    can :read, ConsumableItem
     #
     # The first argument to `can` is the action you are giving the user 
     # permission to do.

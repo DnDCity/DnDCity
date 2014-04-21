@@ -13,6 +13,12 @@ class Character < ActiveRecord::Base
     (score / 2 ).floor - 5
   end
 
+  def character_class
+    class_levels.order('class_level desc').collect do |cl|
+      cl.to_s
+    end.join(' ')
+  end
+
   def to_s
     name
   end

@@ -1,7 +1,3 @@
--if can? :create, Campaign
-  .pull-right
-    %a.btn.btn-large.btn-primary{href: new_campaign_path}
-      Create a Campaign
 %h1.title Campaigns
 .row
   .col-md-4
@@ -17,13 +13,16 @@
                   Edit
             %a{href: campaign_path(campaign)}
               = campaign.name
+    -if can? :create, Campaign
+      %a.btn.btn-large.btn-primary{href: new_campaign_path}
+        Create a Campaign
   .col-md-4
     - if not @members.empty?
       %h2 You Play
       %ul.member
         - @members.each do |member|
           %li
-            = member
+            = link_me member
     - if not @invitations.empty?
       %h2 Your Invited to
       %ul.invitations
