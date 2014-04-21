@@ -20,7 +20,8 @@ class Ability
     end
 
     if user.persisted? # user exists
-       #can :read, :all
+       can :read, Campaign, :id => Campaign.with_role(:invited, user).pluck(:id)
+       can :read, Campaign, :id => Campaign.with_role(:member, user).pluck(:id)
        can :manage, Campaign, user_id: user.id # you can manage your own
        can :manage, Character, user_id: user.id # you can manage your own
        can :create, Character

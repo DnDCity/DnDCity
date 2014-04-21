@@ -1,11 +1,11 @@
 %h1.title Invite Members
-%form
+=form_tag campaign_members_path(@campaign), method: :post do
   .inputs
     .control-group.text.emails
       %p Enter the email address of the people you would like to invite to this campaign.
       %label.text.required.control-label{for: :emails} Emails
       .controls
-        %textarea.text.required{name: :emails}
+        %textarea.text.required{id: :emails, name: :emails}
     .control-group.text.message
       %p Enter a message to send to the people you are inviting.
       %label.text.optional.control-label{for: :message} Message

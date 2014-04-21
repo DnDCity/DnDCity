@@ -54,6 +54,8 @@ class CampaignsController < ApplicationController
     def load_campaigns
       @campaigns = current_user.campaigns
       @public_campaigns = Campaign.where("public = ? and user_id != ?", true, current_user.id)
+      @invitations = Campaign.with_role(:invited, current_user)
+      @members = Campaign.with_role(:member, current_user)
     end
 
     def build_campaign

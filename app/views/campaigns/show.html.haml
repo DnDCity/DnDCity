@@ -29,6 +29,9 @@
     %h3 Owner
     = link_me @campaign.user
     %h3 Members
+    %ul.members
+      - @campaign.members.each do |member|
+        %li= link_me member
     - if can? :invite, @campaign
       = link_to "Invite Players", new_campaign_member_path(@campaign)
 
