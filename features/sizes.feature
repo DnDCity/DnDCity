@@ -29,7 +29,7 @@ I want to be able to lookup the effects of different sizes
     Given that I am a editor
     And there is a size of "Miniscule" with a modifier of "5" and a desc of "Mini Person"
     When I go to the size path for the size
-    Then I should see a title of "Size Miniscule"
+    Then I should see a title of "Size: Miniscule"
     And I should see a name of "Miniscule"
     And I should see a modifier of "+5"
     And I should see an ac of "+5"
