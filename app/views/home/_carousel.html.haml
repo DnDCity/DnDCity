@@ -1,0 +1,21 @@
+#carousel-example-generic.carousel.slide{"data-ride" => "carousel"}
+  / Indicators
+  %ol.carousel-indicators
+    %li.active{"data-slide-to" => "0", "data-target" => "#carousel-example-generic"}
+    %li{"data-slide-to" => "1", "data-target" => "#carousel-example-generic"}
+    %li{"data-slide-to" => "2", "data-target" => "#carousel-example-generic"}
+  / Wrapper for slides
+  .carousel-inner
+    .item.active
+      %img.index{src: "assets/rider.jpg"}
+      .carousel-caption
+        \ What
+    .item
+      %img.index{src: "assets/sea.jpg"}
+      .carousel-caption
+        \ y'all better believe it's more testing
+    .item
+      %img.index{src: "assets/fight.jpg"}
+      .carousel-caption
+        \ yes
+

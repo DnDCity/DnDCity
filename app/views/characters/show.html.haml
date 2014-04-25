@@ -1,6 +1,7 @@
 .pull-right
+  = link_to 'Index', characters_path
   = link_to 'Edit', edit_character_path(@character)
-  = link_to 'Back', characters_path
+  = link_to 'Destroy', @character, :method => :delete, :data => { :confirm => 'Are you sure?' }
   %p
     User:
     = @character.user.name

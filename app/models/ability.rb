@@ -7,20 +7,32 @@ class Ability
     user ||= User.new # guest user (not logged in)
 
     if user.has_role? :admin
-      can :manage, :all ## remove this later when we have things better defined
+      # can :manage, :all ## remove this later when we have things better defined
       can :manage, :users
       can :manage, :roles
+    end
+
+    if user.has_role? :editor
+      can :manage, Size
+      can :manage, Race
+      can :manage, Skill
       can :manage, FeatType
       can :manage, Feat
       can :manage, Spell
       can :manage, Weapon
+      can :manage, CharacterClass
     end
 
     if user.persisted? # user exists
-       #can :read, :all
+       can :manage, User, :id => user.id
+       can :read, User
+       can :read, Campaign, :id => Campaign.with_role(:invited, user).pluck(:id)
+       can :read, Campaign, :id => Campaign.with_role(:member, user).pluck(:id)
        can :manage, Campaign, user_id: user.id # you can manage your own
        can :manage, Character, user_id: user.id # you can manage your own
        can :manage, Weapon, user_id: user.id
+       can :manage, ClassLevel, :id => Character.where(user_id: user.id).pluck(:id)
+       can :create, ClassLevel
        can :create, Character
        can :create, Campaign
        can :create, Weapon
@@ -34,6 +46,8 @@ class Ability
     can :read, CharacterClass
     can :read, Race
     can :read, Size
+    can :read, ConsumableItem
+    can :read, Skill
     #
     # The first argument to `can` is the action you are giving the user 
     # permission to do.

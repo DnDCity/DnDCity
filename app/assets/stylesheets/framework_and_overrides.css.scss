@@ -2,18 +2,45 @@
 @import "compass";
 @import "bootstrap";
 
+// http://colorschemedesigner.com/#3i200w0w0w0w0
+$backgroundColor: #ffffff;
+$fontColor: #333333;
+$primaryColor: #aaa; // teal
+$primaryGrey: #777;
+$primaryDark: #666;
+$primaryPale: #ccc;
+$primaryLight: #eee;
+
+
 // make all images responsive by default
 img {
   @extend .img-responsive;
   margin: 0 auto;
   }
+img.index{
+ width: 250px;
+ height: 300px;
+ }
 // override for the 'Home' navigation link
 .navbar-brand {
   font-size: inherit;
   }
 //NIT-PICKY STYLING FOR SECTIONS
+
+.carousel{
+ position: absolute;
+ top: 0%;
+ right: 30%;
+}
+.carousel-inner{
+ }
+.carousel-caption{
+}
+.carousel-indicators{
+}
 .section1{
  border-style: groove;
+ border-color: #917214;
  min-height: 241px;
  width: 300px;
  background-color: #fff;
@@ -22,6 +49,7 @@ img {
 
 .sectioncamp{
  border-style: groove;
+ border-color: #917214;
  min-height: 200px;
  width: 225px;
  background-color: #fff;
@@ -30,6 +58,7 @@ img {
 
 .section2, .section3, .section4, .section5, .section6, .section7, .sectiontest{
  border-style: groove;
+ border-color: #917214;
  height: 200px;
  width: 200px;
  background-color: #fff;
@@ -42,13 +71,16 @@ img {
 
 //TABS, BUTTONS, AND ETC.
 .subbutton{
- background-color: #bb9955;
+ background-color: $primaryColor;
 }
-.nav-tabs > li.active > a, .nav-tabs > li.active >a:hover, .nav-tabs > li.active > a:focus{
- background-color: #bb9955;  
+.nav-tabs > li.active > a, 
+.nav-tabs > li.active >a:hover, 
+.nav-tabs > li.active > a:focus{
+ background-color: $primaryColor;  
+ color: white;
 }
 .nav-tabs > li > a:hover{
- background-color: #bb9955;
+ background-color: $primaryColor;
 } 
 
 // THESE ARE EXAMPLES YOU CAN MODIFY
@@ -74,12 +106,13 @@ img {
 // to make views framework-neutral
 main {
   @extend .container;
-  @include background(linear-gradient(top, #ffffee, #ffeecc));
   padding-bottom: 80px;
   width: 100%;
   margin-top: 51px; // accommodate the navbar
-  // border-top-style: groove;
-  // border-bottom-style: groove;
+  border-top-style: groove;
+//  border-top-color: #BDAE60;
+  border-bottom-style: groove;
+//  border-bottom-color: #917214;
   }
 section {
   @extend .row;
@@ -116,3 +149,8 @@ section {
 #error_explanation h2 {
   font-size: 16px;
 }
+
+a.btn.btn-primary {
+  color: white;
+}
+

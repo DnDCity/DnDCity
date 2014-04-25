@@ -2,8 +2,14 @@
   .pull-right
     %a{href: new_feat_path}
       %span.glyphicon.glyphicon-plus
+      New Feat
 %h1.title Feats
 
-%ul
+%table.compact
+  %tr
+    %th Feat
+    %th Type
   - @feats.each do |feat|
-    %li #{link_me feat} [#{link_me feat.feat_type}] 
+    %tr
+      %td= link_me feat
+      %td= link_me feat.feat_type

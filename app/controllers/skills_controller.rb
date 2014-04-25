@@ -1,5 +1,7 @@
 class SkillsController < ApplicationController
-  before_action :set_skill, only: [:show, :edit, :update, :destroy]
+  # before_action :set_skill, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, except: [:index, :show]
+  load_and_authorize_resource find_by: :key
 
   # GET /skills
   # GET /skills.json

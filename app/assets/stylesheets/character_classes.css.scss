@@ -3,6 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 table.compact {
+  margin: 10px;
+  th {
+    a {
+      color: white;
+    }
+  }
   th, td {
     padding: 0 5px;
     text-align: left;
@@ -21,7 +27,7 @@ table.compact {
 }
 
 .class-skills {
-  padding: 0 10px;
+  margin: 10px;
   h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
   }

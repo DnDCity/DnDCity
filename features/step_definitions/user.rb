@@ -19,6 +19,12 @@ When(/^I click on "(.*?)"$/) do |label|
   page.status_code.should eq 200
 end
 
+When(/^I click on "(.*?)" in the (\w+)$/) do |link,css|
+  within(css) do 
+    click_on link
+  end
+  page.status_code.should eq 200
+end
 
 When(/^I enter an? ([\w ]+) of "(.*?)"$/) do |field, value|
   fill_in(field, with: value, match: :prefer_exact)
@@ -59,3 +65,52 @@ Then(/^I should be on the page for my new campaign\.$/) do
   current_path.should eq campaign_path(@campaign) 
 end
 
+Given(/^I have a campaign named "(.*?)"$/) do |name|
+  @campaign = @user.campaigns.create! name: name
+end
+
+Given(/^I choose to edit my campaign$/) do
+  visit edit_campaign_path(@campaign)
+end
+
+Then(/^my campaign should now be called "(.*?)"$/) do |name|
+  @campaign.reload
+  @campaign.name.should eq name
+end
+
+Given(/^there is a user "(.*?)"$/) do |email|
+  pending # express the regexp above with the code you wish you had
+end
+
+When(/^I invite "(.*?)" to my campaign$/) do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^they will get an email inviting them to my campaign\.$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^I should not see "(.*?)"$/) do |content|
+  page.should_not have_content(content)
+end
+
+Then(/^I should not see a link to "(.*?)"$/) do |link|
+  page.should_not have_link link
+end
+
+Then(/^I should see a link to "(.*?)"$/) do |link|
+  page.should have_link link
+end
+
+
+Then(/^I should see an? \.?(\w+) of "(.*?)"$/) do |css_class,text|
+  within(".#{css_class}") do
+    page.should have_content text
+  end
+end
+
+Then(/^I should not see an? \.?(\w+) of "(.*?)"$/) do |css_class,text|
+  within(".#{css_class}") do
+    page.should_not have_content text
+  end
+end

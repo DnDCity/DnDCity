@@ -1,8 +1,11 @@
-.pull-right
-  = link_to 'New Skill', new_skill_path
+- if can? :create, Skill
+  .pull-right
+    %a{href: new_skill_path}
+      %span.glyphicon.glyphicon-plus
+      New Skill
 %h1 Listing skills
 
-%table
+%table.compact
   %tr
     %th Name
     %th Key Ability

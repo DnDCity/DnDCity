@@ -1,16 +1,19 @@
+.center
+  %img{src: asset_path('dice_480.png')}
 
 -if user_signed_in?
- %table.home1
-  %th.home1= link_to 'Edit account', edit_user_registration_path
-  %tr
-  %th.home2= link_to 'Logout', destroy_user_session_path, :method=>'delete'
-  %tr
-  %th.home2= link_to 'Campaigns', campaigns_path
-  %tr
-  %th.home3= link_to 'Characters', characters_path
+  %table.home1
+    %th.home1= link_to 'Edit account', edit_user_registration_path
+    %tr
+    %th.home2= link_to 'Logout', destroy_user_session_path, :method=>'delete'
+    %tr
+    %th.home2= link_to 'Campaigns', campaigns_path
+    %tr
+    %th.home3= link_to 'Characters', characters_path
 
 -else
- %table.home1
-  %th.home1= link_to 'Login', new_user_session_path
-  %tr
-  %th.home3= link_to 'Sign up', new_user_registration_path
+  %table.home1
+    %th.home1= link_to 'Login', new_user_session_path
+    %tr
+    %th.home3= link_to 'Sign up', new_user_registration_path
+

@@ -1,22 +1,37 @@
 .pull-right
-  %a{href: sizes_path}
-    %span.glyphicon.glyphicon-list
   -if can? :create, Size
     %a{href: new_size_path}
       %span.glyphicon.glyphicon-plus
+      New
   - if can? :edit, @size
     %a{href: edit_size_path(@size)}
       %span.glyphicon.glyphicon-pencil
+      Edit
   - if can? :destroy, @size
     %a{href: size_path(@size), data: {method: :delete, confirm: "Are you sure you want to delete #{@size}?"}}
       %span.glyphicon.glyphicon-trash
-%h1.title Size #{@size}
+      Delete
+%h1.title #{link_to 'Size', sizes_path}: #{link_me @size}
 %p
   %b Name:
-  = @size.name
+  %span.name= @size.name
+%p
+  %b Modifier:
+  %span.modifier= bonus @size.modifier
+%p
+  %b Ac Bonus:
+  %span.ac= bonus @size.ac
+%p
+  %b Attack Bonus:
+  %span.attack= bonus @size.attack
+%p
+  %b Hide Bonus:
+  %span.hide_bonus= bonus @size.hide
 %p
   %b Desc:
-  = @size.desc
+  .desc
+    :markdown
+      #{@size.desc}
 
 %h3 Races
 - @size.races.each do |race|

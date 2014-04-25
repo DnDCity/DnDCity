@@ -31,7 +31,11 @@ DnDCity::Application.routes.draw do
     resources :character_levels
   end
   resources :campaigns do 
-    resources :members
+    resources :members do
+      collection do
+        get :accept
+      end
+    end
   end
 
   root :to => "home#index"

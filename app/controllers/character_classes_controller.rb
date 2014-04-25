@@ -10,7 +10,7 @@ class CharacterClassesController < ApplicationController
     @npc = []
     @prestige = []
     @character_classes.each do |cc|
-      case cc.class_type.downcase
+      case (cc.class_type || "").downcase
       when 'base' then @base.push cc
       when 'npc' then @npc.push cc
       when 'prestige' then @prestige.push cc
