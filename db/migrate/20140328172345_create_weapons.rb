@@ -1,6 +1,6 @@
 class CreateWeapons < ActiveRecord::Migration
   def change
-      create_table :weapons do |t|
+    create_table :weapons do |t|
       t.string :name, null: false
       t.text :desc
       t.references :user, index: true

@@ -89,15 +89,10 @@ ActiveRecord::Schema.define(version: 20140407203524) do
 
   add_index "characters", ["user_id"], name: "index_characters_on_user_id", using: :btree
 
-  create_table "class_level_seqn", id: false, force: true do |t|
-    t.integer "character_id",             null: false
-    t.integer "seqn",         default: 1, null: false
-  end
-
   create_table "class_levels", force: true do |t|
     t.integer  "character_id"
     t.integer  "character_class_id"
-    t.integer  "class_level",        default: 1
+    t.integer  "class_level"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -163,13 +158,6 @@ ActiveRecord::Schema.define(version: 20140407203524) do
   add_index "feats", ["character_class_id"], name: "index_feats_on_character_class_id", using: :btree
   add_index "feats", ["feat_type_id"], name: "index_feats_on_feat_type_id", using: :btree
   add_index "feats", ["fighter_bonus_feat"], name: "index_feats_on_fighter_bonus_feat", using: :btree
-
-  create_table "hairs", force: true do |t|
-    t.string   "name"
-    t.text     "desc"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "prerequisite_feats", id: false, force: true do |t|
     t.integer "feat_id"

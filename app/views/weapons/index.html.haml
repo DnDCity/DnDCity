@@ -8,17 +8,12 @@
   %tr
     %th Name
     %th Desc
-    %th User
-    %th Damages
-    %th Damagem
+    %th Damage(s)
+    %th Damage(m)
     %th Critical
-    %th Rangeincrement
+    %th Range Increment
     %th Weight
-    %th Isthrowable
-    %th Islight
-    %th Isonehanded
-    %th Istwohanded
-    %th Type
+
     %th
       -if can? :create, Weapon
         %a{href: new_weapon_path}
@@ -28,17 +23,11 @@
     %tr
       %td= weapon.name
       %td= weapon.desc
-      %td= weapon.user
       %td= weapon.damages
       %td= weapon.damagem
       %td= weapon.critical
       %td= weapon.rangeincrement
       %td= weapon.weight
-      %td= weapon.isthrowable
-      %td= weapon.islight
-      %td= weapon.isonehanded
-      %td= weapon.istwohanded
-      %td= weapon.type
       %td
         %a{href: weapon_path(weapon)}
           %span.glyphicon.glyphicon-file
